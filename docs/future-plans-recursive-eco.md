@@ -68,3 +68,25 @@ playback skeleton is already there.
 - Does the performance viewer support (or need) a music track per sequence (cf. the Suno poem music
   that wasn't wiring up in the Alice book)?
 - Build the recorder once against the performance-viewer URL so *any* sequence becomes recordable.
+
+## Playing the opening song in page order (without breaking karaoke)
+
+Question: can the recording read/play in page order — title → author → LibriVox credit → the
+Suno song for the opening poem → narration — or does that derail the TTS timestamps/karaoke?
+
+Answer: it's fine, **as long as the recording is a sequence of independent segments**, each with
+its own local timing — not one global narration track.
+
+- The narration karaoke uses ONE merged LibriVox MP3 with **absolute** word offsets. Splicing the
+  ~3-min Suno song into the middle of that single track would shift every later word timestamp by
+  the song's length → everything after misaligns. Don't do that.
+- Instead, build the recording as ordered segments, each carrying its own audio + its own
+  segment-relative timing: [title/author] → [LibriVox credit] → [Suno song] → [Ch.1 narration] …
+  Inserting the song shifts nothing, because narration timestamps are relative to the narration
+  segment, not a global clock. This is already how the book is built: the poem song is a SEPARATE
+  audio element with its own line-level highlighting (`.poem-line`/`.poem-stanza`), independent of
+  the LibriVox word timestamps.
+- Caveat: do NOT attempt word-level forced alignment on the SUNG track — singing stretches/repeats
+  words and has instrumental bars; WhisperX is for clean speech. Keep the song at line/stanza-level
+  highlighting on a hand-tuned timeline (what the poem player already does), and reserve word-level
+  karaoke for the spoken narration.
