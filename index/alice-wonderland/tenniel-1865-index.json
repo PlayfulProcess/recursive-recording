@@ -32,7 +32,7 @@
    "caption": "Alice and the Dormouse",
    "chapter": 3,
    "anchor": "\"Mine is a long and sad tale!\" said the Mouse, turning to",
-   "our_page": "(refine)"
+   "our_page": "ch3"
   },
   {
    "caption": "Why, Mary Ann, what are you doing out here?",
@@ -80,7 +80,7 @@
    "caption": "Cheshire cat in a tree",
    "chapter": 6,
    "anchor": "\"Cheshire Puss,\" she began, rather timidly, as she did not at all",
-   "our_page": "ch6-12"
+   "our_page": "ch6-13"
   },
   {
    "caption": "Cheshire cat again",
@@ -160,5 +160,7 @@
    "anchor": "\"Then the words don't fit you,\" said the King, looking round the",
    "our_page": "ch12"
   }
- ]
+ ],
+ "refine_notes": "Loose matches resolved: \"Alice and the Dormouse\" anchored at chapter level (ch3, text variant); Cheshire pig/tree share ch6-12 (long page) — both correctly in ch6, no spoiler.",
+ "mapped_to_page": 25
 }
