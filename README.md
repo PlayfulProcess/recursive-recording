@@ -1,14 +1,15 @@
 # recursive-recording
 
-Planning + (future) implementation home for turning **recursive.eco** content and
-audiobooks into recorded, karaoke-style video performances.
+Planning + (future) implementation home for **video recording** — turning recursive.eco
+sequences/performances into recorded, karaoke-style videos for YouTube.
 
-**Status: docs only.** No recording stack is built yet. This repo currently holds
-plans. The first real artifact it relates to is the Alice in Wonderland audiobook
-(see `playfulprocess/recursive-kids-stories-club`, branch `audiobook`), which already
-does CSV-driven illustrations + LibriVox karaoke word-timing in a static HTML player.
+**Scope: video only.** Audiobook content and the illustration index/protocol/engine live with
+the book in **`playfulprocess/recursive-kids-stories-club`**
+(`books/alice-in-wonderland/illustration-index/`), not here.
+
+**Status: docs only.** No recorder is built yet.
 
 ## Docs
 - [`docs/future-plans-recursive-eco.md`](docs/future-plans-recursive-eco.md) — featuring AI-made
-  stories as recursive.eco *sequences*, rendering them via TTS as a timed performance, recording,
-  and posting to YouTube.
+  stories as recursive.eco *sequences*, rendering via TTS as a timed performance, recording, and
+  posting to YouTube (incl. the segmented-timeline approach for the opening song).
