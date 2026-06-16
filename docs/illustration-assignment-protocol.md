@@ -65,3 +65,17 @@ page whose `order_index ≥` the plate's earliest matched anchor page. Never ear
 - Re-runnable & monotonic: adding a per-edition exact index only sharpens placement; never deletes art.
 - Dev-branch only; `main` is the baseline to diff/revert.
 - No R2 deletions, ever.
+
+## Simplification: per-page anchor = the page's first sentence
+Rather than carry a long passage per plate, the **anchor key for a page is its first sentence**
+(unique per page, trivial to match). `pipeline/extract_pages.py` builds `pages.json`
+(`{key, order, chapter, first_sentence, text}`) straight from `book.html` — no browser. An
+edition index then only needs to say *which page's first sentence* a plate sits against, and the
+engine matches on that. This keeps placement page-precise (narrower than chapter) while staying
+easy to produce and audit.
+
+## First run (proof, coarse anchoring)
+164 pages → 114 illustrated: **86 edition + 28 manuscript + 0 AI** (AI correctly unused — originals
+covered the pages). Priority verified: ch2-1→Tenniel 1865; where Tenniel is already used, the page
+falls to the next-oldest (Walker 1907 → Le Fanu 1910 …). `None` pages are the coarse greedy running
+out of in-chapter candidates; exact per-page anchors + the coverage/AI-fallback passes fill them.
