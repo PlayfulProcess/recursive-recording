@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alice — Karaoke Reader</title>
+<style>
+  :root{ --bg:#1a1430; --panel:#241c40; --ink:#f6f1ff; --dim:#b6a9d8; --hi:#ffd54a; --word:#ff7eb6; --accent:#9b6cff; }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{background:radial-gradient(120% 90% at 50% 0%, #2a2150 0%, var(--bg) 60%);color:var(--ink);
+       font-family:"Comic Sans MS","Baloo 2",system-ui,sans-serif;display:flex;flex-direction:column;min-height:100%}
+  header{padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  header h1{font-size:18px;margin:0;letter-spacing:.5px}
+  header .src{font-size:11px;color:var(--dim)}
+  main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:8px 14px 0}
+  .plate{width:min(680px,94vw);aspect-ratio:4/3;max-height:42vh;border-radius:18px;overflow:hidden;
+         box-shadow:0 10px 40px rgba(0,0,0,.45);border:3px solid rgba(255,255,255,.12);background:#0002}
+  .plate svg{width:100%;height:100%;display:block}
+  .badge{font-size:11px;color:var(--dim);margin-top:-6px}
+  .badge b{color:#7fe0a0}
+  .reader{width:min(820px,96vw);background:var(--panel);border-radius:18px;padding:18px 20px;
+          box-shadow:0 8px 30px rgba(0,0,0,.4);min-height:30vh;display:flex;flex-direction:column;justify-content:center}
+  .line{font-size:clamp(22px,4.6vw,40px);line-height:1.5;text-align:center;color:#6a5a92;font-weight:700;
+        transition:color .2s;margin:2px 0;letter-spacing:1px}
+  .line.active{color:var(--ink)}
+  .w{transition:color .12s,background .12s;border-radius:6px;padding:0 2px}
+  .line.active .w.spoken{color:var(--hi)}
+  .w.now{color:#1a1430;background:var(--word);box-shadow:0 0 0 4px var(--word)}
+  footer{position:sticky;bottom:0;background:linear-gradient(180deg,transparent,#140f28 30%);
+          padding:14px;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+  button{font:inherit;font-size:15px;border:none;border-radius:999px;padding:10px 16px;cursor:pointer;
+         background:#352a5e;color:var(--ink)}
+  button.primary{background:var(--accent);font-weight:700;padding:12px 26px}
+  button:active{transform:translateY(1px)}
+  .row{display:flex;align-items:center;gap:8px;color:var(--dim);font-size:13px;flex-wrap:wrap;justify-content:center}
+  select,input[type=range]{font:inherit;background:#241c40;color:var(--ink);border:1px solid #463a72;border-radius:8px;padding:5px 8px}
+  .pill{font-size:12px;color:var(--dim);background:#0003;border-radius:999px;padding:4px 12px}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+  <h1>🐇 Alice — Karaoke Reader</h1>
+  <span class="src" id="src"></span>
+</header>
+
+<main>
+  <div class="plate" id="plate"></div>
+  <div class="badge" id="badge"></div>
+  <div class="reader" id="reader"></div>
+</main>
+
+<footer>
+  <div class="controls">
+    <button id="prev">◀ Back</button>
+    <button id="play" class="primary">▶ Read to me</button>
+    <button id="next">Next ▶</button>
+  </div>
+  <div class="row">
+    <span class="pill" id="counter">—</span>
+    <label>Voice <select id="voice"></select></label>
+    <label>Speed <input id="rate" type="range" min="0.5" max="1.2" step="0.05" value="0.85"></label>
+    <label><input id="auto" type="checkbox" checked> auto-turn pages</label>
+  </div>
+</footer>
+
+<script src="alice-passages.js"></script>
+<script>
+(function(){
+  "use strict";
+  var DATA = window.ALICE_PASSAGES || {passages:[]};
+  var P = DATA.passages || [];
+  var idx = 0, lineIdx = 0, playing = false, fallbackTimer = null;
+  var synth = window.speechSynthesis || null;
+  var voices = [];
+
+  var elPlate = document.getElementById('plate'),
+      elReader = document.getElementById('reader'),
+      elBadge  = document.getElementById('badge'),
+      elCount  = document.getElementById('counter'),
+      elPlay   = document.getElementById('play'),
+      elVoice  = document.getElementById('voice'),
+      elRate   = document.getElementById('rate'),
+      elAuto   = document.getElementById('auto');
+  document.getElementById('src').textContent = DATA.source || '';
+
+  // ---- word-range model for the current line (for karaoke highlight) ----
+  function wordsOf(line){
+    var out = [], re = /\S+/g, m;
+    while ((m = re.exec(line))) out.push({t:m[0], s:m.index, e:m.index+m[0].length});
+    return out;
+  }
+
+  function render(){
+    var p = P[idx]; if(!p) return;
+    elPlate.innerHTML = (p.illustration && p.illustration.svg) || '';
+    var st = p.illustration && p.illustration.status;
+    elBadge.innerHTML = '<b>' + (p.title||'') + '</b>' +
+      (st && st!=='original' ? ' · illustration: <b>'+st+'</b>' : '') +
+      ((p.illustration&&p.illustration.regenerated_reason)?(' — '+p.illustration.regenerated_reason):'');
+    elReader.innerHTML = '';
+    (p.lines||[]).forEach(function(line, li){
+      var div = document.createElement('div');
+      div.className = 'line'; div.dataset.li = li;
+      wordsOf(line).forEach(function(w){
+        var sp = document.createElement('span');
+        sp.className = 'w'; sp.textContent = w.t + ' ';
+        sp.dataset.s = w.s; sp.dataset.e = w.e;
+        div.appendChild(sp);
+      });
+      elReader.appendChild(div);
+    });
+    elCount.textContent = (idx+1) + ' / ' + P.length;
+    setActiveLine(0, false);
+  }
+
+  function setActiveLine(li, markPrevSpoken){
+    var lines = elReader.querySelectorAll('.line');
+    lines.forEach(function(L, i){
+      L.classList.toggle('active', i===li);
+      if(i<li && markPrevSpoken) L.querySelectorAll('.w').forEach(function(w){w.classList.add('spoken');});
+      if(i>=li) L.querySelectorAll('.w').forEach(function(w){w.classList.remove('spoken','now');});
+    });
+    var el = lines[li]; if(el) el.scrollIntoView({block:'center',behavior:'smooth'});
+  }
+
+  function highlightWordAt(charIndex){
+    var L = elReader.querySelector('.line[data-li="'+lineIdx+'"]'); if(!L) return;
+    var ws = L.querySelectorAll('.w'), hit=null;
+    ws.forEach(function(w){
+      var s=+w.dataset.s, e=+w.dataset.e;
+      if(charIndex>=s && charIndex<e){ hit=w; }
+      if(e<=charIndex) w.classList.add('spoken');
+    });
+    ws.forEach(function(w){w.classList.remove('now');});
+    if(hit){ hit.classList.remove('spoken'); hit.classList.add('now'); }
+  }
+
+  // ---- speak one line, advance through the passage ----
+  function speakLine(){
+    var p = P[idx]; if(!p) return;
+    if(lineIdx >= p.lines.length){ endPassage(); return; }
+    setActiveLine(lineIdx, true);
+    var text = p.lines[lineIdx];
+    clearFallback();
+    if(synth){
+      var u = new SpeechSynthesisUtterance(text);
+      u.rate = parseFloat(elRate.value)||0.85; u.pitch = 1.05;
+      if(voices.length && elVoice.value!=='') u.voice = voices[+elVoice.value];
+      var gotBoundary = false;
+      u.onboundary = function(e){ if(e.name==='word'||e.charIndex!=null){ gotBoundary=true; highlightWordAt(e.charIndex||0); } };
+      u.onend = function(){ markLineDone(); lineIdx++; if(playing) speakLine(); };
+      // fallback: if no boundary events ~250ms in, sweep words on a timer
+      startFallback(text, function(){ return gotBoundary; });
+      synth.speak(u);
+    } else {
+      // no TTS: pure read-along on a timer
+      sweepWords(text, function(){ markLineDone(); lineIdx++; if(playing) speakLine(); });
+    }
+  }
+
+  function markLineDone(){
+    var L = elReader.querySelector('.line[data-li="'+lineIdx+'"]');
+    if(L) L.querySelectorAll('.w').forEach(function(w){w.classList.remove('now');w.classList.add('spoken');});
+  }
+
+  // estimate word timing when boundary events are unavailable
+  function sweepWords(text, done){
+    var ws = wordsOf(text), i=0, rate=parseFloat(elRate.value)||0.85;
+    var perWord = Math.max(180, 360/rate); // ms per word, slower for kids
+    fallbackTimer = setInterval(function(){
+      if(i>=ws.length){ clearFallback(); done&&done(); return; }
+      highlightWordAt(ws[i].s); i++;
+    }, perWord);
+  }
+  function startFallback(text, hasBoundary){
+    setTimeout(function(){ if(!hasBoundary() && playing && !fallbackTimer) sweepWords(text); }, 280);
+  }
+  function clearFallback(){ if(fallbackTimer){ clearInterval(fallbackTimer); fallbackTimer=null; } }
+
+  function endPassage(){
+    if(elAuto.checked && idx < P.length-1){ idx++; lineIdx=0; render(); setTimeout(speakLine, 700); }
+    else { stop(); }
+  }
+
+  function play(){ if(!P.length) return; playing=true; elPlay.textContent='⏸ Pause'; lineIdx = Math.min(lineIdx, P[idx].lines.length); if(lineIdx>=P[idx].lines.length) lineIdx=0; speakLine(); }
+  function stop(){ playing=false; elPlay.textContent='▶ Read to me'; clearFallback(); if(synth) synth.cancel(); }
+  function toggle(){ playing ? stop() : play(); }
+  function go(d){ stop(); idx=Math.max(0,Math.min(P.length-1, idx+d)); lineIdx=0; render(); }
+
+  elPlay.onclick = toggle;
+  document.getElementById('next').onclick = function(){ go(1); };
+  document.getElementById('prev').onclick = function(){ go(-1); };
+  elRate.oninput = function(){ if(playing){ stop(); play(); } };
+
+  function loadVoices(){
+    if(!synth) return;
+    voices = synth.getVoices();
+    elVoice.innerHTML = '';
+    voices.forEach(function(v,i){
+      var o=document.createElement('option'); o.value=i; o.textContent=v.name+(v.lang?(' ('+v.lang+')'):''); elVoice.appendChild(o);
+    });
+    // prefer an English, child-friendly-ish voice
+    var pref = voices.findIndex(function(v){return /en(-|_)?(GB|US)?/i.test(v.lang) && /female|girl|samantha|karen|moira|fiona|google uk/i.test(v.name);});
+    if(pref<0) pref = voices.findIndex(function(v){return /^en/i.test(v.lang);});
+    if(pref>=0) elVoice.value = pref;
+  }
+  if(synth){ loadVoices(); synth.onvoiceschanged = loadVoices; }
+  else { elVoice.parentElement.style.display='none'; }
+
+  render();
+  window.addEventListener('keydown', function(e){
+    if(e.code==='Space'){ e.preventDefault(); toggle(); }
+    if(e.code==='ArrowRight') go(1);
+    if(e.code==='ArrowLeft') go(-1);
+  });
+})();
+</script>
+</body>
+</html>

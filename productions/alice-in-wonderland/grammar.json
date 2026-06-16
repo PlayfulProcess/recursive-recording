@@ -1,0 +1,613 @@
+{
+  "name": "Alice's Adventures in Wonderland — Karaoke Reader (Demo)",
+  "description": "A karaoke-style ALL-CAPS narrated reading of Alice in Wonderland (Ch. I). Each passage = one performance clip: illustration + voice-over + per-line highlighted text. Lewis Carroll, 1865 — public domain. Excerpts from Chapter I, 'Down the Rabbit-Hole'.",
+  "grammar_type": "sequence",
+  "default_preview": "performance",
+  "tags": [
+    "alice",
+    "kids",
+    "karaoke",
+    "reading",
+    "public-domain"
+  ],
+  "is_published": false,
+  "items": [
+    {
+      "id": "p01-white-rabbit",
+      "name": "A Rabbit With a Watch",
+      "sort_order": 0,
+      "category": "passage",
+      "image_url": null,
+      "keywords": [
+        "alice",
+        "karaoke",
+        "chapter-1"
+      ],
+      "sections": {
+        "Text": "ALICE WAS BORED BY THE RIVER. SUDDENLY A WHITE RABBIT RAN BY. IT HAD PINK EYES. “OH DEAR! OH DEAR!” IT SAID. “I SHALL BE LATE!” IT TOOK A WATCH FROM ITS WAISTCOAT. ALICE JUMPED UP AND RAN AFTER IT.",
+        "Narration": "Alice was bored by the river. Suddenly a white rabbit ran by. It had pink eyes. “oh dear! oh dear!” it said. “i shall be late!” It took a watch from its waistcoat. Alice jumped up and ran after it.",
+        "Illustration prompt": "Classic children's-book watercolor: a white rabbit standing upright wearing a little checked waistcoat, holding a round gold pocket watch and looking worried; a curious young girl in a blue dress watching from behind a tree on a sunny riverbank; warm, gentle, John Tenniel-inspired but soft and colorful."
+      },
+      "metadata": {
+        "passage_index": 0,
+        "reading_style": "karaoke-allcaps",
+        "illustration_status": "original",
+        "_svg_placeholder": true
+      },
+      "performance": {
+        "start_sec": 0,
+        "end_sec": 27.95,
+        "video_visible": false,
+        "volume": 1.0,
+        "cover_image_url": null,
+        "background_audio": {
+          "note": "low gentle music — set youtube_video_id/volume when chosen"
+        },
+        "overlays": [
+          {
+            "kind": "text",
+            "content": "ALICE WAS BORED BY THE RIVER.",
+            "start_sec": 0.0,
+            "end_sec": 3.72,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "SUDDENLY A WHITE RABBIT RAN BY.",
+            "start_sec": 4.17,
+            "end_sec": 7.89,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "IT HAD PINK EYES.",
+            "start_sec": 8.34,
+            "end_sec": 10.82,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "“OH DEAR! OH DEAR!” IT SAID.",
+            "start_sec": 11.27,
+            "end_sec": 14.99,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "“I SHALL BE LATE!”",
+            "start_sec": 15.44,
+            "end_sec": 17.92,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "IT TOOK A WATCH FROM ITS WAISTCOAT.",
+            "start_sec": 18.37,
+            "end_sec": 22.71,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "ALICE JUMPED UP AND RAN AFTER IT.",
+            "start_sec": 23.16,
+            "end_sec": 27.5,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          }
+        ]
+      }
+    },
+    {
+      "id": "p02-down-the-hole",
+      "name": "Down, Down, Down",
+      "sort_order": 1,
+      "category": "passage",
+      "image_url": null,
+      "keywords": [
+        "alice",
+        "karaoke",
+        "chapter-1"
+      ],
+      "sections": {
+        "Text": "DOWN WENT ALICE AFTER IT. THE RABBIT-HOLE WENT STRAIGHT DOWN. THEN IT DIPPED SUDDENLY DOWN. DOWN, DOWN, DOWN SHE FELL. WOULD THE FALL NEVER END? SHE FELL PAST CUPBOARDS AND SHELVES. SHE FELL VERY, VERY SLOWLY.",
+        "Narration": "Down went alice after it. The rabbit-hole went straight down. Then it dipped suddenly down. Down, down, down she fell. Would the fall never end? She fell past cupboards and shelves. She fell very, very slowly.",
+        "Illustration prompt": "Storybook illustration: a young girl in a blue dress falling gently down a very deep round well, arms out, dress billowing; the curved walls are lined with little cupboards, bookshelves, jars and a map; warm lamplight, dreamy, slightly tumbling perspective."
+      },
+      "metadata": {
+        "passage_index": 1,
+        "reading_style": "karaoke-allcaps",
+        "illustration_status": "original",
+        "_svg_placeholder": true
+      },
+      "performance": {
+        "start_sec": 0,
+        "end_sec": 25.47,
+        "video_visible": false,
+        "volume": 1.0,
+        "cover_image_url": null,
+        "background_audio": {
+          "note": "low gentle music — set youtube_video_id/volume when chosen"
+        },
+        "overlays": [
+          {
+            "kind": "text",
+            "content": "DOWN WENT ALICE AFTER IT.",
+            "start_sec": 0.0,
+            "end_sec": 3.1,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "THE RABBIT-HOLE WENT STRAIGHT DOWN.",
+            "start_sec": 3.55,
+            "end_sec": 6.65,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "THEN IT DIPPED SUDDENLY DOWN.",
+            "start_sec": 7.1,
+            "end_sec": 10.2,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "DOWN, DOWN, DOWN SHE FELL.",
+            "start_sec": 10.65,
+            "end_sec": 13.75,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "WOULD THE FALL NEVER END?",
+            "start_sec": 14.2,
+            "end_sec": 17.3,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "SHE FELL PAST CUPBOARDS AND SHELVES.",
+            "start_sec": 17.75,
+            "end_sec": 21.47,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "SHE FELL VERY, VERY SLOWLY.",
+            "start_sec": 21.92,
+            "end_sec": 25.02,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          }
+        ]
+      }
+    },
+    {
+      "id": "p03-the-little-door",
+      "name": "The Little Door",
+      "sort_order": 2,
+      "category": "passage",
+      "image_url": null,
+      "keywords": [
+        "alice",
+        "karaoke",
+        "chapter-1"
+      ],
+      "sections": {
+        "Text": "ALICE CAME TO A LONG HALL. ALL ROUND WERE LOCKED DOORS. THEN SHE FOUND A TINY DOOR. IT WAS FIFTEEN INCHES HIGH. A LITTLE GOLDEN KEY OPENED IT. BEHIND IT WAS A LOVELY GARDEN. BUT ALICE WAS FAR TOO BIG. SHE COULD NOT EVEN FIT HER HEAD!",
+        "Narration": "Alice came to a long hall. All round were locked doors. Then she found a tiny door. It was fifteen inches high. A little golden key opened it. Behind it was a lovely garden. But alice was far too big. She could not even fit her head!",
+        "Illustration prompt": "Children's-book watercolor: a GIANT young girl in a blue dress kneeling and bending all the way down to peer through a TINY door only about fifteen inches high set in the base of a wall; the little door is unmistakably MUCH smaller than her head; through the small open doorway we glimpse a bright sunny garden of roses, fountains and hedges; a little golden key on the floor; warm, classic, whimsical. The door must look tiny and the girl must look huge."
+      },
+      "metadata": {
+        "passage_index": 2,
+        "reading_style": "karaoke-allcaps",
+        "illustration_status": "regenerated",
+        "_svg_placeholder": true
+      },
+      "performance": {
+        "start_sec": 0,
+        "end_sec": 32.74,
+        "video_visible": false,
+        "volume": 1.0,
+        "cover_image_url": null,
+        "background_audio": {
+          "note": "low gentle music — set youtube_video_id/volume when chosen"
+        },
+        "overlays": [
+          {
+            "kind": "text",
+            "content": "ALICE CAME TO A LONG HALL.",
+            "start_sec": 0.0,
+            "end_sec": 3.72,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "ALL ROUND WERE LOCKED DOORS.",
+            "start_sec": 4.17,
+            "end_sec": 7.27,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "THEN SHE FOUND A TINY DOOR.",
+            "start_sec": 7.72,
+            "end_sec": 11.44,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "IT WAS FIFTEEN INCHES HIGH.",
+            "start_sec": 11.89,
+            "end_sec": 14.99,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "A LITTLE GOLDEN KEY OPENED IT.",
+            "start_sec": 15.44,
+            "end_sec": 19.16,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "BEHIND IT WAS A LOVELY GARDEN.",
+            "start_sec": 19.61,
+            "end_sec": 23.33,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "BUT ALICE WAS FAR TOO BIG.",
+            "start_sec": 23.78,
+            "end_sec": 27.5,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "SHE COULD NOT EVEN FIT HER HEAD!",
+            "start_sec": 27.95,
+            "end_sec": 32.29,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          }
+        ]
+      }
+    },
+    {
+      "id": "p04-drink-me",
+      "name": "DRINK ME",
+      "sort_order": 3,
+      "category": "passage",
+      "image_url": null,
+      "keywords": [
+        "alice",
+        "karaoke",
+        "chapter-1"
+      ],
+      "sections": {
+        "Text": "ON THE TABLE WAS A BOTTLE. A LABEL SAID: “DRINK ME.” ALICE TOOK A LITTLE SIP. IT TASTED LIKE CHERRY TART. “WHAT A CURIOUS FEELING!” SHE SAID. SHE WAS SHUTTING UP LIKE A TELESCOPE. NOW SHE WAS TEN INCHES HIGH!",
+        "Narration": "On the table was a bottle. A label said: “drink me.” Alice took a little sip. It tasted like cherry tart. “what a curious feeling!” she said. She was shutting up like a telescope. Now she was ten inches high!",
+        "Illustration prompt": "Storybook watercolor: a little glass bottle with a paper label reading 'DRINK ME' tied with string, sitting on a three-legged glass table; a young girl in a blue dress shrinking small beside it, looking surprised; soft magical light."
+      },
+      "metadata": {
+        "passage_index": 3,
+        "reading_style": "karaoke-allcaps",
+        "illustration_status": "original",
+        "_svg_placeholder": true
+      },
+      "performance": {
+        "start_sec": 0,
+        "end_sec": 27.95,
+        "video_visible": false,
+        "volume": 1.0,
+        "cover_image_url": null,
+        "background_audio": {
+          "note": "low gentle music — set youtube_video_id/volume when chosen"
+        },
+        "overlays": [
+          {
+            "kind": "text",
+            "content": "ON THE TABLE WAS A BOTTLE.",
+            "start_sec": 0.0,
+            "end_sec": 3.72,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "A LABEL SAID: “DRINK ME.”",
+            "start_sec": 4.17,
+            "end_sec": 7.27,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "ALICE TOOK A LITTLE SIP.",
+            "start_sec": 7.72,
+            "end_sec": 10.82,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "IT TASTED LIKE CHERRY TART.",
+            "start_sec": 11.27,
+            "end_sec": 14.37,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "“WHAT A CURIOUS FEELING!” SHE SAID.",
+            "start_sec": 14.82,
+            "end_sec": 18.54,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "SHE WAS SHUTTING UP LIKE A TELESCOPE.",
+            "start_sec": 18.99,
+            "end_sec": 23.33,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "NOW SHE WAS TEN INCHES HIGH!",
+            "start_sec": 23.78,
+            "end_sec": 27.5,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          }
+        ]
+      }
+    },
+    {
+      "id": "p05-eat-me",
+      "name": "EAT ME",
+      "sort_order": 4,
+      "category": "passage",
+      "image_url": null,
+      "keywords": [
+        "alice",
+        "karaoke",
+        "chapter-1"
+      ],
+      "sections": {
+        "Text": "UNDER THE TABLE WAS A CAKE. ON IT, CURRANTS SPELLED: “EAT ME.” “I’LL EAT IT,” SAID ALICE. SHE TOOK ONE LITTLE BITE. “WHICH WAY? WHICH WAY?” SHE ASKED. THEN UP, UP, UP SHE GREW. NOW SHE WAS NINE FEET TALL!",
+        "Narration": "Under the table was a cake. On it, currants spelled: “eat me.” “i’ll eat it,” said alice. She took one little bite. “which way? which way?” she asked. Then up, up, up she grew. Now she was nine feet tall!",
+        "Illustration prompt": "Storybook watercolor: a small round frosted cake on the floor with the words 'EAT ME' spelled in dark currants on top; a young girl in a blue dress suddenly grown very tall, her head near the ceiling, looking astonished; warm whimsical light."
+      },
+      "metadata": {
+        "passage_index": 4,
+        "reading_style": "karaoke-allcaps",
+        "illustration_status": "original",
+        "_svg_placeholder": true
+      },
+      "performance": {
+        "start_sec": 0,
+        "end_sec": 27.95,
+        "video_visible": false,
+        "volume": 1.0,
+        "cover_image_url": null,
+        "background_audio": {
+          "note": "low gentle music — set youtube_video_id/volume when chosen"
+        },
+        "overlays": [
+          {
+            "kind": "text",
+            "content": "UNDER THE TABLE WAS A CAKE.",
+            "start_sec": 0.0,
+            "end_sec": 3.72,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "ON IT, CURRANTS SPELLED: “EAT ME.”",
+            "start_sec": 4.17,
+            "end_sec": 7.89,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "“I’LL EAT IT,” SAID ALICE.",
+            "start_sec": 8.34,
+            "end_sec": 11.44,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "SHE TOOK ONE LITTLE BITE.",
+            "start_sec": 11.89,
+            "end_sec": 14.99,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "“WHICH WAY? WHICH WAY?” SHE ASKED.",
+            "start_sec": 15.44,
+            "end_sec": 19.16,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "THEN UP, UP, UP SHE GREW.",
+            "start_sec": 19.61,
+            "end_sec": 23.33,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "NOW SHE WAS NINE FEET TALL!",
+            "start_sec": 23.78,
+            "end_sec": 27.5,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          }
+        ]
+      }
+    },
+    {
+      "id": "p06-curiouser",
+      "name": "Curiouser and Curiouser",
+      "sort_order": 5,
+      "category": "passage",
+      "image_url": null,
+      "keywords": [
+        "alice",
+        "karaoke",
+        "chapter-1"
+      ],
+      "sections": {
+        "Text": "“CURIOUSER AND CURIOUSER!” CRIED ALICE. SHE WAS SO SURPRISED. SHE FORGOT TO TALK PROPERLY. “NOW I’M OPENING OUT LIKE A TELESCOPE!” “GOODBYE, FEET!” SHE CALLED. HER FEET WERE SO FAR AWAY NOW. OH, WHAT A STRANGE DAY!",
+        "Narration": "“curiouser and curiouser!” cried alice. She was so surprised. She forgot to talk properly. “now i’m opening out like a telescope!” “goodbye, feet!” she called. Her feet were so far away now. Oh, what a strange day!",
+        "Illustration prompt": "Whimsical storybook watercolor: a young girl in a blue dress grown impossibly tall, looking down and waving cheerfully at her own tiny feet far below; playful, warm, gentle humor, classic children's-book style."
+      },
+      "metadata": {
+        "passage_index": 5,
+        "reading_style": "karaoke-allcaps",
+        "illustration_status": "original",
+        "_svg_placeholder": true
+      },
+      "performance": {
+        "start_sec": 0,
+        "end_sec": 26.09,
+        "video_visible": false,
+        "volume": 1.0,
+        "cover_image_url": null,
+        "background_audio": {
+          "note": "low gentle music — set youtube_video_id/volume when chosen"
+        },
+        "overlays": [
+          {
+            "kind": "text",
+            "content": "“CURIOUSER AND CURIOUSER!” CRIED ALICE.",
+            "start_sec": 0.0,
+            "end_sec": 3.1,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "SHE WAS SO SURPRISED.",
+            "start_sec": 3.55,
+            "end_sec": 6.03,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "SHE FORGOT TO TALK PROPERLY.",
+            "start_sec": 6.48,
+            "end_sec": 9.58,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "“NOW I’M OPENING OUT LIKE A TELESCOPE!”",
+            "start_sec": 10.03,
+            "end_sec": 14.37,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "“GOODBYE, FEET!” SHE CALLED.",
+            "start_sec": 14.82,
+            "end_sec": 17.3,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "HER FEET WERE SO FAR AWAY NOW.",
+            "start_sec": 17.75,
+            "end_sec": 22.09,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          },
+          {
+            "kind": "text",
+            "content": "OH, WHAT A STRANGE DAY!",
+            "start_sec": 22.54,
+            "end_sec": 25.64,
+            "x_pct": 8,
+            "y_pct": 64,
+            "width_pct": 84
+          }
+        ]
+      }
+    }
+  ]
+}

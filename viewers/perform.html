@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Performance · Alice in Wonderland</title>
+<!--
+  Backend-free performance player — adapted from recursive-tarot/viewers/perform.html
+  (the recording-framework player). Reads a `sequence` grammar (recording/docs/
+  performance-grammar.md shape): metadata.audio drives one global clock; each item is a
+  passage with image_url + performance{ start_sec, end_sec, words[] }. This build adds
+  FULL-PROSE PER-WORD karaoke (real LibriVox word timings) over the illustration, and
+  skips the repeated chapter-title reading via metadata.crop_ranges.
+  Output is DATA, not video — this page (and recursive.eco) are the player; no recording.
+  ?src=data/alice-performance.json (default).
+-->
+<style>
+  :root{ --bg:#0f0d17; --panel:#1a1726; --stage:#0a0712; --ink:#ece8f5; --muted:#9b94b3; --accent:#d4af37; --line:#2a2440; }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:16px}
+  h1{font-size:18px;margin:.2em 0 .1em} h1 .sub{font-size:13px;font-weight:400;color:var(--muted)}
+  .note{font-size:12px;color:var(--muted);margin:.2em 0 12px} .note a{color:var(--accent)}
+
+  .stage{position:relative;width:100%;height:min(70vh,720px);background:var(--stage);border:1px solid var(--line);
+    border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .stage img{max-width:100%;max-height:100%;object-fit:contain;display:block;transition:opacity .5s ease}
+  @media (prefers-reduced-motion: reduce){ .stage img{transition:none} }
+  .badge{position:absolute;top:12px;left:12px;z-index:4;background:rgba(0,0,0,.6);color:#fff;font-size:11px;
+    letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+  .pagelbl{position:absolute;top:12px;right:12px;z-index:4;background:rgba(0,0,0,.6);color:#fff;font-size:12px;
+    padding:5px 10px;border-radius:999px;font-variant-numeric:tabular-nums;backdrop-filter:blur(4px)}
+
+  /* full-prose per-word karaoke band over the plate */
+  .kband{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:22px 24px;text-align:center;
+    background:linear-gradient(0deg,rgba(8,7,11,.95) 12%,rgba(8,7,11,.6) 60%,rgba(8,7,11,0));pointer-events:none}
+  .kline{font:italic 600 clamp(18px,2.8vw,32px)/1.4 "Iowan Old Style",Palatino,Georgia,serif;
+    color:rgba(255,255,255,.5);max-width:32ch;margin:0 auto;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+  .kline .w{transition:color .12s} .kline .w.spoken{color:rgba(255,255,255,.85)}
+  .kline .w.active{color:var(--accent);font-style:normal;text-shadow:0 0 16px rgba(212,175,55,.7)}
+
+  .bar{display:flex;align-items:center;gap:12px;margin-top:12px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:10px 14px;flex-wrap:wrap}
+  .bar button{background:var(--accent);color:#1a1206;border:0;border-radius:8px;padding:8px 13px;font-size:15px;font-weight:700;cursor:pointer}
+  .bar button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:600;font-size:14px}
+  .bar .time{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);min-width:104px}
+  .scrub{flex:1;min-width:140px;accent-color:var(--accent)}
+  .passages{display:flex;gap:6px;overflow-x:auto;margin-top:12px;padding-bottom:4px;scrollbar-width:thin}
+  .passages button{flex:0 0 auto;background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:999px;
+    padding:5px 11px;font-size:12px;cursor:pointer;white-space:nowrap}
+  .passages button.on{border-color:var(--accent);color:var(--accent);font-weight:700}
+  #err{color:#e07a5f;padding:24px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 id="title">Performance</h1>
+  <p class="note" id="note"></p>
+  <div id="err" style="display:none"></div>
+
+  <div class="stage" id="stage" aria-live="off">
+    <img id="plate" alt="">
+    <div class="badge" id="badge" style="display:none"></div>
+    <div class="pagelbl" id="pagelbl" style="display:none"></div>
+    <div class="kband" id="kband" style="display:none"><div class="kline" id="kline"></div></div>
+  </div>
+  <audio id="audio" preload="auto"></audio>
+
+  <div class="bar">
+    <button id="play" aria-label="Play or pause">▶ Play</button>
+    <button class="ghost" id="prev" aria-label="Previous passage">⏮</button>
+    <button class="ghost" id="next" aria-label="Next passage">⏭</button>
+    <input class="scrub" id="scrub" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+    <span class="time" id="time">0:00 / 0:00</span>
+  </div>
+  <div class="passages" id="passages"></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const params=new URLSearchParams(location.search);
+const SRC=params.get('src')||'../productions/alice-in-wonderland/alice-performance.json';
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+const GAP=0.45, MAXW=14;
+
+let G=null, items=[], TOTAL=0, t=0, playing=false, raf=0, lastTs=0, audio=$('audio'), hasAudio=false, crops=[];
+const perf=i=>i.performance||{};
+const itemEnd=i=>perf(i).end_sec ?? (perf(i).start_sec||0)+4;
+
+(async function(){
+  try{
+    G=await (await fetch(SRC,{cache:'no-store'})).json();
+    const md=G.metadata||{};
+    // timeline = items that carry real timings, in clock order
+    items=(G.items||[]).filter(i=>perf(i).words&&perf(i).words.length&&typeof perf(i).start_sec==='number')
+                       .sort((a,b)=>perf(a).start_sec-perf(b).start_sec);
+    if(!items.length) throw new Error('No timed items in this performance grammar.');
+    // effective illustration: carry the last real plate forward in BOOK order, so
+    // text-only pages keep showing the prior art even after a seek (items are the
+    // same object refs as G.items, so _effImg sticks).
+    { let li=''; for(const it of (G.items||[]).slice().sort((a,b)=>(a.sort_order??0)-(b.sort_order??0))){ if(it.image_url) li=it.image_url; it._effImg=li; } }
+    TOTAL=md.total_sec || Math.max(...items.map(itemEnd));
+    crops=(md.crop_ranges||[]).slice().sort((a,b)=>a[0]-b[0]);
+    $('title').innerHTML=esc(G.name||'Performance')+' <span class="sub">— a performance</span>';
+    const audioUrl=md.audio||null;
+    if(audioUrl){ audio.src=audioUrl; hasAudio=true; }
+    $('note').innerHTML = hasAudio
+      ? 'Narrated full-prose karaoke · '+esc(md.audio_source||'LibriVox (public domain)')+' · chapter-title reading skipped.'
+      : 'Caption-only preview — no narration audio track set.';
+    buildPassages(); $('scrub').max=TOTAL; seek(perf(items[0]).start_sec||0); bind();
+  }catch(e){ $('err').style.display='block'; $('err').textContent='Could not load the performance: '+e.message; }
+})();
+
+function activeItem(){ for(let k=items.length-1;k>=0;k--){ if(t>=(perf(items[k]).start_sec||0)) return items[k]; } return items[0]; }
+
+function sentencesOf(it){
+  const pf=perf(it);
+  if(pf._sents) return pf._sents;
+  const ws=pf.words, sents=[]; let cur=[];
+  for(let i=0;i<ws.length;i++){ const w=ws[i]; cur.push({w:w.w,start:w.start,end:w.end,gi:i});
+    const nx=ws[i+1]; if(!nx || (nx.start-w.end)>GAP || cur.length>=MAXW){ sents.push(cur); cur=[]; } }
+  if(cur.length) sents.push(cur);
+  const map=new Array(ws.length); sents.forEach((s,si)=>s.forEach(x=>map[x.gi]=si));
+  pf._sents=sents; pf._sentOf=map; return sents;
+}
+function wIdx(ws,tt){ let lo=0,hi=ws.length-1,a=-1; while(lo<=hi){const m=(lo+hi)>>1; if(ws[m].start<=tt){a=m;lo=m+1;}else hi=m-1;} return a; }
+
+function buildPassages(){
+  const p=$('passages'); p.innerHTML='';
+  items.forEach((it,idx)=>{ const b=document.createElement('button'); b.textContent=(idx+1)+'. '+(it.name||it.id);
+    b.onclick=()=>seek(perf(it).start_sec||0); p.appendChild(b); });
+}
+
+let lastKey='', lastActive=null;
+function render(){
+  const it=activeItem(), pf=perf(it), plate=$('plate');
+  // illustration — precomputed effective plate (book-order carry-forward)
+  const img=it._effImg||it.image_url||'';
+  if(img && plate.getAttribute('src')!==img){ plate.src=img; plate.alt=it.name||''; }
+  // badge + page label
+  const cat=it.category||''; $('badge').style.display=cat?'':'none'; $('badge').textContent=cat;
+  const pl=(it.metadata&&it.metadata.page_number!=null)?('No. '+it.metadata.page_number):'';
+  $('pagelbl').style.display=pl?'':'none'; $('pagelbl').textContent=pl;
+  // karaoke band — current sentence, per-word highlight
+  const ws=pf.words;
+  if(ws&&ws.length){
+    $('kband').style.display='';
+    const wi=Math.max(0,wIdx(ws,t));
+    const sents=sentencesOf(it), sNo=pf._sentOf?pf._sentOf[wi]:0, key=it.id+':'+sNo;
+    const line=$('kline');
+    if(key!==lastKey){
+      const sent=sents[sNo]||[];
+      line.innerHTML=sent.map(w=>`<span class="w" data-gi="${w.gi}">${esc(w.w)}</span>`).join(' ');
+      lastKey=key;
+    }
+    const sp=line.children;
+    for(let j=0;j<sp.length;j++){ const gi=+sp[j].getAttribute('data-gi'); sp[j].className=gi<wi?'w spoken':(gi===wi?'w active':'w'); }
+  } else { $('kband').style.display='none'; }
+  // chips + scrubber + time
+  if(it!==lastActive){ items.forEach((x,idx)=>{ const c=$('passages').children[idx]; if(c){ const on=x===it; c.classList.toggle('on',on); if(on)c.scrollIntoView({inline:'center',block:'nearest'}); } }); lastActive=it; }
+  if(document.activeElement!==$('scrub')) $('scrub').value=t;
+  $('time').textContent=fmt(t)+' / '+fmt(TOTAL);
+}
+
+function applyCrop(){ for(let c=0;c<crops.length;c++){ if(t>=crops[c][0]-0.02 && t<crops[c][1]-0.12){ t=crops[c][1]; if(hasAudio)audio.currentTime=t; return true; } } return false; }
+function tick(ts){
+  if(!playing) return;
+  if(hasAudio){ t=audio.currentTime; } else { if(!lastTs)lastTs=ts; t+=(ts-lastTs)/1000; lastTs=ts; }
+  if(applyCrop()){ render(); raf=requestAnimationFrame(tick); return; }
+  if(t>=TOTAL){ t=TOTAL; pause(); render(); return; }
+  render(); raf=requestAnimationFrame(tick);
+}
+function play(){ if(playing)return; playing=true; lastTs=0; $('play').textContent='⏸ Pause';
+  if(hasAudio){ audio.currentTime=Math.min(t,TOTAL-0.05); audio.play().catch(()=>{}); } raf=requestAnimationFrame(tick); }
+function pause(){ playing=false; $('play').textContent='▶ Play'; cancelAnimationFrame(raf); if(hasAudio)audio.pause(); }
+function seek(sec){ t=Math.max(0,Math.min(sec,TOTAL)); applyCrop(); if(hasAudio)audio.currentTime=t; lastTs=0; render(); }
+function bind(){
+  $('play').onclick=()=>playing?pause():play();
+  $('prev').onclick=()=>{ const cur=perf(activeItem()).start_sec||0; const prev=[...items].reverse().find(x=>(perf(x).start_sec||0)<cur-0.3); seek(prev?perf(prev).start_sec:0); };
+  $('next').onclick=()=>{ const cur=perf(activeItem()).start_sec||0; const nx=items.find(x=>(perf(x).start_sec||0)>cur+0.3); if(nx)seek(perf(nx).start_sec); };
+  $('scrub').oninput=e=>{ pause(); seek(+e.target.value); };
+  document.addEventListener('keydown',e=>{
+    if(e.target.tagName==='INPUT')return;
+    if(e.key===' '){ e.preventDefault(); playing?pause():play(); }
+    else if(e.key==='ArrowRight') $('next').click();
+    else if(e.key==='ArrowLeft') $('prev').click();
+    else if(e.key==='Home') seek(0);
+  });
+}
+</script>
+</body>
+</html>

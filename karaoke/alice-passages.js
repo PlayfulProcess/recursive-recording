@@ -1,0 +1,126 @@
+/* GENERATED from alice-passages.json by pipeline/build_karaoke.py — do not hand-edit. */
+window.ALICE_PASSAGES = {
+  "title": "Alice's Adventures in Wonderland — Karaoke Reader (Demo)",
+  "source": "Lewis Carroll, 1865 — public domain. Excerpts from Chapter I, 'Down the Rabbit-Hole'.",
+  "reading_style": "karaoke-allcaps",
+  "note": "Lines are kept short (<= ~7 words) so a young reader can track. The reader app reads each passage aloud and highlights the current word/line. illustration.svg is an OFFLINE placeholder plate; illustration.prompt is the image-gen prompt used to produce/repair the real picture (see docs/illustration-qa.md). illustration.status: original | reordered | regenerated.",
+  "passages": [
+    {
+      "id": "p01-white-rabbit",
+      "title": "A Rabbit With a Watch",
+      "lines": [
+        "ALICE WAS BORED BY THE RIVER.",
+        "SUDDENLY A WHITE RABBIT RAN BY.",
+        "IT HAD PINK EYES.",
+        "“OH DEAR! OH DEAR!” IT SAID.",
+        "“I SHALL BE LATE!”",
+        "IT TOOK A WATCH FROM ITS WAISTCOAT.",
+        "ALICE JUMPED UP AND RAN AFTER IT."
+      ],
+      "illustration": {
+        "alt": "A white rabbit in a waistcoat looking at a pocket watch while Alice watches.",
+        "status": "original",
+        "prompt": "Classic children's-book watercolor: a white rabbit standing upright wearing a little checked waistcoat, holding a round gold pocket watch and looking worried; a curious young girl in a blue dress watching from behind a tree on a sunny riverbank; warm, gentle, John Tenniel-inspired but soft and colorful.",
+        "svg": "<svg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'><rect width='400' height='300' fill='#cde7c9'/><rect y='210' width='400' height='90' fill='#a7d3a0'/><circle cx='150' cy='150' r='38' fill='#fff' stroke='#ddd'/><ellipse cx='150' cy='95' rx='26' ry='40' fill='#fff' stroke='#ddd'/><ellipse cx='141' cy='70' rx='7' ry='24' fill='#fff' stroke='#e9b8c8'/><ellipse cx='159' cy='70' rx='7' ry='24' fill='#fff' stroke='#e9b8c8'/><circle cx='143' cy='150' r='4' fill='#e76' /><rect x='130' y='150' width='40' height='44' rx='8' fill='#f4d35e'/><circle cx='185' cy='170' r='13' fill='#ffd700' stroke='#caa200'/><text x='185' y='175' font-size='11' text-anchor='middle'>⏱</text><circle cx='300' cy='150' r='22' fill='#f6c' opacity='.85'/><rect x='286' y='168' width='28' height='60' rx='6' fill='#5b8dd6'/></svg>"
+      }
+    },
+    {
+      "id": "p02-down-the-hole",
+      "title": "Down, Down, Down",
+      "lines": [
+        "DOWN WENT ALICE AFTER IT.",
+        "THE RABBIT-HOLE WENT STRAIGHT DOWN.",
+        "THEN IT DIPPED SUDDENLY DOWN.",
+        "DOWN, DOWN, DOWN SHE FELL.",
+        "WOULD THE FALL NEVER END?",
+        "SHE FELL PAST CUPBOARDS AND SHELVES.",
+        "SHE FELL VERY, VERY SLOWLY."
+      ],
+      "illustration": {
+        "alt": "Alice falling slowly down a deep well lined with cupboards and shelves.",
+        "status": "original",
+        "prompt": "Storybook illustration: a young girl in a blue dress falling gently down a very deep round well, arms out, dress billowing; the curved walls are lined with little cupboards, bookshelves, jars and a map; warm lamplight, dreamy, slightly tumbling perspective.",
+        "svg": "<svg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'><rect width='400' height='300' fill='#2a2140'/><ellipse cx='200' cy='150' rx='150' ry='150' fill='#3a2f57'/><ellipse cx='200' cy='150' rx='95' ry='95' fill='#4a3d6e'/><ellipse cx='200' cy='150' rx='45' ry='45' fill='#5b4d85'/><rect x='70' y='90' width='30' height='40' rx='4' fill='#c69'/><rect x='300' y='120' width='34' height='26' rx='3' fill='#7a6'/><rect x='95' y='190' width='28' height='34' rx='3' fill='#da7'/><rect x='285' y='200' width='30' height='30' rx='3' fill='#69c'/><ellipse cx='200' cy='150' rx='12' ry='20' fill='#5b8dd6'/><circle cx='200' cy='133' r='9' fill='#f3d3b5'/></svg>"
+      }
+    },
+    {
+      "id": "p03-the-little-door",
+      "title": "The Little Door",
+      "lines": [
+        "ALICE CAME TO A LONG HALL.",
+        "ALL ROUND WERE LOCKED DOORS.",
+        "THEN SHE FOUND A TINY DOOR.",
+        "IT WAS FIFTEEN INCHES HIGH.",
+        "A LITTLE GOLDEN KEY OPENED IT.",
+        "BEHIND IT WAS A LOVELY GARDEN.",
+        "BUT ALICE WAS FAR TOO BIG.",
+        "SHE COULD NOT EVEN FIT HER HEAD!"
+      ],
+      "illustration": {
+        "alt": "A giant Alice kneeling to peer through a tiny fifteen-inch door into a bright garden.",
+        "status": "regenerated",
+        "provenance": "ai",
+        "regenerated_reason": "The live audiobook plate (DALL-E 3, Rackham style) draws the door FULL-HEIGHT, contradicting the text 'a small passage, not much larger than a rat-hole' and 'could not even get her head through the doorway'. AI provenance → eligible for remake; regenerate so the door is a tiny rat-hole-sized opening and Alice is far too big for it.",
+        "prompt": "Children's-book watercolor: a GIANT young girl in a blue dress kneeling and bending all the way down to peer through a TINY door only about fifteen inches high set in the base of a wall; the little door is unmistakably MUCH smaller than her head; through the small open doorway we glimpse a bright sunny garden of roses, fountains and hedges; a little golden key on the floor; warm, classic, whimsical. The door must look tiny and the girl must look huge.",
+        "svg": "<svg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'><rect width='400' height='300' fill='#efe2c8'/><rect y='250' width='400' height='50' fill='#d8c39a'/><rect x='250' y='40' width='150' height='260' fill='#c9b27e'/><rect x='300' y='250' width='26' height='40' rx='3' fill='#7a4'/><rect x='303' y='256' width='20' height='34' rx='2' fill='#3a7d3a'/><circle cx='310' cy='250' r='3' fill='#fc6'/><circle cx='308' cy='262' r='2' fill='#e55'/><circle cx='316' cy='266' r='2' fill='#fd5'/><circle cx='280' cy='292' r='4' fill='#fc6' stroke='#ca0'/><g><ellipse cx='150' cy='180' rx='60' ry='95' fill='#5b8dd6'/><circle cx='150' cy='90' r='34' fill='#f3d3b5'/><path d='M120 78 q30 -34 60 0' fill='#caa15a'/><circle cx='140' cy='90' r='3' fill='#333'/><circle cx='160' cy='90' r='3' fill='#333'/><path d='M140 104 q10 8 20 0' stroke='#a55' fill='none' stroke-width='2'/></g><text x='200' y='20' font-size='13' text-anchor='middle' fill='#7a5'>← huge Alice, tiny door →</text></svg>"
+      }
+    },
+    {
+      "id": "p04-drink-me",
+      "title": "DRINK ME",
+      "lines": [
+        "ON THE TABLE WAS A BOTTLE.",
+        "A LABEL SAID: “DRINK ME.”",
+        "ALICE TOOK A LITTLE SIP.",
+        "IT TASTED LIKE CHERRY TART.",
+        "“WHAT A CURIOUS FEELING!” SHE SAID.",
+        "SHE WAS SHUTTING UP LIKE A TELESCOPE.",
+        "NOW SHE WAS TEN INCHES HIGH!"
+      ],
+      "illustration": {
+        "alt": "A small bottle labelled DRINK ME on a glass table, Alice shrinking.",
+        "status": "original",
+        "prompt": "Storybook watercolor: a little glass bottle with a paper label reading 'DRINK ME' tied with string, sitting on a three-legged glass table; a young girl in a blue dress shrinking small beside it, looking surprised; soft magical light.",
+        "svg": "<svg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'><rect width='400' height='300' fill='#e7eef6'/><rect y='235' width='400' height='65' fill='#cdd9e8'/><rect x='150' y='150' width='100' height='12' fill='#bcd' opacity='.7'/><rect x='160' y='162' width='8' height='73' fill='#bcd'/><rect x='232' y='162' width='8' height='73' fill='#bcd'/><rect x='185' y='95' width='30' height='55' rx='8' fill='#9ec7e8' opacity='.9'/><rect x='193' y='80' width='14' height='18' fill='#9ec7e8'/><rect x='180' y='110' width='40' height='22' fill='#fff' stroke='#caa'/><text x='200' y='125' font-size='10' text-anchor='middle' fill='#a44'>DRINK ME</text><ellipse cx='300' cy='210' rx='16' ry='26' fill='#5b8dd6'/><circle cx='300' cy='184' r='10' fill='#f3d3b5'/></svg>"
+      }
+    },
+    {
+      "id": "p05-eat-me",
+      "title": "EAT ME",
+      "lines": [
+        "UNDER THE TABLE WAS A CAKE.",
+        "ON IT, CURRANTS SPELLED: “EAT ME.”",
+        "“I’LL EAT IT,” SAID ALICE.",
+        "SHE TOOK ONE LITTLE BITE.",
+        "“WHICH WAY? WHICH WAY?” SHE ASKED.",
+        "THEN UP, UP, UP SHE GREW.",
+        "NOW SHE WAS NINE FEET TALL!"
+      ],
+      "illustration": {
+        "alt": "A small cake marked EAT ME in currants, Alice growing tall.",
+        "status": "original",
+        "prompt": "Storybook watercolor: a small round frosted cake on the floor with the words 'EAT ME' spelled in dark currants on top; a young girl in a blue dress suddenly grown very tall, her head near the ceiling, looking astonished; warm whimsical light.",
+        "svg": "<svg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'><rect width='400' height='300' fill='#f6efe7'/><rect y='245' width='400' height='55' fill='#e3d3c0'/><ellipse cx='110' cy='250' rx='46' ry='16' fill='#caa07a'/><rect x='66' y='225' width='88' height='27' rx='6' fill='#e9c39a'/><ellipse cx='110' cy='225' rx='44' ry='13' fill='#fff3e6'/><text x='110' y='229' font-size='11' text-anchor='middle' fill='#633'>EAT ME</text><ellipse cx='300' cy='150' rx='22' ry='105' fill='#5b8dd6'/><circle cx='300' cy='55' r='20' fill='#f3d3b5'/><path d='M280 46 q20 -22 40 0' fill='#caa15a'/></svg>"
+      }
+    },
+    {
+      "id": "p06-curiouser",
+      "title": "Curiouser and Curiouser",
+      "lines": [
+        "“CURIOUSER AND CURIOUSER!” CRIED ALICE.",
+        "SHE WAS SO SURPRISED.",
+        "SHE FORGOT TO TALK PROPERLY.",
+        "“NOW I’M OPENING OUT LIKE A TELESCOPE!”",
+        "“GOODBYE, FEET!” SHE CALLED.",
+        "HER FEET WERE SO FAR AWAY NOW.",
+        "OH, WHAT A STRANGE DAY!"
+      ],
+      "illustration": {
+        "alt": "A very tall Alice waving goodbye to her tiny far-away feet.",
+        "status": "original",
+        "prompt": "Whimsical storybook watercolor: a young girl in a blue dress grown impossibly tall, looking down and waving cheerfully at her own tiny feet far below; playful, warm, gentle humor, classic children's-book style.",
+        "svg": "<svg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'><rect width='400' height='300' fill='#fbe9f0'/><rect y='255' width='400' height='45' fill='#f3cfe0'/><circle cx='200' cy='48' r='22' fill='#f3d3b5'/><path d='M178 40 q22 -24 44 0' fill='#caa15a'/><rect x='188' y='68' width='24' height='150' rx='10' fill='#5b8dd6'/><path d='M212 90 q40 6 40 40' stroke='#f3d3b5' stroke-width='7' fill='none'/><ellipse cx='192' cy='250' rx='8' ry='5' fill='#963'/><ellipse cx='208' cy='250' rx='8' ry='5' fill='#963'/><text x='300' y='250' font-size='12' text-anchor='middle' fill='#a58'>goodbye, feet!</text></svg>"
+      }
+    }
+  ]
+};

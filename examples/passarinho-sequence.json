@@ -1,0 +1,1662 @@
+{
+  "_grammar_commons": {
+    "schema_version": "1.0",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": [
+      {
+        "name": "Anonymous",
+        "url": "",
+        "date": "2026-06-16",
+        "note": "Original creator"
+      }
+    ]
+  },
+  "name": "Passarinho Complete",
+  "description": "",
+  "cover_image_url": "https://i.ytimg.com/vi/T3AoGeR4Kwo/mqdefault.jpg",
+  "tags": [],
+  "grammar_type": "custom",
+  "items": [
+    {
+      "id": "7ba0332b-3065-4b6b-abe0-42d6d317c388",
+      "name": "Bandolim",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e1b4b",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 0
+    },
+    {
+      "id": "d3c2b8e6-fa84-4ce1-8d8c-96b105420cd2",
+      "name": "Bandolim",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 1,
+      "performance": {
+        "end_sec": 56,
+        "start_sec": 1,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "af914425-f763-4ae9-aca4-905fc1fee3ea",
+      "name": "Ao vivo · Bandolim",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/aXBWrNN64z8/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Deutsche Grammophon - DG"
+      },
+      "sections": {},
+      "sort_order": 2
+    },
+    {
+      "id": "10c86dcb-e35d-4b6a-9e22-59c3808b9b76",
+      "name": "Bandolim — live · Deutsche Grammophon - DG",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Avi Avital - Vivaldi: Mandolin Concerto In C Major (Live)",
+        "youtube_url": "https://www.youtube.com/watch?v=aXBWrNN64z8",
+        "live_performer": "Deutsche Grammophon - DG",
+        "youtube_video_id": "aXBWrNN64z8"
+      },
+      "sections": {},
+      "sort_order": 3,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "59233993-a77a-4ee4-9268-ec59256275a4",
+      "name": "zamponha",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#312e81",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 4
+    },
+    {
+      "id": "7fa78802-a0d1-492c-be64-a25fcdd26b0a",
+      "name": "zamponha",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 5,
+      "performance": {
+        "end_sec": 123,
+        "start_sec": 56,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "26246096-83c8-4201-aa7c-bb514efe3772",
+      "name": "Ao vivo · zamponha",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/vuLlSLgmBsw/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Burning-MusicTV"
+      },
+      "sections": {},
+      "sort_order": 6
+    },
+    {
+      "id": "50a8f94a-8266-4806-8580-9e48563451fd",
+      "name": "zamponha — live · Burning-MusicTV",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Leo Rojas live with Orchestra Official &quot;El Condor Pasa&quot;",
+        "youtube_url": "https://www.youtube.com/watch?v=vuLlSLgmBsw",
+        "live_performer": "Burning-MusicTV",
+        "youtube_video_id": "vuLlSLgmBsw"
+      },
+      "sections": {},
+      "sort_order": 7,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "a7f4ee9b-a5c1-4821-8c5d-e750be2ec791",
+      "name": "Violoncelo",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#3730a3",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 8
+    },
+    {
+      "id": "bbd208e9-0b3e-4145-97a7-88e9f5009065",
+      "name": "Violoncelo",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 9,
+      "performance": {
+        "end_sec": 186,
+        "start_sec": 123,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "10d626d5-852c-44dd-9078-76072d768f23",
+      "name": "Ao vivo · Violoncelo",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/JkPUS0Zdwd8/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: HAUSER"
+      },
+      "sections": {},
+      "sort_order": 10
+    },
+    {
+      "id": "8fac521a-b949-4e8b-99eb-88ee4de0a7c1",
+      "name": "Violoncelo — live · HAUSER",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "HAUSER - First EVER &#39;Rebel With a Cello&#39; show! - Live in Budapest 2022 (Full Concert)",
+        "youtube_url": "https://www.youtube.com/watch?v=JkPUS0Zdwd8",
+        "live_performer": "HAUSER",
+        "youtube_video_id": "JkPUS0Zdwd8"
+      },
+      "sections": {},
+      "sort_order": 11,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "c49d2f6f-a308-4dcd-a38a-b163e0617a62",
+      "name": "bateria",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#4338ca",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 12
+    },
+    {
+      "id": "a5b9a137-5dbe-45d0-b44d-6232871ae942",
+      "name": "bateria",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 13,
+      "performance": {
+        "end_sec": 259,
+        "start_sec": 186,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "e0fab141-0641-4018-a7cb-0fe90280fe9c",
+      "name": "Ao vivo · bateria",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/YsYgebdEwSk/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Elevation Worship Resources"
+      },
+      "sections": {},
+      "sort_order": 14
+    },
+    {
+      "id": "43c9be03-85ad-48b6-8321-11005ce9ad67",
+      "name": "bateria — live · Elevation Worship Resources",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "The last fill of tour 🥁| @elevationworship",
+        "youtube_url": "https://www.youtube.com/watch?v=YsYgebdEwSk",
+        "live_performer": "Elevation Worship Resources",
+        "youtube_video_id": "YsYgebdEwSk"
+      },
+      "sections": {},
+      "sort_order": 15,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "a685f08e-70cf-4856-ad77-2db2c02850a2",
+      "name": "Citara",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#5b21b6",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 16
+    },
+    {
+      "id": "7a8ba72f-cf57-4782-a715-5354addf197b",
+      "name": "Citara",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 17,
+      "performance": {
+        "end_sec": 331,
+        "start_sec": 259,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "370c8106-7836-4edc-ab4a-4c9b624b0070",
+      "name": "Ao vivo · Citara",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/MmcRSc2i6YU/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: On Stage Entertainment"
+      },
+      "sections": {},
+      "sort_order": 18
+    },
+    {
+      "id": "00d7b0ce-f345-4939-ae81-895b3f49b10e",
+      "name": "Citara — live · On Stage Entertainment",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "BUNGA CITRA LESTARI  - CINTA SEJATI ( Live Performance at Grand City Convention Hall Surabaya )",
+        "youtube_url": "https://www.youtube.com/watch?v=MmcRSc2i6YU",
+        "live_performer": "On Stage Entertainment",
+        "youtube_video_id": "MmcRSc2i6YU"
+      },
+      "sections": {},
+      "sort_order": 19,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "0b7a39f1-50b5-401e-9c7b-f16e1c5f6470",
+      "name": "Clarinete",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#6d28d9",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 20
+    },
+    {
+      "id": "2ace0cb0-f1c0-427e-ac4c-fc5f781bc0e7",
+      "name": "Clarinete",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 21,
+      "performance": {
+        "end_sec": 394,
+        "start_sec": 331,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "d6ad0513-a2e3-4409-a5c0-3a3160c44873",
+      "name": "Ao vivo · Clarinete",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/YT_63UntRJE/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Iceland Symphony Orchestra"
+      },
+      "sections": {},
+      "sort_order": 22
+    },
+    {
+      "id": "228260b6-ef3b-4972-9f71-2e827d4589b7",
+      "name": "Clarinete — live · Iceland Symphony Orchestra",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Wolfgang Amadeus Mozart: Clarinet Concerto in A major, K.622",
+        "youtube_url": "https://www.youtube.com/watch?v=YT_63UntRJE",
+        "live_performer": "Iceland Symphony Orchestra",
+        "youtube_video_id": "YT_63UntRJE"
+      },
+      "sections": {},
+      "sort_order": 23,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "1fc4c316-f15a-46dc-9741-425e904f6082",
+      "name": "Contra-Baixo",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e1b4b",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 24
+    },
+    {
+      "id": "f100b110-d5fe-4440-98a4-6bcd21283c4a",
+      "name": "Contra-Baixo",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 25,
+      "performance": {
+        "end_sec": 458,
+        "start_sec": 394,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "94b9fa91-d244-4099-b8fe-bb564114ee8f",
+      "name": "Ao vivo · Contra-Baixo",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/ImfYYn2knw4/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Mohini Dey"
+      },
+      "sections": {},
+      "sort_order": 26
+    },
+    {
+      "id": "c2e80cdb-a3a7-4ab2-8032-a3bdf7183795",
+      "name": "Contra-Baixo — live · Mohini Dey",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Mohini Dey Introverted Soul Intro Live at San Jose Jazz Festival",
+        "youtube_url": "https://www.youtube.com/watch?v=ImfYYn2knw4",
+        "live_performer": "Mohini Dey",
+        "youtube_video_id": "ImfYYn2knw4"
+      },
+      "sections": {},
+      "sort_order": 27,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "6731afd3-23d6-406d-b761-fc13966f0790",
+      "name": "Flauta Doce",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#312e81",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 28
+    },
+    {
+      "id": "eae16011-617a-4e82-b67f-e17f70af584f",
+      "name": "Flauta Doce",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 29,
+      "performance": {
+        "end_sec": 532,
+        "start_sec": 458,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "b5c9af59-bf5b-4402-9f5f-aad6d3e0a416",
+      "name": "Ao vivo · Flauta Doce",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/pcaJyzvlrik/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: myfidelio"
+      },
+      "sections": {},
+      "sort_order": 30
+    },
+    {
+      "id": "39ab032c-595c-4116-8fb7-42a45b6e384b",
+      "name": "Flauta Doce — live · myfidelio",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Vivaldi Flötenkonzert mit Lucie Horsch",
+        "youtube_url": "https://www.youtube.com/watch?v=pcaJyzvlrik",
+        "live_performer": "myfidelio",
+        "youtube_video_id": "pcaJyzvlrik"
+      },
+      "sections": {},
+      "sort_order": 31,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "21e5e937-8516-42b8-b15e-ddcb418d8a9b",
+      "name": "Flauta",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#3730a3",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 32
+    },
+    {
+      "id": "9db6ea0f-ea8f-485c-8d85-a1888d605e55",
+      "name": "Flauta",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 33,
+      "performance": {
+        "end_sec": 596,
+        "start_sec": 532,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "00e1b9dd-7c2b-46aa-9572-8dad18fa769f",
+      "name": "Ao vivo · Flauta",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/AKrO7lzx-nk/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Seung Han"
+      },
+      "sections": {},
+      "sort_order": 34
+    },
+    {
+      "id": "da55f6a8-201c-40b0-9352-0f3969d542d9",
+      "name": "Flauta — live · Seung Han",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "W.A.Mozart  Flute Concerto No.2  in D Major , K.314  -Yeojin Han -",
+        "youtube_url": "https://www.youtube.com/watch?v=AKrO7lzx-nk",
+        "live_performer": "Seung Han",
+        "youtube_video_id": "AKrO7lzx-nk"
+      },
+      "sections": {},
+      "sort_order": 35,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "0be16498-e6b6-44f7-b7d0-534375098d67",
+      "name": "Gaita",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#4338ca",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 36
+    },
+    {
+      "id": "521fe51b-9ac0-4d52-b25f-5fc9178e26f6",
+      "name": "Gaita",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 37,
+      "performance": {
+        "end_sec": 669,
+        "start_sec": 596,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "3d774e1c-0f19-4c73-af17-cb5b778cf35a",
+      "name": "Ao vivo · Gaita",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/oZZf6SqC_oo/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Musica En el Patio"
+      },
+      "sections": {},
+      "sort_order": 38
+    },
+    {
+      "id": "3af4f382-c92d-4572-b026-72dd54db932a",
+      "name": "Gaita — live · Musica En el Patio",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "DANELO BADELL LEYENDA y su Show “Gaita en el Patio” @danelobadelloficial",
+        "youtube_url": "https://www.youtube.com/watch?v=oZZf6SqC_oo",
+        "live_performer": "Musica En el Patio",
+        "youtube_video_id": "oZZf6SqC_oo"
+      },
+      "sections": {},
+      "sort_order": 39,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "09df6dcf-6e64-41af-ba4d-4613e74bd213",
+      "name": "Guitarra",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#5b21b6",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 40
+    },
+    {
+      "id": "ca304928-cb11-4d4c-a434-19c692ac08f8",
+      "name": "Guitarra",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 41,
+      "performance": {
+        "end_sec": 732,
+        "start_sec": 669,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "200c25ad-a63b-4f84-bd39-3d1912f4ab4e",
+      "name": "Ao vivo · Guitarra",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/hYxNC7dC5oI/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: 40 Fingers"
+      },
+      "sections": {},
+      "sort_order": 42
+    },
+    {
+      "id": "66fc54d8-4f35-49dd-93d6-cebb933321b3",
+      "name": "Guitarra — live · 40 Fingers",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "40 FINGERS - Guitar Rhapsody (Full Concert)",
+        "youtube_url": "https://www.youtube.com/watch?v=hYxNC7dC5oI",
+        "live_performer": "40 Fingers",
+        "youtube_video_id": "hYxNC7dC5oI"
+      },
+      "sections": {},
+      "sort_order": 43,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "bd3d04fa-e2e8-4a90-9cf8-74efc5bdcc31",
+      "name": "Arpa",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#6d28d9",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 44
+    },
+    {
+      "id": "59e01335-5293-4815-b7ce-4c8352f2bbd9",
+      "name": "Arpa",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 45,
+      "performance": {
+        "end_sec": 808,
+        "start_sec": 732,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "51e96a0a-c5ef-44d4-baf5-53b4f900c099",
+      "name": "Ao vivo · Arpa",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/_xn3uAHZHcc/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: ClassicMmediaGroup"
+      },
+      "sections": {},
+      "sort_order": 46
+    },
+    {
+      "id": "0cbc6871-f025-4a31-8697-6b78d1fa1dd1",
+      "name": "Arpa — live · ClassicMmediaGroup",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Harp concert by Sophia Kiprskaya , soloist of the Mariinsky Theater.",
+        "youtube_url": "https://www.youtube.com/watch?v=_xn3uAHZHcc",
+        "live_performer": "ClassicMmediaGroup",
+        "youtube_video_id": "_xn3uAHZHcc"
+      },
+      "sections": {},
+      "sort_order": 47,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "050731a2-bed6-41a2-bbdd-eb317b8a444d",
+      "name": "Pandeiro",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e1b4b",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 48
+    },
+    {
+      "id": "b1b3dd80-f758-4c12-9ac8-3392a166c003",
+      "name": "Pandeiro",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 49,
+      "performance": {
+        "end_sec": 881,
+        "start_sec": 808,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "c524a1f7-738c-4e20-a1bc-4d2be1841291",
+      "name": "Ao vivo · Pandeiro",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/BpmQ8MZFaOg/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: YAGP - Youth America Grand Prix"
+      },
+      "sections": {},
+      "sort_order": 50
+    },
+    {
+      "id": "c46556b0-f592-4873-8b7f-c6abf572e488",
+      "name": "Pandeiro — live · YAGP - Youth America Grand Prix",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Jeeho Lee WOWS the audience with the La Esmeralda Finale!",
+        "youtube_url": "https://www.youtube.com/watch?v=BpmQ8MZFaOg",
+        "live_performer": "YAGP - Youth America Grand Prix",
+        "youtube_video_id": "BpmQ8MZFaOg"
+      },
+      "sections": {},
+      "sort_order": 51,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "529f1b7a-d1b2-4e08-b83e-75a5dfd36c08",
+      "name": "Piano",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#312e81",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 52
+    },
+    {
+      "id": "cbbe11ca-0f51-44f3-918b-c0c100b4b943",
+      "name": "Piano",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 53,
+      "performance": {
+        "end_sec": 944,
+        "start_sec": 881,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "fc44be33-d55a-47fb-afe2-70b3cf408434",
+      "name": "Ao vivo · Piano",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/fNU-XAZjhzA/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: taky_classic"
+      },
+      "sections": {},
+      "sort_order": 54
+    },
+    {
+      "id": "e6cfc26d-e1bb-448e-ab95-0996eab1fc75",
+      "name": "Piano — live · taky_classic",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Mozart - Piano Concerto No.21, K.467 / Yeol Eum Son",
+        "youtube_url": "https://www.youtube.com/watch?v=fNU-XAZjhzA",
+        "live_performer": "taky_classic",
+        "youtube_video_id": "fNU-XAZjhzA"
+      },
+      "sections": {},
+      "sort_order": 55,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "3112f154-d72e-4c24-b717-239113d034fb",
+      "name": "Sanfona",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#3730a3",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 56
+    },
+    {
+      "id": "deacb43e-8c53-4145-8680-f6859188b192",
+      "name": "Sanfona",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 57,
+      "performance": {
+        "end_sec": 1007,
+        "start_sec": 944,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "2a20febe-d297-439b-bbc5-4c79e9d9851b",
+      "name": "Ao vivo · Sanfona",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/hYe7nmtVC_g/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Projeto Memória Brasileira"
+      },
+      "sections": {},
+      "sort_order": 58
+    },
+    {
+      "id": "a0c95afd-8d88-44de-a2e8-574fa732c349",
+      "name": "Sanfona — live · Projeto Memória Brasileira",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Sanfona Sentida - Dominguinhos, Mariana Aydar e Duani",
+        "youtube_url": "https://www.youtube.com/watch?v=hYe7nmtVC_g",
+        "live_performer": "Projeto Memória Brasileira",
+        "youtube_video_id": "hYe7nmtVC_g"
+      },
+      "sections": {},
+      "sort_order": 59,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "e1842ad5-b636-4513-b3db-1c92cd0413a5",
+      "name": "Saxofone",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#4338ca",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 60
+    },
+    {
+      "id": "ebe58dcb-5b03-4c4e-8369-52beb072fa09",
+      "name": "Saxofone",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 61,
+      "performance": {
+        "end_sec": 1068,
+        "start_sec": 1007,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "690c86fc-abb3-4518-ab76-ac491fb6205c",
+      "name": "Ao vivo · Saxofone",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/pHXDMe6QV-U/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Eurovision Song Contest"
+      },
+      "sections": {},
+      "sort_order": 62
+    },
+    {
+      "id": "6c88e4db-4b95-4db5-85be-a7c678f70021",
+      "name": "Saxofone — live · Eurovision Song Contest",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Sunstroke Project &amp; Olia Tira - Run Away | Moldova 🇲🇩 (Epic Sax Guy) | Grand Final | Eurovision 2010",
+        "youtube_url": "https://www.youtube.com/watch?v=pHXDMe6QV-U",
+        "live_performer": "Eurovision Song Contest",
+        "youtube_video_id": "pHXDMe6QV-U"
+      },
+      "sections": {},
+      "sort_order": 63,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "396a35fd-3f8f-4ce4-963e-97c5e1e3c2e0",
+      "name": "Trombone",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#5b21b6",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 64
+    },
+    {
+      "id": "e3a51464-8eb0-422f-9147-31c9e92bf775",
+      "name": "Trombone",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 65,
+      "performance": {
+        "end_sec": 1133,
+        "start_sec": 1068,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "76ba747e-96bd-4202-8c80-181f8df53ee3",
+      "name": "Ao vivo · Trombone",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/tARTNMDUDnE/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: George Collier"
+      },
+      "sections": {},
+      "sort_order": 66
+    },
+    {
+      "id": "cf32c505-44d7-4bfe-a3b5-cba91b08da99",
+      "name": "Trombone — live · George Collier",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "You can&#39;t make a trombone SING!",
+        "youtube_url": "https://www.youtube.com/watch?v=tARTNMDUDnE",
+        "live_performer": "George Collier",
+        "youtube_video_id": "tARTNMDUDnE"
+      },
+      "sections": {},
+      "sort_order": 67,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "53af08db-beb1-444a-aff3-aaf5c6147f24",
+      "name": "Trompa",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#6d28d9",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 68
+    },
+    {
+      "id": "c93187d3-083d-43c9-b81f-80d0bfd941fd",
+      "name": "Trompa",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 69,
+      "performance": {
+        "end_sec": 1207,
+        "start_sec": 1133,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "548e4ed1-2481-4b36-89ff-363991b598d7",
+      "name": "Ao vivo · Trompa",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/MHgBObK9acY/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Joan Chamorro"
+      },
+      "sections": {},
+      "sort_order": 70
+    },
+    {
+      "id": "8b64e122-6974-4857-aaea-40519a761021",
+      "name": "Trompa — live · Joan Chamorro",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "2015 Wave SANT ANDREU JAZZ BAND -MAX SALGADO trompa- JOEL FRAHM saxo tenor JOAN CHAMORRO direccion",
+        "youtube_url": "https://www.youtube.com/watch?v=MHgBObK9acY",
+        "live_performer": "Joan Chamorro",
+        "youtube_video_id": "MHgBObK9acY"
+      },
+      "sections": {},
+      "sort_order": 71,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "c5db8be8-69b3-471e-9044-9505c6fbf3db",
+      "name": "Trompete",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e1b4b",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 72
+    },
+    {
+      "id": "25c1b137-b13b-42e0-aac6-49aef1911cec",
+      "name": "Trompete",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 73,
+      "performance": {
+        "end_sec": 1269,
+        "start_sec": 1207,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "c3e1e871-ae25-43e5-9265-d7d3307fa81d",
+      "name": "Ao vivo · Trompete",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/2nPwkb9ZyPQ/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: George Collier"
+      },
+      "sections": {},
+      "sort_order": 74
+    },
+    {
+      "id": "469d0ac3-3918-4037-a1fe-59f7f7c7bd10",
+      "name": "Trompete — live · George Collier",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "The Most Beautiful Trumpet Solo",
+        "youtube_url": "https://www.youtube.com/watch?v=2nPwkb9ZyPQ",
+        "live_performer": "George Collier",
+        "youtube_video_id": "2nPwkb9ZyPQ"
+      },
+      "sections": {},
+      "sort_order": 75,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "80e0f5ee-53e2-4cac-96a5-7bad037d42eb",
+      "name": "Tuba",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#312e81",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 76
+    },
+    {
+      "id": "03078b3d-028a-4634-918c-29c475c4a8f0",
+      "name": "Tuba",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 77,
+      "performance": {
+        "end_sec": 1343,
+        "start_sec": 1269,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "fe84682d-766b-472e-aae9-ea47ffff898e",
+      "name": "Ao vivo · Tuba",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/bBINhDYXoEg/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: digitalalexa"
+      },
+      "sections": {},
+      "sort_order": 78
+    },
+    {
+      "id": "0d3aafdf-064d-49bd-9f20-4df5eb3b06f7",
+      "name": "Tuba — live · digitalalexa",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Tuba Skinny - &quot;Going Back Home&quot; - Royal St.   -* Tip the band at Venmo.com. More at Digitalalexa",
+        "youtube_url": "https://www.youtube.com/watch?v=bBINhDYXoEg",
+        "live_performer": "digitalalexa",
+        "youtube_video_id": "bBINhDYXoEg"
+      },
+      "sections": {},
+      "sort_order": 79,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "e27e5972-d596-41e0-aa7b-6cca6951cfe9",
+      "name": "Tumbadora",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#3730a3",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 80
+    },
+    {
+      "id": "3941573b-18dd-4a72-8c16-619aae83ba27",
+      "name": "Tumbadora",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 81,
+      "performance": {
+        "end_sec": 1417,
+        "start_sec": 1343,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "d8f5c2c9-9a18-4336-8688-7829e815d273",
+      "name": "Ao vivo · Tumbadora",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/eeKxQ9LQAB4/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: GloriaEstefanVEVO"
+      },
+      "sections": {},
+      "sort_order": 82
+    },
+    {
+      "id": "101cd1e3-cbff-4654-b03c-5026c0da8ec6",
+      "name": "Tumbadora — live · GloriaEstefanVEVO",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Gloria Estefan - Conga (from Live and Unwrapped)",
+        "youtube_url": "https://www.youtube.com/watch?v=eeKxQ9LQAB4",
+        "live_performer": "GloriaEstefanVEVO",
+        "youtube_video_id": "eeKxQ9LQAB4"
+      },
+      "sections": {},
+      "sort_order": 83,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "319874c3-c062-481d-977c-c5044470379b",
+      "name": "Vibrafone",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#4338ca",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 84
+    },
+    {
+      "id": "03c367e0-ab2f-4d87-8707-d9624968ff32",
+      "name": "Vibrafone",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 85,
+      "performance": {
+        "end_sec": 1480,
+        "start_sec": 1417,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "c8376926-b9c9-4439-938b-40f0e4aa323d",
+      "name": "Ao vivo · Vibrafone",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/ix-QW-BShPY/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Christoph Sietzen - Percussion"
+      },
+      "sections": {},
+      "sort_order": 86
+    },
+    {
+      "id": "781f3ca3-c1f4-4bea-8631-3f46a768b24d",
+      "name": "Vibrafone — live · Christoph Sietzen - Percussion",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Emmanuel Séjourné: Attraction (short version) performed by Christoph Sietzen",
+        "youtube_url": "https://www.youtube.com/watch?v=ix-QW-BShPY",
+        "live_performer": "Christoph Sietzen - Percussion",
+        "youtube_video_id": "ix-QW-BShPY"
+      },
+      "sections": {},
+      "sort_order": 87,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "ace23ea9-1c22-47d3-9c4a-9316ff884a26",
+      "name": "Viola Caipira",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#5b21b6",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 88
+    },
+    {
+      "id": "80139fa1-2a66-4464-ae92-e5a5ed87ef47",
+      "name": "Viola Caipira",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 89,
+      "performance": {
+        "end_sec": 1553,
+        "start_sec": 1480,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "4ef2a8ac-0680-404a-9de5-4c97e6c59d48",
+      "name": "Ao vivo · Viola Caipira",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/EA5fCUx7qgE/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Mayck e Lyan"
+      },
+      "sections": {},
+      "sort_order": 90
+    },
+    {
+      "id": "c3f6544d-e4ce-4cc9-9e72-6d6a8a13765a",
+      "name": "Viola Caipira — live · Mayck e Lyan",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Volta ao mundo na VIOLA CAIPIRA - Viagem Musical (LYAN - Fingerstyle)",
+        "youtube_url": "https://www.youtube.com/watch?v=EA5fCUx7qgE",
+        "live_performer": "Mayck e Lyan",
+        "youtube_video_id": "EA5fCUx7qgE"
+      },
+      "sections": {},
+      "sort_order": 91,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "12764d38-4712-40bd-8d06-90ed90bf4170",
+      "name": "Violão",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#6d28d9",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 92
+    },
+    {
+      "id": "3aee4430-30e7-4832-b64b-bf8a69591982",
+      "name": "Violão",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 93,
+      "performance": {
+        "end_sec": 1616,
+        "start_sec": 1553,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "498f4d78-358f-4666-b8c4-c0803ce73afa",
+      "name": "Ao vivo · Violão",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/IJ6pc0fAMmU/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Débora Lobo"
+      },
+      "sections": {},
+      "sort_order": 94
+    },
+    {
+      "id": "4f8ae4f7-8ac8-4713-bf55-41c5f03dd498",
+      "name": "Violão — live · Débora Lobo",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Esse solo é incrivelmente relaxante - violão - Débora Lobo",
+        "youtube_url": "https://www.youtube.com/watch?v=IJ6pc0fAMmU",
+        "live_performer": "Débora Lobo",
+        "youtube_video_id": "IJ6pc0fAMmU"
+      },
+      "sections": {},
+      "sort_order": 95,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "324adece-d605-4a81-957b-8c30b4848711",
+      "name": "Violino",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#1e1b4b",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 96
+    },
+    {
+      "id": "87f5ad72-d1f1-4455-8c6f-a5430f9aa7d2",
+      "name": "Violino",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 97,
+      "performance": {
+        "end_sec": 1679,
+        "start_sec": 1616,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "b2687caf-7e2e-4eef-b07f-812e16742938",
+      "name": "Ao vivo · Violino",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/1KDWTw41BxU/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Lindsey Stirling"
+      },
+      "sections": {},
+      "sort_order": 98
+    },
+    {
+      "id": "5a7f8483-a98a-4701-9339-675ed91b02d9",
+      "name": "Violino — live · Lindsey Stirling",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Lindsey Stirling - Kashmir (Lollapalooza Paris 2023)",
+        "youtube_url": "https://www.youtube.com/watch?v=1KDWTw41BxU",
+        "live_performer": "Lindsey Stirling",
+        "youtube_video_id": "1KDWTw41BxU"
+      },
+      "sections": {},
+      "sort_order": 99,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "889d41bd-97b1-4084-b576-61e317171f89",
+      "name": "Baixo Elétrico",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "#312e81",
+        "card_hold_sec": 8
+      },
+      "sections": {},
+      "sort_order": 100
+    },
+    {
+      "id": "8d69be30-4474-4099-82ef-92a94e54e370",
+      "name": "Baixo Elétrico",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "youtube_video_id": "T3AoGeR4Kwo"
+      },
+      "sections": {},
+      "sort_order": 101,
+      "performance": {
+        "end_sec": 1755,
+        "start_sec": 1679,
+        "video_visible": true
+      }
+    },
+    {
+      "id": "aedfed4e-1487-4e3e-b1b8-23e362036d6c",
+      "name": "Ao vivo · Baixo Elétrico",
+      "level": 1,
+      "category": "card",
+      "keywords": [],
+      "metadata": {
+        "card_bg": "url('https://i.ytimg.com/vi/ZICaUnea6pk/mqdefault.jpg') center/cover",
+        "card_hold_sec": 10,
+        "card_subtitle": "Live: Miami Symphony"
+      },
+      "sections": {},
+      "sort_order": 102
+    },
+    {
+      "id": "7a7b1a51-132c-4451-9e0e-61a75f6b0b17",
+      "name": "Baixo Elétrico — live · Miami Symphony",
+      "level": 1,
+      "category": "segment",
+      "keywords": [],
+      "metadata": {
+        "live_title": "Rodner Padilla - Concerto for Electric Bass and Orchestra",
+        "youtube_url": "https://www.youtube.com/watch?v=ZICaUnea6pk",
+        "live_performer": "Miami Symphony",
+        "youtube_video_id": "ZICaUnea6pk"
+      },
+      "sections": {},
+      "sort_order": 103,
+      "performance": {
+        "start_sec": 0,
+        "video_visible": true
+      }
+    }
+  ],
+  "creator_name": "",
+  "creator_link": ""
+}

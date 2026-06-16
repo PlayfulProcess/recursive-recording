@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sequence · Recursive Tarot</title>
+<!--
+  Backend-free sequence / program player. Ported from recursive.eco's view.html engine,
+  stripped of every recursive.eco dependency (no Supabase, no GrammarLoader, no auth, no
+  web components beyond this repo's <site-header>). The only external script is YouTube's
+  IFrame API, which is the standard embed.
+
+  It plays a "performance grammar" — an ordered items[] that alternates:
+    • category:"card"     → a full-bleed title card (metadata.card_bg, card_subtitle),
+                            held for metadata.card_hold_sec (default 8s) then auto-advances.
+    • category:"segment"  → a YouTube clip (metadata.youtube_video_id), cropped to
+                            performance.{start_sec → end_sec}; when the clip reaches end_sec
+                            (or ENDs) the program advances. performance.video_visible:false
+                            keeps audio only behind a cover.
+
+  Load any grammar with ?src=<url>. Default: the Passarinho example shipped in
+  recording/examples/. See recording/docs/sequence-format.md.
+-->
+<style>
+  :root{ --bg:#0f0d17; --panel:#1a1726; --stage:#000; --ink:#ece8f5; --muted:#9b94b3; --accent:#d4af37; --line:#2a2440; }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#fbfaff; --panel:#fff; --ink:#241b3a; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:16px}
+  h1{font-size:18px;margin:.2em 0 .1em} h1 .sub{font-size:13px;font-weight:400;color:var(--muted)}
+  .note{font-size:12px;color:var(--muted);margin:.2em 0 12px} .note a{color:var(--accent)}
+
+  .stage{position:relative;width:100%;aspect-ratio:16/9;background:var(--stage);border:1px solid var(--line);
+    border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  /* Title card */
+  .card-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:2rem;background-size:cover;background-position:center}
+  .card-face .ttl{color:#fff;font-size:clamp(1.6rem,5vw,3.4rem);font-weight:700;line-height:1.12;
+    white-space:pre-line;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+  .card-face .sub{color:rgba(255,255,255,.88);font-size:clamp(.95rem,2.5vw,1.4rem);margin-top:.85rem;
+    text-shadow:0 1px 10px rgba(0,0,0,.45)}
+  /* audio-only cover for video_visible:false */
+  .cover{position:absolute;inset:0;background:#000 center/cover;z-index:5}
+  /* card-progress sliver */
+  .card-prog{position:absolute;left:0;bottom:0;height:4px;background:var(--accent);width:0;z-index:6;transition:width .2s linear}
+
+  .bar{display:flex;align-items:center;gap:10px;margin-top:12px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:10px 14px;flex-wrap:wrap}
+  .bar button{background:var(--accent);color:#1a1206;border:0;border-radius:8px;padding:8px 13px;font-size:15px;font-weight:700;cursor:pointer}
+  .bar button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:600;font-size:14px}
+  .bar button[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:1px}
+  .bar .pos{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);min-width:74px}
+  .bar .now{flex:1;min-width:120px;font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar .now b{color:var(--ink);font-weight:600}
+
+  .strip{display:flex;gap:6px;overflow-x:auto;margin-top:12px;padding-bottom:4px;scrollbar-width:thin}
+  .strip button{flex:0 0 auto;background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:8px;
+    padding:6px 10px;font-size:12px;cursor:pointer;max-width:170px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .strip button.seg{border-left:3px solid var(--accent)}
+  .strip button.on{border-color:var(--accent);color:var(--accent);font-weight:700;background:rgba(212,175,55,.08)}
+  #err{color:#e07a5f;padding:24px}
+  @media (prefers-reduced-motion: reduce){ .card-prog{transition:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 id="title">Sequence</h1>
+  <p class="note" id="note"></p>
+  <div id="err" style="display:none"></div>
+
+  <div class="stage" id="stage" aria-live="off">
+    <div id="surface" style="position:absolute;inset:0"></div>
+    <div class="card-prog" id="cardProg"></div>
+  </div>
+
+  <div class="bar">
+    <button id="play" aria-label="Play or pause">▶ Play</button>
+    <button class="ghost" id="prev" aria-label="Previous item">⏮</button>
+    <button class="ghost" id="next" aria-label="Next item">⏭</button>
+    <button class="ghost" id="auto" aria-pressed="true" aria-label="Toggle continuous play" title="Continuous play">↻ Auto</button>
+    <span class="pos" id="pos">1 / 1</span>
+    <span class="now" id="now"></span>
+  </div>
+  <div class="strip" id="strip" role="tablist" aria-label="Program items"></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const params=new URLSearchParams(location.search);
+const SRC=params.get('src')||'../examples/passarinho-sequence.json';
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+
+// ---- YouTube IFrame API bootstrap (single shared loader) ----
+let ytReady=false; const ytWaiters=[];
+window.onYouTubeIframeAPIReady=()=>{ ytReady=true; ytWaiters.splice(0).forEach(fn=>fn()); };
+(function(){ const s=document.createElement('script'); s.src='https://www.youtube.com/iframe_api'; document.head.appendChild(s); })();
+function whenYT(fn){ if(ytReady&&window.YT&&window.YT.Player) fn(); else ytWaiters.push(fn); }
+
+// ---- normalize a grammar item → {type, ...} (ported from view.html convertUnifiedToLegacy) ----
+function normalize(it){
+  const md=it.metadata||{}; const name=it.name||it.title||'';
+  const isSeg=it.category==='segment'||md.item_type==='video'||md.youtube_video_id||md.video_url||it.video_id;
+  if(isSeg){
+    let vid=md.youtube_video_id||it.video_id||'';
+    const url=md.video_url||md.youtube_url||'';
+    if(!vid&&url){ if(url.includes('youtu.be/')) vid=url.split('youtu.be/')[1].split(/[?&#]/)[0];
+      else if(url.includes('watch')) vid=new URLSearchParams(url.split('?')[1]||'').get('v')||''; }
+    return {type:'video', title:name, video_id:vid, performance:it.performance||{}, id:it.id};
+  }
+  return {type:'card', title:name, card_bg:md.card_bg||'#15121f',
+          card_subtitle:md.card_subtitle||'', card_hold_sec:typeof md.card_hold_sec==='number'?md.card_hold_sec:8, id:it.id};
+}
+
+let G=null, items=[], idx=0, player=null, playing=false;
+let cardTimer=null, cardProgTimer=null, poll=null, autoplay=true;
+
+(async function(){
+  try{
+    G=await (await fetch(SRC)).json();
+    const raw=(G.items||[]).slice().sort((a,b)=>(a.sort_order||0)-(b.sort_order||0));
+    items=raw.map(normalize).filter(x=>x.type==='card'||x.video_id);
+    if(!items.length) throw new Error('No playable items in this sequence.');
+    $('title').innerHTML=esc(G.name||'Sequence')+' <span class="sub">— a program in '+items.length+' parts</span>';
+    $('note').innerHTML=(G.description?esc(G.description)+' ':'')
+      +'A card-and-clip program. Videos are cropped to their cue points; cards hold, then advance. '
+      +'<a href="../docs/sequence-format.md">Format →</a>';
+    buildStrip();
+    bind();
+    show(0);
+  }catch(e){ $('err').style.display='block'; $('err').textContent='Could not load the sequence: '+e.message; }
+})();
+
+function buildStrip(){
+  const s=$('strip'); s.innerHTML='';
+  items.forEach((it,i)=>{ const b=document.createElement('button');
+    b.className=it.type==='video'?'seg':''; b.textContent=(i+1)+'. '+(it.title||(it.type==='video'?'Clip':'Card'));
+    b.setAttribute('role','tab'); b.onclick=()=>{ playing?show(i,true):show(i); }; s.appendChild(b); });
+}
+
+function clearTimers(){
+  if(cardTimer){clearTimeout(cardTimer);cardTimer=null;}
+  if(cardProgTimer){clearInterval(cardProgTimer);cardProgTimer=null;}
+  if(poll){clearInterval(poll);poll=null;}
+  $('cardProg').style.width='0';
+}
+function destroyPlayer(){ if(player){ try{player.destroy();}catch(_){ } player=null; } }
+
+function show(i, autostart){
+  if(i<0||i>=items.length) return;
+  clearTimers();
+  idx=i; const it=items[i];
+  $('pos').textContent=(i+1)+' / '+items.length;
+  $('now').innerHTML='<b>'+esc(it.title||'')+'</b>'+(it.type==='video'?' · '+segLabel(it):' · card');
+  [...$('strip').children].forEach((b,k)=>b.classList.toggle('on',k===i));
+  if($('strip').children[i]) $('strip').children[i].scrollIntoView({block:'nearest',inline:'center'});
+
+  const surface=$('surface');
+  if(it.type==='card'){
+    destroyPlayer();
+    surface.innerHTML='<div class="card-face" style="background:'+esc(it.card_bg)+'">'
+      +'<div class="ttl">'+esc(it.title)+'</div>'
+      +(it.card_subtitle?'<div class="sub">'+esc(it.card_subtitle)+'</div>':'')+'</div>';
+    if(playing||autostart){ startCardHold(it); }
+  } else {
+    surface.innerHTML='<div id="ytslot" style="position:absolute;inset:0"></div>';
+    mountVideo(it, playing||autostart);
+  }
+}
+
+function startCardHold(it){
+  if(idx>=items.length-1) return;            // never auto-advance off the last item
+  const hold=(it.card_hold_sec||8)*1000;
+  const t0=Date.now();
+  cardProgTimer=setInterval(()=>{ $('cardProg').style.width=Math.min(100,(Date.now()-t0)/hold*100)+'%'; },200);
+  cardTimer=setTimeout(()=>{ goNext(); }, hold);
+}
+
+function segLabel(it){
+  const p=it.performance||{};
+  if(typeof p.start_sec==='number'&&typeof p.end_sec==='number'&&p.end_sec>p.start_sec)
+    return fmt(p.start_sec)+' → '+fmt(p.end_sec)+' · '+fmt(p.end_sec-p.start_sec);
+  return 'clip';
+}
+
+function mountVideo(it, autostart){
+  const p=it.performance||{};
+  whenYT(()=>{
+    if(items[idx]!==it) return;               // navigated away while waiting
+    destroyPlayer();
+    player=new YT.Player('ytslot',{
+      videoId:it.video_id,
+      playerVars:{ rel:0, modestbranding:1, enablejsapi:1, controls:1, fs:1, iv_load_policy:3,
+                   playsinline:1, start:Math.max(0,p.start_sec|0), autoplay:autostart?1:0 },
+      events:{
+        onReady:e=>{
+          if(typeof p.start_sec==='number'&&p.start_sec>0){ try{e.target.seekTo(p.start_sec,true);}catch(_){ } }
+          if(p.video_visible===false){ addCover(it); }
+          if(autostart){ try{e.target.playVideo();}catch(_){ } }
+          startPoll(it);
+        },
+        onStateChange:e=>{
+          if(e.data===YT.PlayerState.PLAYING){ playing=true; setPlayBtn(); }
+          else if(e.data===YT.PlayerState.PAUSED){ playing=false; setPlayBtn(); }
+          else if(e.data===YT.PlayerState.ENDED){ goNext(); }
+        }
+      }
+    });
+  });
+}
+
+function addCover(it){
+  const slot=$('ytslot'); if(!slot) return;
+  const cover=document.createElement('div'); cover.className='cover';
+  const thumb=(it.performance&&it.performance.cover_image_url)||('https://i.ytimg.com/vi/'+it.video_id+'/hqdefault.jpg');
+  cover.style.backgroundImage="url('"+thumb+"')";
+  slot.appendChild(cover);
+}
+
+function startPoll(it){
+  const p=it.performance||{};
+  if(poll) clearInterval(poll);
+  poll=setInterval(()=>{
+    if(!player||!player.getCurrentTime) return;
+    let t=0; try{ t=player.getCurrentTime()||0; }catch(_){ return; }
+    if(typeof p.end_sec==='number'&&t>=p.end_sec){ goNext(); }
+  },250);
+}
+
+function goNext(){
+  if(idx<items.length-1){ const willPlay=autoplay||playing; show(idx+1, willPlay); }
+  else { pause(); }
+}
+function goPrev(){ if(idx>0) show(idx-1, playing); }
+
+function play(){
+  playing=true; setPlayBtn();
+  const it=items[idx];
+  if(it.type==='card'){ clearTimers(); startCardHold(it); }
+  else if(player&&player.playVideo){ try{player.playVideo();}catch(_){ } }
+  else { show(idx, true); }
+}
+function pause(){
+  playing=false; setPlayBtn();
+  clearTimers();
+  if(player&&player.pauseVideo){ try{player.pauseVideo();}catch(_){ } }
+}
+function setPlayBtn(){ $('play').textContent=playing?'⏸ Pause':'▶ Play'; }
+
+function bind(){
+  $('play').onclick=()=>playing?pause():play();
+  $('prev').onclick=goPrev;
+  $('next').onclick=goNext;
+  $('auto').onclick=()=>{ autoplay=!autoplay; $('auto').setAttribute('aria-pressed',String(autoplay)); };
+  document.addEventListener('keydown',e=>{
+    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+    if(e.key===' '){ e.preventDefault(); playing?pause():play(); }
+    else if(e.key==='ArrowRight'){ e.preventDefault(); goNext(); }
+    else if(e.key==='ArrowLeft'){ e.preventDefault(); goPrev(); }
+    else if(e.key==='Home'){ e.preventDefault(); show(0, playing); }
+  });
+}
+</script>
+</body>
+</html>
