@@ -37,6 +37,9 @@
     background:linear-gradient(0deg,rgba(8,7,11,.95) 12%,rgba(8,7,11,.6) 60%,rgba(8,7,11,0));pointer-events:none}
   .kline{font:italic 600 clamp(18px,2.8vw,32px)/1.4 "Iowan Old Style",Palatino,Georgia,serif;
     color:rgba(255,255,255,.5);max-width:32ch;margin:0 auto;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+  /* ALL-CAPS kids reading mode (toggle) — the recording-framework karaoke style */
+  .kband.caps .kline{font-style:normal;font-weight:800;text-transform:uppercase;letter-spacing:.03em;
+    font-size:clamp(20px,3.2vw,38px)}
   .kline .w{transition:color .12s} .kline .w.spoken{color:rgba(255,255,255,.85)}
   .kline .w.active{color:var(--accent);font-style:normal;text-shadow:0 0 16px rgba(212,175,55,.7)}
 
@@ -73,6 +76,7 @@
     <button class="ghost" id="next" aria-label="Next passage">⏭</button>
     <input class="scrub" id="scrub" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek">
     <span class="time" id="time">0:00 / 0:00</span>
+    <button class="ghost" id="caps" aria-pressed="false" title="ALL-CAPS kids reading (c)">AA</button>
   </div>
   <div class="passages" id="passages"></div>
 </div>
@@ -181,11 +185,13 @@ function bind(){
   $('prev').onclick=()=>{ const cur=perf(activeItem()).start_sec||0; const prev=[...items].reverse().find(x=>(perf(x).start_sec||0)<cur-0.3); seek(prev?perf(prev).start_sec:0); };
   $('next').onclick=()=>{ const cur=perf(activeItem()).start_sec||0; const nx=items.find(x=>(perf(x).start_sec||0)>cur+0.3); if(nx)seek(perf(nx).start_sec); };
   $('scrub').oninput=e=>{ pause(); seek(+e.target.value); };
+  $('caps').onclick=()=>{ const on=$('kband').classList.toggle('caps'); $('caps').setAttribute('aria-pressed',on?'true':'false'); $('caps').classList.toggle('on',on); };
   document.addEventListener('keydown',e=>{
     if(e.target.tagName==='INPUT')return;
     if(e.key===' '){ e.preventDefault(); playing?pause():play(); }
     else if(e.key==='ArrowRight') $('next').click();
     else if(e.key==='ArrowLeft') $('prev').click();
+    else if(e.key==='c'||e.key==='C') $('caps').click();
     else if(e.key==='Home') seek(0);
   });
 }

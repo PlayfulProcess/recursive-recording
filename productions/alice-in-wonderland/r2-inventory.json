@@ -1,0 +1,987 @@
+{
+ "prefix": "grammar-illustrations/alice-in-wonderland/",
+ "count": 194,
+ "total_bytes": 277764971,
+ "duplicate_groups": [
+  [
+   "grammar-illustrations/alice-in-wonderland/ch01-bored-by-the-river/brinsley-le-fanu-1910.jpg",
+   "grammar-illustrations/alice-in-wonderland/ch01-falling-down/brinsley-le-fanu-1910.jpg"
+  ],
+  [
+   "grammar-illustrations/alice-in-wonderland/ch06-the-baby-turns-into-a-pig/alice-b-woodward-1913.jpg",
+   "grammar-illustrations/alice-in-wonderland/ch06-the-fish-footman/alice-b-woodward-1913.jpg"
+  ]
+ ],
+ "objects": [
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ChatGPT Image Mar 24, 2026, 12_48_09 AM.png",
+   "size": 3405180,
+   "etag": "9d0eb0b9e64eb11233e57cc9acb678b2"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/alice-liddell-photos/alice-age-20-1872.jpg",
+   "size": 272850,
+   "etag": "5074904f0f4e78b7d8e79a39dfcc4859"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/alice-liddell-photos/alice-beggar-girl-1858.jpg",
+   "size": 302655,
+   "etag": "e545454096e49e85ac313cf7e8f1b0eb"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/alice-liddell-photos/alice-feigned-sleep-1860.jpg",
+   "size": 187711,
+   "etag": "84a1c79c441d8e3613acced6b038b3a4"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/alice-liddell-photos/alice-grown-up.jpg",
+   "size": 198836,
+   "etag": "999fef18370c9cf51db2eae5f71e17cb"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/alice-liddell-photos/alice-hargreaves-1932-age-80.jpg",
+   "size": 358811,
+   "etag": "3a7c479a8f45ab36db37539a4d991c42"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/alice-liddell-photos/alice-ina-harry-edith-1860.jpg",
+   "size": 145343,
+   "etag": "2323747c2da4b02159077aa37b726156"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/alice-liddell-photos/alice-liddell-1859.jpg",
+   "size": 183854,
+   "etag": "728c99b8f560f8f8ea1d931ca74e6f91"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/alice-liddell-photos/alice-liddell-portrait.jpg",
+   "size": 252525,
+   "etag": "5831a6cfe0bc7cbec5b3a76621842ab1"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/alice-liddell-photos/alice-with-julia-margaret-cameron-1872.jpg",
+   "size": 233989,
+   "etag": "fe2060b69056182b63006653da88cfde"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/alice-liddell-photos/edith-ina-alice-july-1860.jpg",
+   "size": 319366,
+   "etag": "b9968b5792f58862e9c5e0cc3001af41"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/alice-liddell-photos/lorina-edith-alice-1859.jpg",
+   "size": 217729,
+   "etag": "d7508a76f2ce8e4c6a1cb2921f535e1a"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/audio/all-in-the-golden-afternoon.mp3",
+   "size": 4224023,
+   "etag": "c520a13d5267fce95ee935a98fdf17e2"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/audio/librivox/wonderland-complete.mp3",
+   "size": 78072262,
+   "etag": "52997d7521affe55a51a357c63fcc758"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/book.html",
+   "size": 2133777,
+   "etag": "ccb2b8df70efb4db2b57928310703d41"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-bored-by-the-river/brinsley-le-fanu-1910.jpg",
+   "size": 466081,
+   "etag": "6195e1d45512b9fdedf05b5703bdf58b"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-bored-by-the-river/lewis-carroll-1864-dedication.webp",
+   "size": 12232,
+   "etag": "4c0060eb5597c9cbb0c1d4ffbd4ea8db"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-bored-by-the-river/lewis-carroll-1864-manuscript.webp",
+   "size": 12606,
+   "etag": "c8d18d470e2f0a05a03214f1c7fe20e7"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-drink-me/lewis-carroll-1864-manuscript.webp",
+   "size": 12292,
+   "etag": "259d47f0c0f9b407e23b4f5e98be41c1"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-drink-me/lewis-carroll-1864-title-page.webp",
+   "size": 13934,
+   "etag": "7e7bf8342d75d20cadf0c4ae0d078831"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-eat-me/lewis-carroll-1864-manuscript.webp",
+   "size": 12334,
+   "etag": "adb8980a720ad56ef5d2420f7842f64e"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-eat-me/nursery-alice-1890-cover.jpg",
+   "size": 2933514,
+   "etag": "74a8a8f0aaac917717d370aae262706f"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-falling-down/brinsley-le-fanu-1910.jpg",
+   "size": 466081,
+   "etag": "6195e1d45512b9fdedf05b5703bdf58b"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-falling-down/william-h-walker-1907.jpg",
+   "size": 2459028,
+   "etag": "fe1b349e642644fd4395945eaf3482cb"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-the-hall-of-doors/brinsley-le-fanu-1910.jpg",
+   "size": 436573,
+   "etag": "300c31215bab48d6f3332b522790e99e"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-the-white-rabbit-appears/alice-b-woodward-1913.jpg",
+   "size": 1975048,
+   "etag": "0c42cf3b0347b30286f90ad9a6f19a70"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-the-white-rabbit-appears/arthur-rackham-1907.jpg",
+   "size": 1545013,
+   "etag": "1124ad1a807ec3f18ee881f9e1af4dde"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-the-white-rabbit-appears/gwynedd-hudson-1922.jpg",
+   "size": 1445059,
+   "etag": "d99c2168274f1bd7b8f03eefd387882a"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch01-the-white-rabbit-appears/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 645185,
+   "etag": "758d7f9b1cbdb6058d6f1b840469d4bc"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch02-curiouser-and-curiouser/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 833085,
+   "etag": "9e23a02e5ca737815487e6bc19e5369c"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch02-meeting-the-mouse/emily-overnell-1912.jpg",
+   "size": 1280274,
+   "etag": "69e2f8f3b72d7051ed939c1fdfb8ed86"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch02-meeting-the-mouse/lewis-carroll-1864-manuscript.webp",
+   "size": 11916,
+   "etag": "a557cd0f631448d4461bbaf77c0edbeb"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch02-the-pool-of-tears/alice-b-woodward-1913.jpg",
+   "size": 1910719,
+   "etag": "0143c1411ed99e7148e4035720062d18"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch02-the-pool-of-tears/arthur-rackham-1907.jpg",
+   "size": 3422047,
+   "etag": "9fec226fbb9b698adb7247d02d217362"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch02-the-pool-of-tears/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 872931,
+   "etag": "0932565a99719f2b31eb71f59f0824f3"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch02-the-white-rabbit-returns/lewis-carroll-1864-manuscript.webp",
+   "size": 12646,
+   "etag": "e737a4693f3227b6a6d04a775a929945"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch03-a-long-sad-tale/lewis-carroll-1864-manuscript.webp",
+   "size": 7504,
+   "etag": "fbe081be1fb8d5433fdc3ba9f0ab6207"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch03-the-caucus-race/arthur-rackham-1907.jpg",
+   "size": 4146215,
+   "etag": "f67596fba86bec44e82704dee2c6c0c8"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch03-the-caucus-race/bessie-pease-gutmann-1933.jpg",
+   "size": 3206750,
+   "etag": "ebda6ac43b6e50408ba53736917b22f3"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch03-the-caucus-race/brinsley-le-fanu-1910.jpg",
+   "size": 495123,
+   "etag": "fdb97c74662bceb0525d3172fcc09f43"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch03-the-caucus-race/emily-overnell-1912.jpg",
+   "size": 1067196,
+   "etag": "69215b5cb7f09617d92cf5bf7d17316c"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch03-the-caucus-race/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 1113287,
+   "etag": "1227e02714d3a64c6c48894d9aec9cbd"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch03-the-caucus-race/william-h-walker-1907.jpg",
+   "size": 2105919,
+   "etag": "0df20b323b047f2bb837cfef7886e7dd"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch03-the-driest-thing/john-tenniel-harry-theaker-1911.jpg",
+   "size": 723203,
+   "etag": "e8ba162ce68c6540fcea69a6f3db9622"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch03-the-driest-thing/lewis-carroll-1864-manuscript.webp",
+   "size": 9908,
+   "etag": "7581cf48c8246f29cf6db08583d7e54a"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch04-bill-the-lizard/brinsley-le-fanu-1910.jpg",
+   "size": 448030,
+   "etag": "259385750782f97e5d2750fb9eb3ae1c"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch04-bill-the-lizard/gwynedd-hudson-1922.jpg",
+   "size": 1531118,
+   "etag": "925dfe6cf1bfe53deb15e66ef80fbfcb"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch04-bill-the-lizard/harry-rountree-1928.jpg",
+   "size": 1965066,
+   "etag": "809e2384de605cc99604d459e0d4c9d6"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch04-bill-the-lizard/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 745624,
+   "etag": "52c39a88863c239e5f1d382bf4ba0ecb"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch04-mistaken-for-mary-ann/harry-rountree-1928.jpg",
+   "size": 1917071,
+   "etag": "d4bae98dfe99bc1dd2a1328647702a28"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch04-mistaken-for-mary-ann/john-tenniel-harry-theaker-1911.jpg",
+   "size": 431791,
+   "etag": "31f23738b6e2932b9e10ca1c4fcf30f1"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch04-stuck-in-the-house/bessie-pease-gutmann-1933.jpg",
+   "size": 3323609,
+   "etag": "8499f1777eadd384d14b55a4c2fd9922"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch04-stuck-in-the-house/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 858239,
+   "etag": "d6805555ef3fe2945b25224282e75e71"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch04-the-great-puppy/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 1582326,
+   "etag": "bb0396a9cf1e1e590678d59b63e8ca68"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch05-father-william/bessie-pease-gutmann-1933.jpg",
+   "size": 3164824,
+   "etag": "ee7f5b282fc544d1357bbab52c37f78a"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch05-serpent/lewis-carroll-1864-manuscript.webp",
+   "size": 12428,
+   "etag": "7a3e14d5a428d0b6e5dc073c52e37261"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch05-the-mushrooms-magic/lewis-carroll-1864-manuscript.webp",
+   "size": 11472,
+   "etag": "e9d076d42a0fb5f60903c77484df6fa7"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch05-who-are-you/alice-b-woodward-1913.jpg",
+   "size": 1739213,
+   "etag": "1785d77fbb7905b2f7435c1e9a8f89b4"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch05-who-are-you/arthur-rackham-1907.jpg",
+   "size": 1654403,
+   "etag": "703198c7209c6c4eb2e1a7b066b47286"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch05-who-are-you/gwynedd-hudson-1922.jpg",
+   "size": 1717547,
+   "etag": "ec44ee2c9fb37f80bbd29d1a1226df41"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch05-who-are-you/william-h-walker-1907.jpg",
+   "size": 2104687,
+   "etag": "956040fe6054ba0f7fe052c831c93741"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch06-the-baby-turns-into-a-pig/alice-b-woodward-1913.jpg",
+   "size": 1697925,
+   "etag": "1ccfb5b2f84975822583fd2091bc73aa"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch06-the-baby-turns-into-a-pig/arthur-rackham-1907.jpg",
+   "size": 1749548,
+   "etag": "75e0d9db02b319e065c3943b670eb7b1"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch06-the-baby-turns-into-a-pig/gwynedd-hudson-1922.jpg",
+   "size": 1701950,
+   "etag": "a2d0dd1859d114953756629645f7f64b"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch06-the-baby-turns-into-a-pig/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 654729,
+   "etag": "9a4d95b5ad07e34b8f0b179d4d77755e"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch06-the-cheshire-cat/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 1646106,
+   "etag": "478925fdfac561426b1fe245476dcbe1"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch06-the-cheshire-cat/john-tenniel-harry-theaker-1911.jpg",
+   "size": 780667,
+   "etag": "685ca787d63058ab5c29c190e1fd6202"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch06-the-duchesss-kitchen/alice-b-woodward-1913.jpg",
+   "size": 1953941,
+   "etag": "a4dfb8bd60d7a0bb483d9bfc0daed39c"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch06-the-duchesss-kitchen/arthur-rackham-1907.jpg",
+   "size": 4036470,
+   "etag": "6f958a6f7ac0ecc0371083554e1ef768"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch06-the-duchesss-kitchen/brinsley-le-fanu-1910.jpg",
+   "size": 471298,
+   "etag": "b9f6dab12766a861492aead4173d8eeb"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch06-the-fish-footman/alice-b-woodward-1913.jpg",
+   "size": 1697925,
+   "etag": "1ccfb5b2f84975822583fd2091bc73aa"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch06-the-fish-footman/lewis-carroll-1864-manuscript.webp",
+   "size": 9146,
+   "etag": "6a539a62a7d94fc5804092b77f73568c"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch07-alice-leaves-the-tea-party/lewis-carroll-1864-cheshire-cat-tree.webp",
+   "size": 11614,
+   "etag": "d1b08f04587970f850a4f46cd0b43bbb"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch07-no-room/alice-b-woodward-1913.jpg",
+   "size": 2255487,
+   "etag": "79425b9ec073fc6e66e196fed4e1f3a4"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch07-no-room/arthur-rackham-1907.jpg",
+   "size": 1823412,
+   "etag": "89a47e9412fef5a968de00eb2622f163"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch07-no-room/brinsley-le-fanu-1910.jpg",
+   "size": 441667,
+   "etag": "9911648b7137a95493b0c7b2fb2e2258"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch07-no-room/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 883645,
+   "etag": "21b7fff9b07f22eb2eeb59ed98bbb4c2"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch07-the-dormouses-story/brinsley-le-fanu-1910.jpg",
+   "size": 552419,
+   "etag": "26c820bb3657e1fc55002e054ea7e429"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch07-the-dormouses-story/harry-rountree-1928.jpg",
+   "size": 1847829,
+   "etag": "a82c2b44d768e89373017fe986713384"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch07-the-hatters-watch/lewis-carroll-1864-duchess-kitchen.webp",
+   "size": 10950,
+   "etag": "caab2f14d9fc15e9f8b635e649c1317f"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch07-time-is-frozen/lewis-carroll-1864-animals-concert.webp",
+   "size": 13664,
+   "etag": "a8e0c50d569f6b60e3f38a4b1290ee81"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-croquet-with-flamingos/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 760941,
+   "etag": "cd11b6898c6acfe9dc876b6f32644a12"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-croquet-with-flamingos/john-tenniel-harry-theaker-1911.jpg",
+   "size": 656542,
+   "etag": "ec20dc27f7fd3cf9f00a49691dbf595c"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-painting-the-roses-red/bessie-pease-gutmann-1933.jpg",
+   "size": 3183122,
+   "etag": "552ac83eca786097b6d2990e7a7eeabb"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-painting-the-roses-red/gwynedd-hudson-1922.jpg",
+   "size": 1586952,
+   "etag": "3fe302d95c565f46969c5bd867e874fe"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-painting-the-roses-red/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 671522,
+   "etag": "33496398fe75a629ab56222870c6aa81"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-painting-the-roses-red/william-h-walker-1907.jpg",
+   "size": 2349336,
+   "etag": "0d3969b736ed5365c3dc32c655acc73b"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-the-cheshire-cats-head/alice-b-woodward-1913.jpg",
+   "size": 1996706,
+   "etag": "cbe88ae61c79fea30b8da3fa1f795e71"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-the-cheshire-cats-head/brinsley-le-fanu-1910.jpg",
+   "size": 477480,
+   "etag": "260c80a08f1b92f52072bc13eda40462"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-the-cheshire-cats-head/gwynedd-hudson-1922.jpg",
+   "size": 1264216,
+   "etag": "121f01a9d8bd162600591205a24d953a"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-the-royal-procession/arthur-rackham-1907.jpg",
+   "size": 1690647,
+   "etag": "770d587567f567cf5cbf87c48b490dd1"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-the-royal-procession/gwynedd-hudson-1922.jpg",
+   "size": 1884411,
+   "etag": "a5cd83fa330954f0d6e5732222bead63"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-the-royal-procession/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 1470967,
+   "etag": "b37f6b7dfebd40fb621ac5be6e3ce6ac"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch08-the-royal-procession/john-tenniel-harry-theaker-1911.jpg",
+   "size": 752051,
+   "etag": "376045b1e9a3c0f98d9ca49096af2f4e"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch09-meeting-the-gryphon/arthur-rackham-1907.jpg",
+   "size": 1783570,
+   "etag": "96f7bfa5b868a4d6099bc06c94072d24"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch09-meeting-the-gryphon/bessie-pease-gutmann-1933.jpg",
+   "size": 3031781,
+   "etag": "0de2202d42df54cecf70a50a23346732"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch09-meeting-the-gryphon/brinsley-le-fanu-1910.jpg",
+   "size": 487321,
+   "etag": "460dc5db282dd14def003812f57bd012"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch09-the-duchess-and-her-morals/gwynedd-hudson-1922.jpg",
+   "size": 1906383,
+   "etag": "1e50c08d893dee2389754c839396a163"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch09-the-duchess-and-her-morals/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 1889616,
+   "etag": "68636b485d3dc023ed70dbd0af584b76"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch09-the-mock-turtles-school/gwynedd-hudson-1922.jpg",
+   "size": 1716786,
+   "etag": "23ce1d82e06092aab3e46a2a0964b40c"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch09-the-mock-turtles-school/john-tenniel-harry-theaker-1911.jpg",
+   "size": 658902,
+   "etag": "2cc7f7310b568a64c5818632eaf28899"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch09-the-mock-turtles-school/william-h-walker-1907.jpg",
+   "size": 2218874,
+   "etag": "32e8178027501d7f6d85c1d75c397b6d"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch10-beautiful-soup/lewis-carroll-1864-manuscript.webp",
+   "size": 11542,
+   "etag": "2238ef3475e2662b65426a1c14959ff8"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch10-the-lobster-and-the-owl/lewis-carroll-1864-manuscript.webp",
+   "size": 9166,
+   "etag": "f0dbc992064dd48de5bf57396c09198d"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch10-the-lobster-quadrille/harry-rountree-1928.jpg",
+   "size": 1596673,
+   "etag": "631bede8e21347829e8e44b2f0824184"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch11-the-cooks-evidence/brinsley-le-fanu-1910.jpg",
+   "size": 525888,
+   "etag": "8548315453dc88a2a35279d6a25df9fb"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch11-the-court-assembles/arthur-rackham-1907.jpg",
+   "size": 1657877,
+   "etag": "7489897f7df240bf190b3684476ca8c0"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch11-the-court-assembles/william-h-walker-1907.jpg",
+   "size": 2461390,
+   "etag": "7be37ccf4c6bfe87b3be21fd58c285a3"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch11-the-hatters-evidence/lewis-carroll-1864-manuscript.webp",
+   "size": 11464,
+   "etag": "5218d25f7aacb0061f3dcb42d6a79bc5"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch12-alice-tips-the-jury/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 1315953,
+   "etag": "1ee7e91ade995f023b0fb2e9b465f79c"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch12-alice-tips-the-jury/john-tenniel-harry-theaker-1911.jpg",
+   "size": 498496,
+   "etag": "88838a0f8147425a9cacb9b599f4ec9e"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch12-sentence-first/arthur-rackham-1907.jpg",
+   "size": 4274212,
+   "etag": "2c5766d456754dfd483aa2398574e55f"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch12-sentence-first/gwynedd-hudson-1922.jpg",
+   "size": 1894333,
+   "etag": "9a85af3045b9d25020a07263a3b80510"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch12-sentence-first/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 1619714,
+   "etag": "bb06430b4f2c5a9fa15078c8881142c0"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch12-the-mysterious-letter/lewis-carroll-1864-manuscript.webp",
+   "size": 12388,
+   "etag": "93cca8237bb842f2e2d24e6e37300195"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/ch12-waking-up/lewis-carroll-1864-manuscript.webp",
+   "size": 11144,
+   "etag": "c9e5e3d868edc9e94db72779efd184ef"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-01-down-the-rabbit-hole/arthur-rackham-1907.jpg",
+   "size": 894132,
+   "etag": "730c02efcdc6324cb1e98d5a4f1cef0d"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-01-down-the-rabbit-hole/gwynedd-hudson-1922.jpg",
+   "size": 1341762,
+   "etag": "c814507c527b55caf8fe66f48bba3548"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-02-the-pool-of-tears/lewis-carroll-1864-chapter-I.webp",
+   "size": 158000,
+   "etag": "c1e9d250615a754494030d47d4fbab02"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-03-a-caucus-race-and-a-long-tale/lewis-carroll-1864-chapter-II.webp",
+   "size": 128886,
+   "etag": "68e51902babae6b3d475f79ffc03b489"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-04-the-rabbit-sends-in-a-little-bill/lewis-carroll-1864-chapter-III.webp",
+   "size": 88184,
+   "etag": "cec539acc6052e68da492ab3c1f63819"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-05-advice-from-a-caterpillar/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 965249,
+   "etag": "42a2b45101cd7f51a9c5ddf6a2971394"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-06-pig-and-pepper/lewis-carroll-1864-chapter-IV.webp",
+   "size": 71324,
+   "etag": "a3280a1634b759b07d1f1b28570e1a78"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-07-a-mad-tea-party/gwynedd-hudson-1922.jpg",
+   "size": 1415229,
+   "etag": "34cb4c7450f6767a1e00d63f77bdaaa9"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-07-a-mad-tea-party/john-tenniel-1865.jpg",
+   "size": 2807618,
+   "etag": "44ca08f14bcac1a4fdc9427015a934d6"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-07-a-mad-tea-party/william-h-walker-1907.jpg",
+   "size": 2697708,
+   "etag": "c55e41343c2791a01aad5f8d0b6005ba"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-08-the-queens-croquet-ground/alice-b-woodward-1913.jpg",
+   "size": 1968550,
+   "etag": "4a7a148c238d41c319afe4e1e5c9e6e2"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-08-the-queens-croquet-ground/john-tenniel-harry-theaker-1911.jpg",
+   "size": 923303,
+   "etag": "670de3af0a994b7ccd2fcfdd2dcd8193"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-09-the-mock-turtles-story/john-tenniel-colorized-e-g-thomson-1890.jpg",
+   "size": 910098,
+   "etag": "d79662b5001abdbcfa37fe6fef9eb8d9"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-10-the-lobster-quadrille/lewis-carroll-1864-mock-turtle.webp",
+   "size": 11946,
+   "etag": "dc2037004c3c5b99ef36a8d92d174250"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-11-who-stole-the-tarts/lewis-carroll-1864-royal-court.webp",
+   "size": 10642,
+   "etag": "8555ba4153ba7484b34796f33e55e5a0"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/chapter-12-alices-evidence/lewis-carroll-1864-croquet-chaos.webp",
+   "size": 11914,
+   "etag": "f04d615bd3463c8829cbb2dc2ba9873d"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/dall-e-ch1-dinah-and-bats.png",
+   "size": 2019265,
+   "etag": "c5fd1175ddc72d2c567bb2bdefe86013"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/dall-e-ch1-hall-of-doors-v3.png",
+   "size": 1961173,
+   "etag": "165701f7ad36dbd3f1604d563a1378fb"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/dall-e-ch1-lovely-garden-v4.png",
+   "size": 2574833,
+   "etag": "1cad69239faca0ffb4bc6c42f186cf5d"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/dall-e-ch2-head-hitting-roof.png",
+   "size": 2025381,
+   "etag": "8945b6031f9d06028ac8b0c8ae8bf899"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/dall-e-ch2-nine-feet-tall-v3.png",
+   "size": 1874461,
+   "etag": "f32c0ba611f417be3ef097ecd89001cf"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/dall-e-ch2-nine-feet-tall-v4.png",
+   "size": 1788478,
+   "etag": "633c55375d016f8925964f0c6472b486"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/dall-e-golden-afternoon-boat.png",
+   "size": 2323184,
+   "etag": "4034b4e2018b40802f755cb7944b1311"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/door-loveliest-garden-final.png",
+   "size": 2810584,
+   "etag": "f4143ca9ad6c8f0d3754b98f6463e1ce"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/door-loveliest-garden-muted.png",
+   "size": 2674683,
+   "etag": "7dad9ea0ad6f96d1701cb83279cf37da"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/gpt4-cheshire-cat-croquet.png",
+   "size": 3717916,
+   "etag": "a410a2f6241c1018e6af71fad0a687a8"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/gpt4-cheshire-cat-kitchen.png",
+   "size": 2426976,
+   "etag": "f79c1bb3d36ed46623bb830a3ce5b652"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/gpt4-cheshire-cat-tree.png",
+   "size": 2498811,
+   "etag": "f367c9213a5b853262173b230d62678d"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/gpt4-golden-afternoon-boat.png",
+   "size": 2471046,
+   "etag": "33001df329b8ffad702131744d1e43a4"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/gpt4-pigeon-serpent-ch5.png",
+   "size": 3393539,
+   "etag": "89e4c20082bdeef2007a8d00fa1f3f40"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/generated/gpt4-queen-of-hearts-card.png",
+   "size": 4094814,
+   "etag": "2a988f27c7bb956a2eb91944b3e27f05"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-00.jpg",
+   "size": 44837,
+   "etag": "1d3cdd57ddaa5e78b8140084c7ef5d22"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-01.jpg",
+   "size": 124375,
+   "etag": "70f3674e9aee7738bcbc3c0bc3efe8c6"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-02.jpg",
+   "size": 103976,
+   "etag": "e94e75cbf46c048eb9e14005c4868f62"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-03.jpg",
+   "size": 110164,
+   "etag": "4a8855427cf82055c08a2f58335f0533"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-04.jpg",
+   "size": 110334,
+   "etag": "d631246409c2a9243b39214f6a48364a"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-05.jpg",
+   "size": 104561,
+   "etag": "60b3d6041512a4777af4d3dec8d5ceaa"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-06.jpg",
+   "size": 110068,
+   "etag": "b103dfeed8341679b54c6f29047d591d"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-07.jpg",
+   "size": 111254,
+   "etag": "a76c88d0a5624d28acc1137f4fd0d8d4"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-08.jpg",
+   "size": 100839,
+   "etag": "162141210e14aaa59ff6e108c6840cec"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-09.jpg",
+   "size": 107109,
+   "etag": "7b3420049216000a4f05533120851512"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-10.jpg",
+   "size": 92351,
+   "etag": "238405ce5b157ef608096a000dd722b9"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-11.jpg",
+   "size": 104613,
+   "etag": "2d135f6698ae7f22ac51dae85621ae1b"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-12.jpg",
+   "size": 91564,
+   "etag": "39138cc3dfad7fa9b0bd13914861344c"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-13.jpg",
+   "size": 101684,
+   "etag": "eee98cc87873a37cf7ce390af89c9c6e"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-14.jpg",
+   "size": 107151,
+   "etag": "8875137db877e6cb64e27d1c8a0c9b39"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-15.jpg",
+   "size": 74079,
+   "etag": "50de1d1e3f0dc23e91a99bf1aa758963"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-16.jpg",
+   "size": 103399,
+   "etag": "fbd4b3696025b56dfabd718615058ed5"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-17.jpg",
+   "size": 108158,
+   "etag": "3b4e5ab8052c30ac224ff6c8646c3fd2"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-18.jpg",
+   "size": 98678,
+   "etag": "75bd56573ae62971a91986d7a9292101"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-19.jpg",
+   "size": 115378,
+   "etag": "37c75030febfaf0afecad192687dc4ab"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-20.jpg",
+   "size": 103194,
+   "etag": "a2a77e3a316d4a077168f11cd5de7e7f"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-21.jpg",
+   "size": 115247,
+   "etag": "51775ffb467b0594d86d36f43c23959a"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-22.jpg",
+   "size": 109690,
+   "etag": "a386927af64622c7278b03c17493f082"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-23.jpg",
+   "size": 108861,
+   "etag": "8440ea28073358bdba4c440fe8fc5a5b"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-24.jpg",
+   "size": 110967,
+   "etag": "3bec0224ba53e66602b0453905981a27"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-25.jpg",
+   "size": 106393,
+   "etag": "a3bf9d1f2b8a0997091583566ef044c3"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-26.jpg",
+   "size": 104602,
+   "etag": "e779a487b9a490061faced0bd5cfd2d6"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-27.jpg",
+   "size": 76595,
+   "etag": "fb751130b18ba1d289739ac26eed3d43"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-28.jpg",
+   "size": 76160,
+   "etag": "3a889eb0f0e7c5beaa34c700824faa3e"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-29.jpg",
+   "size": 82711,
+   "etag": "a5e381b24f0547a3f82ec27b5dcae58d"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-30.jpg",
+   "size": 68975,
+   "etag": "ea27cfaaf7cfc2c4b94b112d5ba578d1"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-31.jpg",
+   "size": 105222,
+   "etag": "ea6e1653cb331caadd6bab87af41567e"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-32.jpg",
+   "size": 98230,
+   "etag": "7287db27e7bd56776eb73e9193ccc212"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-33.jpg",
+   "size": 106006,
+   "etag": "b0684c1224159913a1ebda7922497f44"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-34.jpg",
+   "size": 111372,
+   "etag": "fbcda65e1788c33a45a862f8274579fe"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-35.jpg",
+   "size": 104639,
+   "etag": "a78143659331a26179cb9e0ea972c6e7"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-36.jpg",
+   "size": 116440,
+   "etag": "fd3f75dbd85cfff810b0278c97076f11"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-37.jpg",
+   "size": 109081,
+   "etag": "ecb54246cf6fa5fe1a69f98ed7474262"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-38.jpg",
+   "size": 124595,
+   "etag": "50e9e71e732b6799b9e21d48978e1666"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-39.jpg",
+   "size": 109878,
+   "etag": "5c271c71623bec54a546c180ba48890b"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-40.jpg",
+   "size": 108878,
+   "etag": "a1725bb01df1178748081ef23260d421"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-41.jpg",
+   "size": 104687,
+   "etag": "f2157f24812e0b7d43ab22b52e4f9956"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-42.jpg",
+   "size": 97946,
+   "etag": "38f699c205f83172ec8643a10f8844f9"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-43.jpg",
+   "size": 97730,
+   "etag": "69d1efd703f18c6c7ffc1ce579b56f55"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-44.jpg",
+   "size": 107075,
+   "etag": "ed6c3656b80b41b1e82f9141c2fd9168"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-45.jpg",
+   "size": 109006,
+   "etag": "193b60a07d6e3b7f8c1c1a71542a09c4"
+  },
+  {
+   "key": "grammar-illustrations/alice-in-wonderland/manuscript-under-ground/manuscript-page-46.jpg",
+   "size": 57710,
+   "etag": "6816411abd157b548220062eef30261e"
+  }
+ ]
+}
