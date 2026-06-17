@@ -1,0 +1,935 @@
+[
+ {
+  "entry_point": "chapter-01-down-the-rabbit-hole",
+  "chapter": 1,
+  "anchor_text": "And here Alice began to get rather sleepy, and went on saying to herself, in a dreamy sort of way, “Do cats eat bats?",
+  "current_pages": [
+   "0-0",
+   "1-6",
+   "4-3"
+  ],
+  "editions_here": [
+   "Rackham (1907)",
+   "Hudson (1922)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch01-the-white-rabbit-appears",
+  "chapter": 1,
+  "anchor_text": "(when she thought it over afterwards, it occurred to her that she ought to have wondered at this, but at the time it all",
+  "current_pages": [
+   "0-0",
+   "1-0",
+   "1-2",
+   "1-13",
+   "2-3",
+   "2-5",
+   "4-1",
+   "10-9"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Rackham (1907)",
+   "Woodward (1913)",
+   "Hudson (1922)"
+  ],
+  "n_editions": 4
+ },
+ {
+  "entry_point": "ch01-bored-by-the-river",
+  "chapter": 1,
+  "anchor_text": "“They couldn’t have done that, you know,”",
+  "current_pages": [
+   "0-0",
+   "7-10"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)",
+   "Le Fanu (1910)"
+  ],
+  "n_editions": 3
+ },
+ {
+  "entry_point": "ch01-drink-me",
+  "chapter": 1,
+  "anchor_text": "",
+  "current_pages": [
+   "0-0",
+   "1-14",
+   "1-18"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch01-eat-me",
+  "chapter": 1,
+  "anchor_text": "",
+  "current_pages": [
+   "0-0",
+   "1-16"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)",
+   "Nursery Alice (1890)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch01-the-hall-of-doors",
+  "chapter": 1,
+  "anchor_text": "After a while, finding that nothing more happened, she decided on going into the garden at once; but, alas for poor Alic",
+  "current_pages": [
+   "1-11"
+  ],
+  "editions_here": [
+   "Le Fanu (1910)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch01-falling-down",
+  "chapter": 1,
+  "anchor_text": "Either the well was very deep, or she fell very slowly, for she had plenty of time as she went down to look about her an",
+  "current_pages": [
+   "1-3",
+   "1-4"
+  ],
+  "editions_here": [
+   "Walker (1907)",
+   "Le Fanu (1910)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch02-the-pool-of-tears",
+  "chapter": 2,
+  "anchor_text": "“How cheerfully he seems to grin, How neatly spread his claws, And welcome little fishes in With gently smiling jaws!”",
+  "current_pages": [
+   "0-0",
+   "2-6",
+   "2-10"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Woodward (1913)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "chapter-02-the-pool-of-tears",
+  "chapter": 2,
+  "anchor_text": "",
+  "current_pages": [
+   "1-15"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch02-curiouser-and-curiouser",
+  "chapter": 2,
+  "anchor_text": "There seemed to be no use in waiting by the little door, so she went back to the table, half hoping she might find anoth",
+  "current_pages": [
+   "1-9",
+   "1-17"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch02-meeting-the-mouse",
+  "chapter": 2,
+  "anchor_text": "“I won’t indeed!”",
+  "current_pages": [
+   "2-12"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch02-the-white-rabbit-returns",
+  "chapter": 2,
+  "anchor_text": "“The first thing I’ve got to do,”",
+  "current_pages": [
+   "4-13"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "chapter-03-a-caucus-race-and-a-long-tale",
+  "chapter": 3,
+  "anchor_text": "“Not like cats!”",
+  "current_pages": [
+   "2-11"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch03-the-caucus-race",
+  "chapter": 3,
+  "anchor_text": "They were indeed a queer-looking party that assembled on the bank—the birds with draggled feathers, the animals with the",
+  "current_pages": [
+   "3-0",
+   "3-1",
+   "3-3",
+   "3-4",
+   "3-5",
+   "3-8"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Walker (1907)",
+   "Rackham (1907)",
+   "Le Fanu (1910)",
+   "Overnell (1912)",
+   "Gutmann (1933)"
+  ],
+  "n_editions": 6
+ },
+ {
+  "entry_point": "ch03-a-long-sad-tale",
+  "chapter": 3,
+  "anchor_text": "",
+  "current_pages": [
+   "3-11"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch03-the-driest-thing",
+  "chapter": 3,
+  "anchor_text": "“You promised to tell me your history, you know,”",
+  "current_pages": [
+   "3-7",
+   "4-10"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)",
+   "Tenniel/Theaker (1911)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch04-stuck-in-the-house",
+  "chapter": 4,
+  "anchor_text": "“Curiouser and curiouser!”",
+  "current_pages": [
+   "0-0",
+   "2-1"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "chapter-04-the-rabbit-sends-in-a-little-bill",
+  "chapter": 4,
+  "anchor_text": "When the Mouse heard this, it turned round and swam slowly back to her: its face was quite pale (with passion, Alice tho",
+  "current_pages": [
+   "2-13"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch04-bill-the-lizard",
+  "chapter": 4,
+  "anchor_text": "“But then,”",
+  "current_pages": [
+   "4-0",
+   "4-6",
+   "4-7",
+   "4-11",
+   "4-12"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Le Fanu (1910)",
+   "Hudson (1922)",
+   "Rountree (1928)"
+  ],
+  "n_editions": 4
+ },
+ {
+  "entry_point": "ch04-the-great-puppy",
+  "chapter": 4,
+  "anchor_text": "Hardly knowing what she did, she picked up a little bit of stick, and held it out to the puppy; whereupon the puppy jump",
+  "current_pages": [
+   "4-14",
+   "4-17"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch04-mistaken-for-mary-ann",
+  "chapter": 4,
+  "anchor_text": "Very soon the Rabbit noticed Alice, as she went hunting about, and called out to her in an angry tone, “Why, Mary Ann, w",
+  "current_pages": [
+   "4-2",
+   "4-5"
+  ],
+  "editions_here": [
+   "Tenniel/Theaker (1911)",
+   "Rountree (1928)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch05-who-are-you",
+  "chapter": 5,
+  "anchor_text": "The Caterpillar and Alice looked at each other for some time in silence: at last the Caterpillar took the hookah out of ",
+  "current_pages": [
+   "5-0",
+   "5-1",
+   "5-2",
+   "5-3",
+   "5-4"
+  ],
+  "editions_here": [
+   "Walker (1907)",
+   "Rackham (1907)",
+   "Woodward (1913)",
+   "Hudson (1922)"
+  ],
+  "n_editions": 4
+ },
+ {
+  "entry_point": "ch05-the-mushrooms-magic",
+  "chapter": 5,
+  "anchor_text": "As there seemed to be no chance of getting her hands up to her head, she tried to get her head down to them, and was del",
+  "current_pages": [
+   "5-10"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch05-serpent",
+  "chapter": 5,
+  "anchor_text": "",
+  "current_pages": [
+   "5-15"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch05-father-william",
+  "chapter": 5,
+  "anchor_text": "“You are old,”",
+  "current_pages": [
+   "5-5"
+  ],
+  "editions_here": [
+   "Gutmann (1933)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "chapter-05-advice-from-a-caterpillar",
+  "chapter": 5,
+  "anchor_text": "Alice said nothing: she had never been so much contradicted in her life before, and she felt that she was losing her tem",
+  "current_pages": [
+   "5-7"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "chapter-06-pig-and-pepper",
+  "chapter": 6,
+  "anchor_text": "",
+  "current_pages": [
+   "6-0"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch06-the-baby-turns-into-a-pig",
+  "chapter": 6,
+  "anchor_text": "For a minute or two she stood looking at the house, and wondering what to do next, when suddenly a footman in livery cam",
+  "current_pages": [
+   "6-1",
+   "6-9",
+   "6-10",
+   "6-11"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Rackham (1907)",
+   "Woodward (1913)",
+   "Hudson (1922)"
+  ],
+  "n_editions": 4
+ },
+ {
+  "entry_point": "ch06-the-cheshire-cat",
+  "chapter": 6,
+  "anchor_text": "“Then it doesn’t matter which way you go,”",
+  "current_pages": [
+   "6-13",
+   "6-16"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Tenniel/Theaker (1911)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch06-the-fish-footman",
+  "chapter": 6,
+  "anchor_text": "Then they both bowed low, and their curls got entangled together.",
+  "current_pages": [
+   "6-2",
+   "6-3"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)",
+   "Woodward (1913)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch06-the-duchesss-kitchen",
+  "chapter": 6,
+  "anchor_text": "The door led right into a large kitchen, which was full of smoke from one end to the other: the Duchess was sitting on a",
+  "current_pages": [
+   "6-5",
+   "6-6",
+   "6-8"
+  ],
+  "editions_here": [
+   "Rackham (1907)",
+   "Le Fanu (1910)",
+   "Woodward (1913)"
+  ],
+  "n_editions": 3
+ },
+ {
+  "entry_point": "chapter-07-a-mad-tea-party",
+  "chapter": 7,
+  "anchor_text": "“If you knew Time as well as I do,”",
+  "current_pages": [
+   "7-0",
+   "7-6",
+   "7-7"
+  ],
+  "editions_here": [
+   "Tenniel (1865)",
+   "Walker (1907)",
+   "Hudson (1922)"
+  ],
+  "n_editions": 3
+ },
+ {
+  "entry_point": "ch07-no-room",
+  "chapter": 7,
+  "anchor_text": "There was a table set out under a tree in front of the house, and the March Hare and the Hatter were having tea at it: a",
+  "current_pages": [
+   "7-1",
+   "7-2",
+   "7-3",
+   "7-4"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Rackham (1907)",
+   "Le Fanu (1910)",
+   "Woodward (1913)"
+  ],
+  "n_editions": 4
+ },
+ {
+  "entry_point": "ch07-the-dormouses-story",
+  "chapter": 7,
+  "anchor_text": "The Dormouse again took a minute or two to think about it, and then said, “It was a treacle-well.”",
+  "current_pages": [
+   "7-11",
+   "7-13"
+  ],
+  "editions_here": [
+   "Le Fanu (1910)",
+   "Rountree (1928)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch07-alice-leaves-the-tea-party",
+  "chapter": 7,
+  "anchor_text": "",
+  "current_pages": [
+   "7-15"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch07-the-hatters-watch",
+  "chapter": 7,
+  "anchor_text": "“Of course not,”",
+  "current_pages": [
+   "7-5"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch07-time-is-frozen",
+  "chapter": 7,
+  "anchor_text": "“Well, I’d hardly finished the first verse,”",
+  "current_pages": [
+   "7-8"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "chapter-08-the-queens-croquet-ground",
+  "chapter": 8,
+  "anchor_text": "The players all played at once without waiting for turns, quarrelling all the while, and fighting for the hedgehogs; and",
+  "current_pages": [
+   "8-0",
+   "8-10"
+  ],
+  "editions_here": [
+   "Tenniel/Theaker (1911)",
+   "Woodward (1913)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch08-painting-the-roses-red",
+  "chapter": 8,
+  "anchor_text": "A large rose-tree stood near the entrance of the garden: the roses growing on it were white, but there were three garden",
+  "current_pages": [
+   "8-1",
+   "8-2",
+   "8-4",
+   "8-8"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Walker (1907)",
+   "Hudson (1922)",
+   "Gutmann (1933)"
+  ],
+  "n_editions": 4
+ },
+ {
+  "entry_point": "ch08-the-cheshire-cats-head",
+  "chapter": 8,
+  "anchor_text": "“It’s a friend of mine—a Cheshire Cat,”",
+  "current_pages": [
+   "8-13",
+   "8-15",
+   "8-17"
+  ],
+  "editions_here": [
+   "Le Fanu (1910)",
+   "Woodward (1913)",
+   "Hudson (1922)"
+  ],
+  "n_editions": 3
+ },
+ {
+  "entry_point": "ch08-the-royal-procession",
+  "chapter": 8,
+  "anchor_text": "First came ten soldiers carrying clubs; these were all shaped like the three gardeners, oblong and flat, with their hand",
+  "current_pages": [
+   "8-3",
+   "8-5",
+   "8-6",
+   "8-7"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Rackham (1907)",
+   "Tenniel/Theaker (1911)",
+   "Hudson (1922)"
+  ],
+  "n_editions": 4
+ },
+ {
+  "entry_point": "ch08-croquet-with-flamingos",
+  "chapter": 8,
+  "anchor_text": "The chief difficulty Alice found at first was in managing her flamingo: she succeeded in getting its body tucked away, c",
+  "current_pages": [
+   "8-9",
+   "8-11"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Tenniel/Theaker (1911)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "chapter-09-the-mock-turtles-story",
+  "chapter": 9,
+  "anchor_text": "",
+  "current_pages": [
+   "9-0"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch09-the-mock-turtles-school",
+  "chapter": 9,
+  "anchor_text": "“We had the best of educations—in fact, we went to school every day—”",
+  "current_pages": [
+   "9-12",
+   "9-13",
+   "9-15"
+  ],
+  "editions_here": [
+   "Walker (1907)",
+   "Tenniel/Theaker (1911)",
+   "Hudson (1922)"
+  ],
+  "n_editions": 3
+ },
+ {
+  "entry_point": "ch09-the-duchess-and-her-morals",
+  "chapter": 9,
+  "anchor_text": "“You’re thinking about something, my dear, and that makes you forget to talk.",
+  "current_pages": [
+   "9-2",
+   "9-5"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Hudson (1922)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch09-meeting-the-gryphon",
+  "chapter": 9,
+  "anchor_text": "The other guests had taken advantage of the Queen’s absence, and were resting in the shade: however, the moment they saw",
+  "current_pages": [
+   "9-7",
+   "9-9",
+   "9-10"
+  ],
+  "editions_here": [
+   "Rackham (1907)",
+   "Le Fanu (1910)",
+   "Gutmann (1933)"
+  ],
+  "n_editions": 3
+ },
+ {
+  "entry_point": "chapter-10-the-lobster-quadrille",
+  "chapter": 10,
+  "anchor_text": "",
+  "current_pages": [
+   "10-0"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch10-the-lobster-and-the-owl",
+  "chapter": 10,
+  "anchor_text": "“Go on with the next verse,”",
+  "current_pages": [
+   "10-11"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch10-beautiful-soup",
+  "chapter": 10,
+  "anchor_text": "",
+  "current_pages": [
+   "10-14"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch10-the-lobster-quadrille",
+  "chapter": 10,
+  "anchor_text": "“Thank you, it’s a very interesting dance to watch,”",
+  "current_pages": [
+   "10-5"
+  ],
+  "editions_here": [
+   "Rountree (1928)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "chapter-11-who-stole-the-tarts",
+  "chapter": 11,
+  "anchor_text": "",
+  "current_pages": [
+   "11-0"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch11-the-cooks-evidence",
+  "chapter": 11,
+  "anchor_text": "",
+  "current_pages": [
+   "11-12"
+  ],
+  "editions_here": [
+   "Le Fanu (1910)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch11-the-court-assembles",
+  "chapter": 11,
+  "anchor_text": "The judge, by the way, was the King; and as he wore his crown over the wig, (look at the frontispiece if you want to see",
+  "current_pages": [
+   "11-2",
+   "11-4"
+  ],
+  "editions_here": [
+   "Rackham (1907)",
+   "Walker (1907)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch11-the-hatters-evidence",
+  "chapter": 11,
+  "anchor_text": "“I’m a poor man, your Majesty,”",
+  "current_pages": [
+   "11-8"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "chapter-12-alices-evidence",
+  "chapter": 12,
+  "anchor_text": "",
+  "current_pages": [
+   "12-0"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch12-waking-up",
+  "chapter": 12,
+  "anchor_text": "So she sat on, with closed eyes, and half believed herself in Wonderland, though she knew she had but to open them again",
+  "current_pages": [
+   "12-13"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch12-alice-tips-the-jury",
+  "chapter": 12,
+  "anchor_text": "Alice looked at the jury-box, and saw that, in her haste, she had put the Lizard in head downwards, and the poor little ",
+  "current_pages": [
+   "12-2",
+   "12-3"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Tenniel/Theaker (1911)"
+  ],
+  "n_editions": 2
+ },
+ {
+  "entry_point": "ch12-the-mysterious-letter",
+  "chapter": 12,
+  "anchor_text": "“That proves his guilt,”",
+  "current_pages": [
+   "12-6"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 1
+ },
+ {
+  "entry_point": "ch12-sentence-first",
+  "chapter": 12,
+  "anchor_text": "“If there’s no meaning in it,”",
+  "current_pages": [
+   "12-8",
+   "12-9",
+   "12-10"
+  ],
+  "editions_here": [
+   "Tenniel (colorized) (1865)",
+   "Rackham (1907)",
+   "Hudson (1922)"
+  ],
+  "n_editions": 3
+ },
+ {
+  "entry_point": "generated",
+  "chapter": 99,
+  "anchor_text": "Alice opened the door and found that it led into a small passage, not much larger than a rat-hole: she knelt down and lo",
+  "current_pages": [
+   "0-0",
+   "1-8",
+   "5-9",
+   "6-7",
+   "6-14",
+   "8-12",
+   "8-14"
+  ],
+  "editions_here": [
+   "AI (2026)",
+   "AI (2026)",
+   "AI (2026)",
+   "AI (2026)",
+   "AI (2026)",
+   "AI (2026)",
+   "AI (2026)"
+  ],
+  "n_editions": 7
+ },
+ {
+  "entry_point": "manuscript-under-ground",
+  "chapter": 99,
+  "anchor_text": "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice s",
+  "current_pages": [
+   "1-1",
+   "1-5",
+   "1-7",
+   "1-10",
+   "2-0",
+   "2-7",
+   "2-9",
+   "3-2",
+   "3-6",
+   "3-9",
+   "4-8",
+   "5-6",
+   "5-8"
+  ],
+  "editions_here": [
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)",
+   "Manuscript (Carroll) (1864)"
+  ],
+  "n_editions": 13
+ },
+ {
+  "entry_point": "alice-liddell-photos",
+  "chapter": 99,
+  "anchor_text": "She generally gave herself very good advice, (though she very seldom followed it), and sometimes she scolded herself so ",
+  "current_pages": [
+   "1-12",
+   "3-10",
+   "4-16",
+   "5-12",
+   "6-12",
+   "7-12",
+   "9-6",
+   "10-7",
+   "11-7",
+   "12-7",
+   "12-11"
+  ],
+  "editions_here": [
+   "Photograph (1860)",
+   "Photograph (1860)",
+   "Photograph (1860)",
+   "Photograph (1860)",
+   "Photograph (1860)",
+   "Photograph (1860)",
+   "Photograph (1860)",
+   "Photograph (1860)",
+   "Photograph (1860)",
+   "Photograph (1860)",
+   "Photograph (1860)"
+  ],
+  "n_editions": 11
+ },
+ {
+  "entry_point": "flow-image-gen",
+  "chapter": 99,
+  "anchor_text": "(Rackham/Tenniel style) — Nine feet tall, filling the room 📝 41 Alice’s Right Foot, Esq., Hearthrug, near the Fender, (w",
+  "current_pages": [
+   "2-2"
+  ],
+  "editions_here": [
+   "AI (2026)"
+  ],
+  "n_editions": 1
+ }
+]

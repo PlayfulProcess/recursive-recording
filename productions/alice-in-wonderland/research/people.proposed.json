@@ -1,0 +1,340 @@
+{
+  "_note": "PROPOSED corrected manifest (research/people.proposed.json). Web-verified June 2026. See research/CORRECTIONS.md and research/sources.bib. Originals in data/people.json left untouched. Added: edmund-evans and publisher/firm stubs.",
+  "people": [
+    {
+      "id": "lewis-carroll",
+      "name": "Lewis Carroll (Charles Lutwidge Dodgson)",
+      "role_group": "author",
+      "lifespan": "1832–1898",
+      "roles": [
+        "author",
+        "self-illustrator (manuscript)",
+        "photographer",
+        "mathematician"
+      ],
+      "made": [
+        "under-ground-1864"
+      ],
+      "confidence": "high",
+      "note": "27 Jan 1832 – 14 Jan 1898."
+    },
+    {
+      "id": "alice-liddell",
+      "name": "Alice Liddell (later Hargreaves)",
+      "role_group": "muse",
+      "lifespan": "1852–1934",
+      "roles": [
+        "dedicatee",
+        "muse",
+        "Carroll photographic subject"
+      ],
+      "made": [],
+      "confidence": "high",
+      "note": "4 May 1852 – 16 Nov 1934."
+    },
+    {
+      "id": "john-tenniel",
+      "name": "Sir John Tenniel",
+      "role_group": "illustrator",
+      "lifespan": "1820–1914",
+      "roles": [
+        "illustrator",
+        "Punch cartoonist"
+      ],
+      "made": [
+        "tenniel-1865",
+        "nursery-1890",
+        "theaker-1911"
+      ],
+      "confidence": "high",
+      "note": "42 Wonderland illustrations engraved by the Dalziel Brothers; knighted 1893."
+    },
+    {
+      "id": "macmillan",
+      "name": "Macmillan & Co. (Alexander Macmillan)",
+      "role_group": "publisher",
+      "lifespan": "firm est. 1843; A. Macmillan 1818–1896",
+      "roles": [
+        "publisher"
+      ],
+      "published": [
+        "tenniel-1865",
+        "nursery-1890",
+        "theaker-1911"
+      ],
+      "confidence": "high",
+      "note": "Founded 1843 by Daniel & Alexander Macmillan."
+    },
+    {
+      "id": "e-gertrude-thomson",
+      "name": "Emily Gertrude Thomson",
+      "role_group": "colorist",
+      "lifespan": "1850–1929",
+      "roles": [
+        "artist",
+        "Carroll associate",
+        "cover designer/colorist"
+      ],
+      "made": [
+        "nursery-1890"
+      ],
+      "confidence": "high",
+      "note": "CORRECTED: designed & coloured the COVER of The Nursery 'Alice' only — not the interior plates."
+    },
+    {
+      "id": "edmund-evans",
+      "name": "Edmund Evans",
+      "role_group": "colorist",
+      "lifespan": "1826–1905",
+      "roles": [
+        "colour wood-engraver",
+        "colour printer"
+      ],
+      "made": [
+        "nursery-1890"
+      ],
+      "confidence": "high",
+      "note": "ADDED. Engraved & colour-printed The Nursery 'Alice' from Tenniel's proofs."
+    },
+    {
+      "id": "arthur-rackham",
+      "name": "Arthur Rackham",
+      "role_group": "illustrator",
+      "lifespan": "1867–1939",
+      "roles": [
+        "illustrator"
+      ],
+      "made": [
+        "rackham-1907"
+      ],
+      "confidence": "high",
+      "note": "1907 Heinemann Alice, 13 colour plates."
+    },
+    {
+      "id": "heinemann",
+      "name": "William Heinemann",
+      "role_group": "publisher",
+      "lifespan": "firm est. 1890; W. Heinemann 1863–1920",
+      "roles": [
+        "publisher"
+      ],
+      "published": [
+        "rackham-1907"
+      ],
+      "confidence": "high",
+      "note": "CORRECTED confidence medium→high."
+    },
+    {
+      "id": "william-h-walker",
+      "name": "W. H. Walker",
+      "role_group": "illustrator",
+      "lifespan": "unknown / disputed",
+      "roles": [
+        "illustrator"
+      ],
+      "made": [
+        "walker-1907"
+      ],
+      "confidence": "low",
+      "note": "Identity disputed; most likely American cartoonist W. H. Walker (1871–1938), conflated with architect W. H. Romaine-Walker (1854–1940)."
+    },
+    {
+      "id": "brinsley-le-fanu",
+      "name": "George Brinsley Sheridan Le Fanu",
+      "role_group": "illustrator",
+      "lifespan": "1854/1855–1929",
+      "roles": [
+        "illustrator"
+      ],
+      "made": [
+        "le-fanu-1910"
+      ],
+      "confidence": "medium",
+      "note": "Irish; son of J. Sheridan Le Fanu. Birth year unsettled (1854/1855); death 1929 firm."
+    },
+    {
+      "id": "harry-theaker",
+      "name": "Harry George Theaker",
+      "role_group": "colorist",
+      "lifespan": "1873–1954",
+      "roles": [
+        "illustrator",
+        "colorist",
+        "educator"
+      ],
+      "made": [
+        "theaker-1911"
+      ],
+      "confidence": "high",
+      "note": "CORRECTED confidence low→high."
+    },
+    {
+      "id": "emily-overnell",
+      "name": "\"Emily Overnell\" (unverified)",
+      "role_group": "illustrator",
+      "lifespan": "unknown",
+      "roles": [
+        "illustrator"
+      ],
+      "made": [
+        "overnell-1912"
+      ],
+      "confidence": "low",
+      "note": "Identity unverified — name from a frontispiece signature; no biographical record. Not a confirmed pseudonym."
+    },
+    {
+      "id": "alice-b-woodward",
+      "name": "Alice Bolingbroke Woodward",
+      "role_group": "illustrator",
+      "lifespan": "1862–1951",
+      "roles": [
+        "illustrator"
+      ],
+      "made": [
+        "woodward-1913"
+      ],
+      "confidence": "high",
+      "note": "CORRECTED confidence low→high."
+    },
+    {
+      "id": "gwynedd-hudson",
+      "name": "Gwynedd M. Hudson",
+      "role_group": "illustrator",
+      "lifespan": "c.1882–1935",
+      "roles": [
+        "illustrator"
+      ],
+      "made": [
+        "hudson-1922"
+      ],
+      "confidence": "low",
+      "note": "Lifespan uncertain; do NOT use '1909–1935'. British."
+    },
+    {
+      "id": "harry-rountree",
+      "name": "Harry Rountree",
+      "role_group": "illustrator",
+      "lifespan": "1878–1950",
+      "roles": [
+        "illustrator"
+      ],
+      "made": [
+        "rountree-1928"
+      ],
+      "confidence": "high",
+      "note": "NZ-born. Also a 1908 Thomas Nelson Alice. CORRECTED confidence low→high."
+    },
+    {
+      "id": "bessie-pease-gutmann",
+      "name": "Bessie Pease Gutmann",
+      "role_group": "illustrator",
+      "lifespan": "1876–1960",
+      "roles": [
+        "illustrator"
+      ],
+      "made": [
+        "gutmann-1933"
+      ],
+      "confidence": "high",
+      "note": "American. Her Alice = 1907 Dodge (manifest's 1933 is a later Coker reissue). CORRECTED confidence low→high."
+    },
+    {
+      "id": "john-lane",
+      "name": "John Lane / The Bodley Head",
+      "role_group": "publisher",
+      "lifespan": "firm est. 1887; John Lane 1854–1925",
+      "roles": [
+        "publisher"
+      ],
+      "published": [
+        "walker-1907"
+      ],
+      "confidence": "medium",
+      "note": "ADDED stub."
+    },
+    {
+      "id": "british-esperanto-association",
+      "name": "British Esperanto Association",
+      "role_group": "publisher",
+      "lifespan": "est. 1904",
+      "roles": [
+        "publisher"
+      ],
+      "published": [
+        "le-fanu-1910"
+      ],
+      "confidence": "medium",
+      "note": "ADDED stub."
+    },
+    {
+      "id": "everett",
+      "name": "Everett & Co.",
+      "role_group": "publisher",
+      "lifespan": "London, fl. early 1900s",
+      "roles": [
+        "publisher"
+      ],
+      "published": [
+        "overnell-1912"
+      ],
+      "confidence": "low",
+      "note": "ADDED stub."
+    },
+    {
+      "id": "g-bell",
+      "name": "G. Bell & Sons",
+      "role_group": "publisher",
+      "lifespan": "firm est. 1839",
+      "roles": [
+        "publisher"
+      ],
+      "published": [
+        "woodward-1913"
+      ],
+      "confidence": "high",
+      "note": "ADDED stub. Queen's Treasure Series."
+    },
+    {
+      "id": "hodder-stoughton",
+      "name": "Hodder & Stoughton",
+      "role_group": "publisher",
+      "lifespan": "firm est. 1868",
+      "roles": [
+        "publisher"
+      ],
+      "published": [
+        "hudson-1922"
+      ],
+      "confidence": "high",
+      "note": "ADDED stub. Also a Boots the Chemist issue."
+    },
+    {
+      "id": "collins",
+      "name": "Collins (Clear-Type Press)",
+      "role_group": "publisher",
+      "lifespan": "firm est. 1819",
+      "roles": [
+        "publisher"
+      ],
+      "published": [
+        "rountree-1928"
+      ],
+      "confidence": "high",
+      "note": "ADDED stub."
+    },
+    {
+      "id": "dodge",
+      "name": "Dodge Publishing Co.",
+      "role_group": "publisher",
+      "lifespan": "New York, fl. 1890s–1920s",
+      "roles": [
+        "publisher"
+      ],
+      "published": [
+        "gutmann-1933"
+      ],
+      "confidence": "high",
+      "note": "ADDED stub."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alice in Wonderland — The Illustrated Editions</title>
+<style>
+  :root { --bg:#15120e; --panel:#211c16; --ink:#efe7d8; --muted:#a99e88; --line:#352d22; --accent:#c9912f; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:var(--bg); color:var(--ink); font-family:Georgia, "Times New Roman", serif; }
+  header { padding:28px 22px 14px; border-bottom:1px solid var(--line); }
+  header h1 { margin:0; font-size:26px; font-weight:700; letter-spacing:.3px; }
+  header p { margin:8px 0 0; color:var(--muted); max-width:760px; line-height:1.5; }
+  header .nav { margin-top:14px; font-size:14px; }
+  header .nav a { color:var(--accent); text-decoration:none; margin-right:18px; }
+  main { padding:22px; max-width:1100px; margin:0 auto; }
+  h2 { font-size:18px; border-bottom:1px solid var(--line); padding-bottom:6px; margin:30px 0 14px; }
+  .timeline { display:flex; flex-direction:column; gap:10px; }
+  .ed { display:flex; gap:14px; align-items:baseline; padding:10px 12px; background:var(--panel); border:1px solid var(--line); border-radius:7px; }
+  .ed .yr { font-size:20px; font-weight:700; color:var(--accent); min-width:64px; }
+  .ed .body { flex:1; }
+  .ed .ttl { font-size:15px; }
+  .ed .meta { font-size:13px; color:var(--muted); margin-top:3px; }
+  .ed .lo { color:#b06a3a; font-size:11px; border:1px solid #5a3a22; border-radius:4px; padding:1px 5px; margin-left:6px; }
+  .people { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:10px; }
+  .p { background:var(--panel); border:1px solid var(--line); border-radius:7px; padding:10px 12px; }
+  .p .nm { font-size:14px; font-weight:700; }
+  .p .rl { font-size:12px; color:var(--muted); margin-top:2px; }
+  .p .md { font-size:12px; color:var(--accent); margin-top:5px; }
+  footer { padding:24px 22px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Alice in Wonderland — The Illustrated Editions</h1>
+  <p>Lewis Carroll's <i>Alice</i> has been reillustrated by dozens of artists since 1864. This is a
+  map of <b>who drew and published which edition, when, and how they relate</b> — and the people behind them.</p>
+  <div class="nav"><a href="genealogy.html">⛓ Genealogy graph</a><a href="#editions">Editions</a><a href="#people">People</a></div>
+</header>
+<main>
+  <section id="editions"><h2>Editions — a timeline</h2><div class="timeline" id="timeline">Loading…</div></section>
+  <section id="people"><h2>The people behind them</h2><div class="people" id="peopleList">Loading…</div></section>
+</main>
+<footer>Data-driven from <code>data/editions.json</code> + <code>data/people.json</code>. AI-assisted; entries marked <span style="color:#b06a3a">verify</span> need web-checking. Companion to the audiobook reader (recursive-kids-stories-club). Modeled on recursive-tarot.</footer>
+<script>
+(async function(){
+  const [eds, ppl] = await Promise.all([
+    fetch('data/editions.json').then(r=>r.json()),
+    fetch('data/people.json').then(r=>r.json())
+  ]);
+  const pById = {}; ppl.people.forEach(p=>pById[p.id]=p);
+  const tl = document.getElementById('timeline'); tl.innerHTML='';
+  eds.editions.slice().sort((a,b)=>a.year-b.year).forEach(e=>{
+    const ill = pById[e.illustrator]; const pub = e.publisher?pById[e.publisher]:null;
+    const lo = e.confidence==='low' ? '<span class="lo">verify</span>' : '';
+    const div = document.createElement('div'); div.className='ed';
+    div.innerHTML = `<div class="yr">${e.year}</div><div class="body"><div class="ttl">${e.title}${lo}</div>
+      <div class="meta">${e.kind||''} · illustrator: <b>${ill?ill.name:e.illustrator}</b>${pub?' · publisher: '+pub.name:''}${e.colorist?' · color: '+(pById[e.colorist]?pById[e.colorist].name:e.colorist):''}</div>
+      ${e.note?`<div class="meta" style="margin-top:5px">${e.note}</div>`:''}</div>`;
+    tl.appendChild(div);
+  });
+  const pl = document.getElementById('peopleList'); pl.innerHTML='';
+  ppl.people.forEach(p=>{
+    const made = (p.made||[]).concat(p.published||[]);
+    const div = document.createElement('div'); div.className='p';
+    div.innerHTML = `<div class="nm">${p.name}</div><div class="rl">${p.role_group} · ${p.lifespan||'?'}</div>
+      ${made.length?`<div class="md">${made.join(', ')}</div>`:''}`;
+    pl.appendChild(div);
+  });
+})();
+</script>
+</body>
+</html>

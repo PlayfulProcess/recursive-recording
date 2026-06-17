@@ -1,0 +1,177 @@
+{
+  "_note": "PROPOSED corrected manifest (research/editions.proposed.json). Web-verified June 2026. See research/CORRECTIONS.md for every change and research/sources.bib for citations. Originals in data/editions.json left untouched.",
+  "editions": [
+    {
+      "id": "under-ground-1864",
+      "title": "Alice's Adventures Under Ground",
+      "year": 1864,
+      "illustrator": "lewis-carroll",
+      "publisher": null,
+      "derives_from": [],
+      "kind": "manuscript",
+      "confidence": "high",
+      "note": "Carroll's handwritten, self-illustrated manuscript (37 drawings), gifted to Alice Liddell 1864. BL Add MS 46700; facsimile = Gutenberg #19002.",
+      "r2_folder": "manuscript-under-ground"
+    },
+    {
+      "id": "tenniel-1865",
+      "title": "Alice's Adventures in Wonderland (first edition)",
+      "year": 1865,
+      "illustrator": "john-tenniel",
+      "publisher": "macmillan",
+      "derives_from": [
+        "under-ground-1864"
+      ],
+      "kind": "first-edition",
+      "confidence": "high",
+      "note": "42 Tenniel illustrations engraved by the Dalziel Brothers, Macmillan. 1865 printing suppressed over quality; published edition dated 1866; suppressed sheets sold to Appleton, NY.",
+      "r2_folder": "ch*/*tenniel*"
+    },
+    {
+      "id": "nursery-1890",
+      "title": "The Nursery Alice (colorized Tenniel)",
+      "year": 1890,
+      "illustrator": "john-tenniel",
+      "colorist": [
+        "john-tenniel",
+        "edmund-evans"
+      ],
+      "cover_artist": "e-gertrude-thomson",
+      "publisher": "macmillan",
+      "derives_from": [
+        "tenniel-1865"
+      ],
+      "kind": "colorized",
+      "confidence": "high",
+      "note": "20 Tenniel plates enlarged & coloured (Tenniel-supervised), engraved/colour-printed by Edmund Evans. Cover designed & coloured by E. Gertrude Thomson. Printed 1889, issued 1890. CORRECTED from earlier 'colorist: e-gertrude-thomson'.",
+      "r2_folder": "*john-tenniel-colorized-e-g-thomson-1890*"
+    },
+    {
+      "id": "walker-1907",
+      "title": "Alice — illustrated by W. H. Walker",
+      "year": 1907,
+      "illustrator": "william-h-walker",
+      "publisher": "john-lane",
+      "derives_from": [
+        "tenniel-1865"
+      ],
+      "kind": "reillustration",
+      "confidence": "medium",
+      "note": "John Lane / The Bodley Head, 8 colour plates. Illustrator identity disputed (see people/william-h-walker.md).",
+      "r2_folder": "*william-h-walker-1907*"
+    },
+    {
+      "id": "rackham-1907",
+      "title": "Alice — illustrated by Arthur Rackham",
+      "year": 1907,
+      "illustrator": "arthur-rackham",
+      "publisher": "heinemann",
+      "derives_from": [
+        "tenniel-1865"
+      ],
+      "kind": "reillustration",
+      "confidence": "high",
+      "note": "Heinemann: 13 colour plates + line drawings. Gutenberg #28885.",
+      "r2_folder": "*arthur-rackham-1907*"
+    },
+    {
+      "id": "le-fanu-1910",
+      "title": "La Aventuroj de Alicio en Mirlando — illustrated by Brinsley Le Fanu",
+      "year": 1910,
+      "illustrator": "brinsley-le-fanu",
+      "publisher": "british-esperanto-association",
+      "derives_from": [
+        "tenniel-1865"
+      ],
+      "kind": "reillustration",
+      "confidence": "medium",
+      "note": "The ESPERANTO Alice, British Esperanto Association, 1910 (CORRECTED — not an English edition).",
+      "r2_folder": "*brinsley-le-fanu-1910*"
+    },
+    {
+      "id": "theaker-1911",
+      "title": "Alice — Tenniel re-colored by Harry Theaker",
+      "year": 1911,
+      "illustrator": "john-tenniel",
+      "colorist": "harry-theaker",
+      "publisher": "macmillan",
+      "derives_from": [
+        "tenniel-1865"
+      ],
+      "kind": "colorized",
+      "confidence": "high",
+      "note": "Macmillan commissioned Theaker (Tenniel-approved) to colour 16 Tenniel compositions; the blue dress becomes standard.",
+      "r2_folder": "*john-tenniel-harry-theaker-1911*"
+    },
+    {
+      "id": "overnell-1912",
+      "title": "Alice — \"Emily Overnell\"",
+      "year": 1912,
+      "illustrator": "emily-overnell",
+      "publisher": "everett",
+      "derives_from": [
+        "tenniel-1865"
+      ],
+      "kind": "reillustration",
+      "confidence": "low",
+      "note": "Everett & Co.; single frontispiece. Illustrator UNVERIFIED — name read from a signature, no biographical record. Not a confirmed pseudonym.",
+      "r2_folder": "*emily-overnell-1912*"
+    },
+    {
+      "id": "woodward-1913",
+      "title": "Alice — illustrated by Alice B. Woodward",
+      "year": 1913,
+      "illustrator": "alice-b-woodward",
+      "publisher": "g-bell",
+      "derives_from": [
+        "tenniel-1865"
+      ],
+      "kind": "reillustration",
+      "confidence": "high",
+      "note": "G. Bell & Sons, Queen's Treasure Series, 16 colour plates.",
+      "r2_folder": "*alice-b-woodward-1913*"
+    },
+    {
+      "id": "hudson-1922",
+      "title": "Alice — illustrated by Gwynedd Hudson",
+      "year": 1922,
+      "illustrator": "gwynedd-hudson",
+      "publisher": "hodder-stoughton",
+      "derives_from": [
+        "tenniel-1865"
+      ],
+      "kind": "reillustration",
+      "confidence": "high",
+      "note": "Hodder & Stoughton, 12 colour plates; also a Boots the Chemist issue. (Artist lifespan uncertain.)",
+      "r2_folder": "*gwynedd-hudson-1922*"
+    },
+    {
+      "id": "rountree-1928",
+      "title": "Alice in Wonderland & Through the Looking-Glass — illustrated by Harry Rountree",
+      "year": 1928,
+      "illustrator": "harry-rountree",
+      "publisher": "collins",
+      "derives_from": [
+        "tenniel-1865"
+      ],
+      "kind": "reillustration",
+      "confidence": "high",
+      "note": "Collins Clear-Type Press, combined edition. Rountree also did a 1908 Thomas Nelson Alice (NOT Nister).",
+      "r2_folder": "*harry-rountree-1928*"
+    },
+    {
+      "id": "gutmann-1933",
+      "title": "Alice — illustrated by Bessie Pease Gutmann",
+      "year": 1907,
+      "illustrator": "bessie-pease-gutmann",
+      "publisher": "dodge",
+      "derives_from": [
+        "tenniel-1865"
+      ],
+      "kind": "reillustration",
+      "confidence": "high",
+      "note": "CORRECTED: first published 1907 by Dodge Publishing Co., NY. The '1933' was a later J. Coker & Co. (London) reissue. Consider renaming id to gutmann-1907.",
+      "r2_folder": "*bessie-pease-gutmann-1933*"
+    }
+  ]
+}
