@@ -1,0 +1,27 @@
+{
+  "_note": "Illustrated editions of Alice's Adventures in Wonderland (and its 1864 manuscript ur-text). AI-assisted; biographical/edition details marked confidence:low must be web-verified before publishing. r2_folder = prefix under https://pub-71ebbc217e6247ecacb85126a6616699.r2.dev/grammar-illustrations/alice-in-wonderland/ where that edition's plates live.",
+  "editions": [
+    { "id": "under-ground-1864", "title": "Alice's Adventures Under Ground", "year": 1864, "illustrator": "lewis-carroll", "publisher": null, "derives_from": [], "kind": "manuscript", "confidence": "high",
+      "note": "Carroll's own handwritten, self-illustrated manuscript (~37 drawings), gifted to Alice Liddell. The ur-text that became Wonderland.", "r2_folder": "manuscript-under-ground" },
+    { "id": "tenniel-1865", "title": "Alice's Adventures in Wonderland (first edition)", "year": 1865, "illustrator": "john-tenniel", "publisher": "macmillan", "derives_from": ["under-ground-1864"], "kind": "first-edition", "confidence": "high",
+      "note": "The canonical first edition: 42 wood-engraved Tenniel illustrations, Macmillan. 1865 print recalled over quality; 1866 dated reissue. Carroll directed Tenniel closely.", "r2_folder": "ch*/*tenniel*" },
+    { "id": "nursery-1890", "title": "The Nursery Alice (colorized Tenniel)", "year": 1890, "illustrator": "john-tenniel", "colorist": "e-gertrude-thomson", "publisher": "macmillan", "derives_from": ["tenniel-1865"], "kind": "colorized", "confidence": "low",
+      "note": "Colorized Tenniel plates for younger readers. VERIFY colorist/printing attribution (E. Gertrude Thomson association vs. printer Edmund Evans).", "r2_folder": "*john-tenniel-colorized-e-g-thomson-1890*" },
+    { "id": "walker-1907", "title": "Alice — illustrated by W. H. Walker", "year": 1907, "illustrator": "william-h-walker", "publisher": null, "derives_from": ["tenniel-1865"], "kind": "reillustration", "confidence": "low", "note": "Part of the 1907 wave after UK copyright lapsed.", "r2_folder": "*william-h-walker-1907*" },
+    { "id": "rackham-1907", "title": "Alice — illustrated by Arthur Rackham", "year": 1907, "illustrator": "arthur-rackham", "publisher": "heinemann", "derives_from": ["tenniel-1865"], "kind": "reillustration", "confidence": "high",
+      "note": "The most celebrated post-copyright edition (Heinemann): ~13 muted color plates + line drawings. Gutenberg #28885.", "r2_folder": "*arthur-rackham-1907*" },
+    { "id": "le-fanu-1910", "title": "Alice — illustrated by Brinsley Le Fanu", "year": 1910, "illustrator": "brinsley-le-fanu", "publisher": null, "derives_from": ["tenniel-1865"], "kind": "reillustration", "confidence": "low", "r2_folder": "*brinsley-le-fanu-1910*" },
+    { "id": "theaker-1911", "title": "Alice — Tenniel re-colored by Harry Theaker", "year": 1911, "illustrator": "john-tenniel", "colorist": "harry-theaker", "publisher": null, "derives_from": ["tenniel-1865"], "kind": "colorized", "confidence": "low", "note": "Tenniel compositions re-colored by Theaker (1911). VERIFY.", "r2_folder": "*john-tenniel-harry-theaker-1911*" },
+    { "id": "overnell-1912", "title": "Alice — illustrated by Emily Overnell", "year": 1912, "illustrator": "emily-overnell", "publisher": null, "derives_from": ["tenniel-1865"], "kind": "reillustration", "confidence": "low", "note": "VERIFY illustrator identity/spelling (Emily Overnell).", "r2_folder": "*emily-overnell-1912*" },
+    { "id": "woodward-1913", "title": "Alice — illustrated by Alice B. Woodward", "year": 1913, "illustrator": "alice-b-woodward", "publisher": null, "derives_from": ["tenniel-1865"], "kind": "reillustration", "confidence": "low", "r2_folder": "*alice-b-woodward-1913*" },
+    { "id": "hudson-1922", "title": "Alice — illustrated by Gwynedd Hudson", "year": 1922, "illustrator": "gwynedd-hudson", "publisher": null, "derives_from": ["tenniel-1865"], "kind": "reillustration", "confidence": "low", "r2_folder": "*gwynedd-hudson-1922*" },
+    { "id": "rountree-1928", "title": "Alice — illustrated by Harry Rountree", "year": 1928, "illustrator": "harry-rountree", "publisher": null, "derives_from": ["tenniel-1865"], "kind": "reillustration", "confidence": "low", "r2_folder": "*harry-rountree-1928*" },
+    { "id": "gutmann-1933", "title": "Alice — illustrated by Bessie Pease Gutmann", "year": 1933, "illustrator": "bessie-pease-gutmann", "publisher": null, "derives_from": ["tenniel-1865"], "kind": "reillustration", "confidence": "low", "r2_folder": "*bessie-pease-gutmann-1933*" }
+  ],
+  "_key_relationships": [
+    "Carroll told the story to the Liddell sisters on a boat trip (4 July 1862); wrote it out as 'Under Ground' (1864) for Alice Liddell.",
+    "Macmillan published the expanded 'Wonderland' (1865) with Tenniel; Carroll paid/controlled production and famously micromanaged Tenniel.",
+    "UK copyright on the text lapsed in 1907 (Carroll d.1898) — triggering the 1907+ wave of new illustrated editions (Rackham, Walker, then Le Fanu, Woodward, Hudson, Rountree, Gutmann...).",
+    "Tenniel's 1865 designs remained the 'canonical' Alice that every later illustrator answered to."
+  ]
+}

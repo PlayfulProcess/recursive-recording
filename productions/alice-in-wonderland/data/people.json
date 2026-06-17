@@ -1,0 +1,26 @@
+{
+  "_note": "People behind the Alice editions: author, muse, illustrators, colorists, publishers. AI-assisted; lifespans/roles marked confidence:low MUST be web-verified before publishing. `made` lists edition ids; `role_group` clusters them for the genealogy graph.",
+  "people": [
+    { "id": "lewis-carroll", "name": "Lewis Carroll (Charles Lutwidge Dodgson)", "role_group": "author", "lifespan": "1832–1898", "roles": ["author", "self-illustrator (manuscript)", "photographer"], "made": ["under-ground-1864"], "confidence": "high",
+      "note": "Oxford mathematician; told the tale to the Liddell sisters (1862), wrote+drew 'Under Ground' (1864), expanded to Wonderland. Closely directed Tenniel." },
+    { "id": "alice-liddell", "name": "Alice Liddell (later Hargreaves)", "role_group": "muse", "lifespan": "1852–1934", "roles": ["dedicatee", "muse", "Carroll photographic subject"], "made": [], "confidence": "high",
+      "note": "Daughter of Dean Liddell; the child the story was told to and the manuscript gifted to." },
+    { "id": "john-tenniel", "name": "Sir John Tenniel", "role_group": "illustrator", "lifespan": "1820–1914", "roles": ["illustrator", "Punch cartoonist"], "made": ["tenniel-1865", "nursery-1890"], "confidence": "high",
+      "note": "Defined the canonical Alice in 42 wood-engravings (1865). Reluctant collaborator; Carroll micromanaged. Every later illustrator answers to him." },
+    { "id": "macmillan", "name": "Macmillan & Co. (Alexander Macmillan)", "role_group": "publisher", "lifespan": "firm est. 1843; A. Macmillan 1818–1896", "roles": ["publisher"], "published": ["tenniel-1865", "nursery-1890"], "confidence": "high",
+      "note": "Carroll's publisher; he funded/controlled production himself (commission model)." },
+    { "id": "e-gertrude-thomson", "name": "E. Gertrude Thomson", "role_group": "colorist", "lifespan": "1850–1929", "roles": ["artist", "Carroll associate", "colorist?"], "made": ["nursery-1890"], "confidence": "low",
+      "note": "VERIFY her exact role in the 1890 Nursery Alice coloring vs. printer Edmund Evans." },
+    { "id": "arthur-rackham", "name": "Arthur Rackham", "role_group": "illustrator", "lifespan": "1867–1939", "roles": ["illustrator"], "made": ["rackham-1907"], "confidence": "high",
+      "note": "Leading golden-age illustrator; first major post-copyright Alice (1907, Heinemann)." },
+    { "id": "heinemann", "name": "William Heinemann", "role_group": "publisher", "lifespan": "firm est. 1890", "roles": ["publisher"], "published": ["rackham-1907"], "confidence": "medium" },
+    { "id": "william-h-walker", "name": "William H. Walker", "role_group": "illustrator", "lifespan": "?", "roles": ["illustrator"], "made": ["walker-1907"], "confidence": "low", "note": "VERIFY identity/dates." },
+    { "id": "brinsley-le-fanu", "name": "Brinsley Le Fanu", "role_group": "illustrator", "lifespan": "1854–1929", "roles": ["illustrator"], "made": ["le-fanu-1910"], "confidence": "low", "note": "VERIFY dates (son of author J.S. Le Fanu?)." },
+    { "id": "harry-theaker", "name": "Harry G. Theaker", "role_group": "colorist", "lifespan": "1873–1954", "roles": ["illustrator", "colorist"], "made": ["theaker-1911"], "confidence": "low", "note": "Re-colored Tenniel (1911). VERIFY." },
+    { "id": "emily-overnell", "name": "Emily Overnell", "role_group": "illustrator", "lifespan": "?", "roles": ["illustrator"], "made": ["overnell-1912"], "confidence": "low", "note": "VERIFY identity/spelling — uncertain figure." },
+    { "id": "alice-b-woodward", "name": "Alice B. Woodward", "role_group": "illustrator", "lifespan": "1862–1951", "roles": ["illustrator"], "made": ["woodward-1913"], "confidence": "low", "note": "VERIFY dates." },
+    { "id": "gwynedd-hudson", "name": "Gwynedd M. Hudson", "role_group": "illustrator", "lifespan": "fl. 1910s–1930s", "roles": ["illustrator"], "made": ["hudson-1922"], "confidence": "low", "note": "VERIFY dates." },
+    { "id": "harry-rountree", "name": "Harry Rountree", "role_group": "illustrator", "lifespan": "1878–1950", "roles": ["illustrator"], "made": ["rountree-1928"], "confidence": "low", "note": "VERIFY dates (NZ-born)." },
+    { "id": "bessie-pease-gutmann", "name": "Bessie Pease Gutmann", "role_group": "illustrator", "lifespan": "1876–1960", "roles": ["illustrator"], "made": ["gutmann-1933"], "confidence": "low", "note": "VERIFY dates (American)." }
+  ]
+}
