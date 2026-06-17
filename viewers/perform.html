@@ -143,8 +143,9 @@ function render(){
   // illustration — precomputed effective plate (book-order carry-forward)
   const img=it._effImg||it.image_url||'';
   if(img && plate.getAttribute('src')!==img){ plate.src=img; plate.alt=it.name||''; }
-  // badge + page label
-  const cat=it.category||''; $('badge').style.display=cat?'':'none'; $('badge').textContent=cat;
+  // badge = source credit (edition/artist/year) when present, else category.
+  // Rendered into the corner so it's baked into any recording (attribution travels).
+  const credit=(it.metadata&&it.metadata.credit)||it.category||''; $('badge').style.display=credit?'':'none'; $('badge').textContent=credit;
   const pl=(it.metadata&&it.metadata.page_number!=null)?('No. '+it.metadata.page_number):'';
   $('pagelbl').style.display=pl?'':'none'; $('pagelbl').textContent=pl;
   // karaoke band — current sentence, per-word highlight
