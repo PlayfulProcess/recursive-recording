@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>recursive-recording</title>
+<style>
+  :root{ --bg:#0f0d17; --panel:#1a1726; --ink:#ece8f5; --muted:#9b94b3; --accent:#d4af37; --line:#2a2440; }
+  *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 80px}
+  h1{font-size:26px;margin:0 0 6px} .sub{color:var(--muted);margin:0 0 28px}
+  a{color:var(--accent)}
+  .card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;margin:12px 0;text-decoration:none;color:var(--ink);transition:border-color .15s}
+  .card:hover{border-color:var(--accent)}
+  .card h2{margin:0 0 4px;font-size:18px} .card p{margin:0;color:var(--muted);font-size:14px}
+  .meta{margin-top:30px;color:var(--muted);font-size:13px}
+  .meta code{background:#000;padding:2px 6px;border-radius:5px;color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>recursive-recording</h1>
+  <p class="sub">Open framework for narrated, illustrated <em>performances</em> — data, not video. The viewer is the player.</p>
+
+  <a class="card" href="viewers/perform.html?src=../productions/alice-in-wonderland/alice-illustration-stream.json">
+    <h2>🎞 Alice — Illustrated Editions ▸</h2>
+    <p>Every edition's plate (1864–1933) at its scene, ≥3s, staggered, credited — over public-domain LibriVox karaoke.</p>
+  </a>
+  <a class="card" href="viewers/perform.html">
+    <h2>📖 Alice — Full-Prose Reader ▸</h2>
+    <p>The complete text, word-by-word karaoke synced to the LibriVox narration. Tap <strong>AA</strong> for ALL-CAPS.</p>
+  </a>
+  <a class="card" href="viewers/sequence.html">
+    <h2>▶ Sequence player ▸</h2>
+    <p>A card/clip playlist performance (the Passarinho demo).</p>
+  </a>
+
+  <p class="meta">
+    Format: <a href="GRAMMAR_FORMAT.md">GRAMMAR_FORMAT.md</a> ·
+    <a href="https://github.com/PlayfulProcess/recursive-recording">source on GitHub</a><br>
+    Code <code>AGPL-3.0</code> · content <code>CC-BY-SA-4.0</code> · public-domain sources, AI disclosed.
+  </p>
+</div>
+</body>
+</html>
