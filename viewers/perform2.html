@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sequence v2 · Recursive Tarot</title>
+<!--
+  sequence-v2.html — a FULLER backend-free port of recursive-eco's apps/landing/view.html
+  playback engine, for A/B comparison against viewers/sequence.html (v1).
+
+  v2 ports the parts of view.html that v1 left out, to test whether the richer engine is
+  better as the canonical viewer:
+    • controls:0 + disablekb:1 clean embed with our OWN control bar (v1 used YouTube controls)
+    • card_hold_sec dwell — DEFAULT 10s (matches view.html; v1 used 8)
+    • YouTube segment crop performance.start_sec → end_sec (250ms poll → advance)
+    • ENDED / auto-advance, with an end-of-clip Replay/Next overlay
+    • performance.video_visible:false → cover image over still-audible audio
+    • performance.overlays[] → timed text/image captions positioned by x_pct/y_pct/width_pct
+    • performance.background_audio → a second hidden YT player (volume, loop-in-window, synced)
+    • full convertUnifiedToLegacy() normalization (cards, video, image items + sections)
+    • keyboard: ←/→ prev/next · Space play/pause · J/L seek ±10s · Home restart · F fullscreen
+    • video progress bar (seekable)
+
+  Dependency-free. The ONLY external script is YouTube's IFrame API.
+  Everything recursive-eco-specific was stripped — see the "REMOVED ECO DEPENDENCIES" note
+  at the bottom of this file. Load any program with ?src=<url>. See recording/docs/sequence-format.md.
+-->
+<style>
+  :root{ --bg:#0f0d17; --panel:#1a1726; --stage:#000; --ink:#ece8f5; --muted:#9b94b3; --accent:#d4af37; --line:#2a2440; }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#fbfaff; --panel:#fff; --ink:#241b3a; --muted:#6b6388; --accent:#8a5a00; --line:#e6e0f4; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);color-scheme:light dark;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:16px}
+  h1{font-size:18px;margin:.2em 0 .1em} h1 .sub{font-size:13px;font-weight:400;color:var(--muted)}
+  h1 .v2{display:inline-block;font-size:11px;font-weight:700;color:#1a1206;background:var(--accent);
+    border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+  .note{font-size:12px;color:var(--muted);margin:.2em 0 12px} .note a{color:var(--accent)}
+
+  .stage{position:relative;width:100%;aspect-ratio:16/9;background:var(--stage);border:1px solid var(--line);
+    border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  /* Title card */
+  .card-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:2rem;background-size:cover;background-position:center}
+  .card-face .ttl{color:#fff;font-size:clamp(1.6rem,5vw,3.4rem);font-weight:700;line-height:1.12;
+    white-space:pre-line;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+  .card-face .sub{color:rgba(255,255,255,.88);font-size:clamp(.95rem,2.5vw,1.4rem);margin-top:.85rem;
+    text-shadow:0 1px 10px rgba(0,0,0,.45)}
+  /* image item */
+  .img-face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#000}
+  .img-face img{max-width:100%;max-height:100%;object-fit:contain}
+  /* audio-only cover for video_visible:false */
+  .cover{position:absolute;inset:0;background:#000 center/cover;z-index:5;display:flex;align-items:center;justify-content:center}
+  .cover img{max-width:100%;max-height:100%;object-fit:contain}
+  /* overlay layer (timed captions) */
+  .ov-layer{position:absolute;inset:0;pointer-events:none;z-index:10}
+  /* end-of-clip overlay */
+  .endov{position:absolute;inset:0;z-index:20;display:none;flex-direction:column;align-items:center;justify-content:center;
+    gap:14px;background:rgba(0,0,0,.62);text-align:center;padding:1.5rem}
+  .endov b{color:#fff;font-size:clamp(1.1rem,3vw,1.7rem);font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+  .endov .row{display:flex;gap:10px}
+  .endov button{background:var(--accent);color:#1a1206;border:0;border-radius:8px;padding:9px 15px;font-weight:700;cursor:pointer;font-size:15px}
+  /* card-progress sliver */
+  .card-prog{position:absolute;left:0;bottom:0;height:4px;background:var(--accent);width:0;z-index:6;transition:width .2s linear}
+
+  /* video scrubber */
+  .scrub{display:none;align-items:center;gap:10px;margin-top:10px;font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted)}
+  .scrub.on{display:flex}
+  .track{flex:1;height:6px;background:var(--line);border-radius:99px;cursor:pointer;position:relative}
+  .track .fill{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:99px;width:0}
+
+  .bar{display:flex;align-items:center;gap:10px;margin-top:12px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:10px 14px;flex-wrap:wrap}
+  .bar button{background:var(--accent);color:#1a1206;border:0;border-radius:8px;padding:8px 13px;font-size:15px;font-weight:700;cursor:pointer}
+  .bar button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:600;font-size:14px}
+  .bar button[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:1px}
+  .bar .pos{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);min-width:74px}
+  .bar .now{flex:1;min-width:120px;font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar .now b{color:var(--ink);font-weight:600}
+
+  .strip{display:flex;gap:6px;overflow-x:auto;margin-top:12px;padding-bottom:4px;scrollbar-width:thin}
+  .strip button{flex:0 0 auto;background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:8px;
+    padding:6px 10px;font-size:12px;cursor:pointer;max-width:170px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .strip button.seg{border-left:3px solid var(--accent)}
+  .strip button.on{border-color:var(--accent);color:var(--accent);font-weight:700;background:rgba(212,175,55,.08)}
+  #err{color:#e07a5f;padding:24px}
+  @media (prefers-reduced-motion: reduce){ .card-prog{transition:none} }
+  /* ── grafted: MP3-driven per-word karaoke band + source credit ── */
+  .kband{position:absolute;left:0;right:0;bottom:0;z-index:12;padding:18px 22px;text-align:center;
+    background:linear-gradient(0deg,rgba(0,0,0,.92) 12%,rgba(0,0,0,.55) 60%,transparent);pointer-events:none;display:none}
+  .kband.on{display:block}
+  .kline{font:italic 600 clamp(16px,2.6vw,30px)/1.4 "Iowan Old Style",Palatino,Georgia,serif;
+    color:rgba(255,255,255,.5);max-width:34ch;margin:0 auto;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+  .kband.caps .kline{font-style:normal;font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(18px,3vw,34px)}
+  .kline .w{transition:color .12s} .kline .w.spoken{color:rgba(255,255,255,.85)}
+  .kline .w.active{color:var(--accent);font-style:normal;text-shadow:0 0 16px rgba(212,175,55,.7)}
+  .credit{position:absolute;top:10px;left:10px;z-index:12;background:rgba(0,0,0,.55);color:#fff;font-size:11px;
+    letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;backdrop-filter:blur(4px);display:none}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <h1 id="title">Sequence <span class="v2">v2</span></h1>
+  <p class="note" id="note"></p>
+  <div id="err" style="display:none"></div>
+
+  <div class="stage" id="stage" aria-live="off">
+    <div id="surface" style="position:absolute;inset:0"></div>
+    <div class="credit" id="credit"></div>
+    <div class="kband" id="kband"><div class="kline" id="kline"></div></div>
+    <div class="card-prog" id="cardProg"></div>
+    <div class="endov" id="endov">
+      <b id="endovTitle">Clip complete</b>
+      <div class="row">
+        <button id="endReplay">↺ Replay</button>
+        <button id="endNext">Next ⏭</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audio" preload="auto"></audio>
+
+  <div class="scrub" id="scrub">
+    <span id="curTime">0:00</span>
+    <div class="track" id="track"><div class="fill" id="trackFill"></div></div>
+    <span id="durTime">0:00</span>
+  </div>
+
+  <div class="bar">
+    <button id="play" aria-label="Play or pause">▶ Play</button>
+    <button class="ghost" id="prev" aria-label="Previous item">⏮</button>
+    <button class="ghost" id="back10" aria-label="Back 10 seconds" title="Back 10s (J)">« 10</button>
+    <button class="ghost" id="fwd10" aria-label="Forward 10 seconds" title="Forward 10s (L)">10 »</button>
+    <button class="ghost" id="next" aria-label="Next item">⏭</button>
+    <button class="ghost" id="auto" aria-pressed="true" aria-label="Toggle continuous play" title="Continuous play">↻ Auto</button>
+    <button class="ghost" id="caps" aria-pressed="false" aria-label="ALL-CAPS karaoke" title="ALL-CAPS (c)">AA</button>
+    <button class="ghost" id="full" aria-label="Fullscreen" title="Fullscreen (F)">⛶</button>
+    <span class="pos" id="pos">1 / 1</span>
+    <span class="now" id="now"></span>
+  </div>
+  <div class="strip" id="strip" role="tablist" aria-label="Program items"></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const params=new URLSearchParams(location.search);
+const SRC=params.get('src')||'../productions/alice-in-wonderland/alice-illustration-stream.json';
+const NOCOOKIE=params.has('kiosk');   // kiosk → privacy host (the only URL-param behavior kept from view.html)
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+const CARD_HOLD_DEFAULT=10;            // view.html default (v1 uses 8)
+
+// ---- YouTube IFrame API bootstrap (single shared loader) ----
+let ytReady=false; const ytWaiters=[];
+window.onYouTubeIframeAPIReady=()=>{ ytReady=true; ytWaiters.splice(0).forEach(fn=>fn()); };
+(function(){ const s=document.createElement('script'); s.src='https://www.youtube.com/iframe_api'; document.head.appendChild(s); })();
+function whenYT(fn){ if(ytReady&&window.YT&&window.YT.Player) fn(); else ytWaiters.push(fn); }
+const YT_HOST=()=>NOCOOKIE?'https://www.youtube-nocookie.com':'https://www.youtube.com';
+
+// ---- normalize a unified grammar item → legacy shape (ported from view.html convertUnifiedToLegacy) ----
+function normalize(it, index){
+  const md=it.metadata||{}; const name=it.name||it.title||'';
+  // Card — detected by metadata.card_bg OR category:"card"
+  if(md.card_bg || it.category==='card'){
+    return { type:'card', title:name, card_bg:md.card_bg||'#15121f',
+      card_subtitle:md.card_subtitle||'', card_hold_sec:typeof md.card_hold_sec==='number'?md.card_hold_sec:CARD_HOLD_DEFAULT,
+      id:it.id, sort:(it.sort_order??it.position??index) };
+  }
+  // Video — youtube_video_id / item_type:video / video_url / direct video_id
+  const isVid=it.category==='segment'||md.item_type==='video'||md.youtube_video_id||md.video_url||it.video_id;
+  if(isVid){
+    let vid=md.youtube_video_id||it.video_id||'';
+    const url=md.video_url||md.youtube_url||it.url||'';
+    if(!vid&&url){ if(url.includes('youtu.be/')) vid=url.split('youtu.be/')[1].split(/[?&#]/)[0];
+      else if(url.includes('watch')) vid=new URLSearchParams(url.split('?')[1]||'').get('v')||''; }
+    return { type:'video', title:name, video_id:vid, channel:md.channel||it.creator||'',
+      thumbnail:it.image_url||md.thumbnail||it.thumbnail||'', performance:it.performance||{},
+      sections:it.sections, id:it.id, sort:(it.sort_order??it.position??index) };
+  }
+  // Image — fallback (still part of the unified format)
+  return { type:'image', title:name, image_url:it.image_url||md.image_url||'', metadata:md,
+    narration:(it.sections&&(it.sections.Narration||it.sections.Description))||it.narration||'',
+    performance:it.performance||{}, sections:it.sections, id:it.id, sort:(it.sort_order??it.position??index) };
+}
+
+let G=null, items=[], idx=0, player=null, playing=false, autoplay=true;
+let cardTimer=null, cardProgTimer=null, poll=null, progTimer=null;
+let bgPlayer=null, bgCfg=null;            // background_audio
+// ── grafted audio-karaoke mode state ──
+let audioMode=false, audioEl=null, scenes=[], crops=[], caps=false, lastKey='', curIdx=-1;
+const GAP=0.45, MAXW=14;
+
+(async function(){
+  try{
+    G=await (await fetch(SRC)).json();
+    const raw=(G.items||[]).slice();
+    items=raw.map(normalize).sort((a,b)=>(a.sort||0)-(b.sort||0)).filter(x=>x.type==='card'||x.type==='image'||x.video_id);
+    if(!items.length) throw new Error('No playable items in this sequence.');
+    $('title').innerHTML=esc(G.name||'Sequence')+' <span class="v2">v2</span> <span class="sub">— '+items.length+' parts</span>';
+    $('note').innerHTML=(G.description?esc(G.description)+' ':'')
+      +'Fuller recursive-eco engine: overlays, background audio, clean embed, J/L seek. '
+      +'<a href="../recording/docs/sequence-format.md">Format →</a> · <a href="sequence.html?src='+encodeURIComponent(SRC)+'">open in v1</a>';
+    audioMode = !!(G.metadata && G.metadata.audio);   // single-MP3 karaoke performance
+    buildStrip(); bind();
+    if(audioMode) initAudio(); else show(0);
+  }catch(e){ $('err').style.display='block'; $('err').textContent='Could not load the sequence: '+e.message; }
+})();
+
+function buildStrip(){
+  const s=$('strip'); s.innerHTML='';
+  items.forEach((it,i)=>{ const b=document.createElement('button');
+    b.className=it.type==='video'?'seg':''; b.textContent=(i+1)+'. '+(it.title||(it.type==='video'?'Clip':it.type==='image'?'Image':'Card'));
+    b.setAttribute('role','tab'); b.onclick=()=>{ if(audioMode){ const st=(items[i].performance||{}).start_sec; if(typeof st==='number'&&audioEl){ audioEl.currentTime=st; audioTick(); } else showAudio(i); } else show(i, playing); }; s.appendChild(b); });
+}
+
+function clearTimers(){
+  if(cardTimer){clearTimeout(cardTimer);cardTimer=null;}
+  if(cardProgTimer){clearInterval(cardProgTimer);cardProgTimer=null;}
+  if(poll){clearInterval(poll);poll=null;}
+  if(progTimer){clearInterval(progTimer);progTimer=null;}
+  $('cardProg').style.width='0';
+}
+function destroyPlayer(){ if(player){ try{player.destroy();}catch(_){ } player=null; } destroyBg(); }
+function destroyBg(){ if(bgPlayer){ try{bgPlayer.destroy();}catch(_){ } bgPlayer=null; } bgCfg=null;
+  const h=$('bg-audio-host'); if(h) h.innerHTML=''; }
+
+function show(i, autostart){
+  if(audioMode) return showAudio(i);
+  if(i<0||i>=items.length) return;
+  clearTimers(); destroyPlayer();
+  idx=i; const it=items[i];
+  $('endov').style.display='none';
+  $('pos').textContent=(i+1)+' / '+items.length;
+  $('now').innerHTML='<b>'+esc(it.title||'')+'</b>'+(it.type==='video'?' · '+segLabel(it):' · '+it.type);
+  $('scrub').classList.toggle('on', it.type==='video');
+  [...$('strip').children].forEach((b,k)=>b.classList.toggle('on',k===i));
+  if($('strip').children[i]) $('strip').children[i].scrollIntoView({block:'nearest',inline:'center'});
+
+  const surface=$('surface');
+  if(it.type==='card'){
+    surface.innerHTML='<div class="card-face" style="background:'+esc(it.card_bg)+'">'
+      +'<div class="ttl">'+esc(it.title)+'</div>'
+      +(it.card_subtitle?'<div class="sub">'+esc(it.card_subtitle)+'</div>':'')+'</div>';
+    if(playing||autostart) startCardHold(it);
+  } else if(it.type==='image'){
+    surface.innerHTML='<div class="img-face">'+(it.image_url?'<img src="'+esc(it.image_url)+'" alt="'+esc(it.title)+'">':'')+'</div>';
+    if(playing||autostart) startCardHold({card_hold_sec:CARD_HOLD_DEFAULT}); // images dwell like cards
+  } else {
+    surface.innerHTML='<div id="ytwrap" style="position:absolute;inset:0"><div id="ytslot" style="position:absolute;inset:0"></div></div>';
+    mountVideo(it, playing||autostart);
+  }
+}
+
+function startCardHold(it){
+  if(idx>=items.length-1) return;            // never auto-advance off the last item
+  const hold=((it.card_hold_sec||CARD_HOLD_DEFAULT))*1000;
+  const t0=Date.now();
+  cardProgTimer=setInterval(()=>{ $('cardProg').style.width=Math.min(100,(Date.now()-t0)/hold*100)+'%'; },200);
+  cardTimer=setTimeout(()=>{ goNext(); }, hold);
+}
+
+function segLabel(it){
+  const p=it.performance||{};
+  if(typeof p.start_sec==='number'&&typeof p.end_sec==='number'&&p.end_sec>p.start_sec)
+    return fmt(p.start_sec)+' → '+fmt(p.end_sec)+' · '+fmt(p.end_sec-p.start_sec);
+  return 'clip';
+}
+
+function mountVideo(it, autostart){
+  const p=it.performance||{};
+  whenYT(()=>{
+    if(items[idx]!==it) return;               // navigated away while waiting
+    player=new YT.Player('ytslot',{
+      host:YT_HOST(), videoId:it.video_id,
+      playerVars:{ rel:0, modestbranding:1, enablejsapi:1, controls:0, fs:0, iv_load_policy:3,
+                   disablekb:1, playsinline:1, start:Math.max(0,p.start_sec|0), autoplay:autostart?1:0 },
+      events:{
+        onReady:e=>{
+          try{ if(typeof p.volume==='number') e.target.setVolume(Math.round(Math.max(0,Math.min(1,p.volume))*100)); }catch(_){}
+          if(typeof p.start_sec==='number'&&p.start_sec>0){ try{e.target.seekTo(p.start_sec,true);}catch(_){ } }
+          mountBg(p.background_audio);
+          renderOverlay(it);
+          startPoll(it);
+          startProgress();
+          if(autostart){ try{e.target.playVideo();}catch(_){ } }
+        },
+        onStateChange:e=>{
+          syncBg(e.data);
+          if(e.data===YT.PlayerState.PLAYING){ playing=true; setPlayBtn(); }
+          else if(e.data===YT.PlayerState.PAUSED){ playing=false; setPlayBtn(); }
+          else if(e.data===YT.PlayerState.ENDED){
+            if(autoplay&&idx<items.length-1){ goNext(); }
+            else { showEndOverlay(it); }
+          }
+        }
+      }
+    });
+  });
+}
+
+// ---- background audio: a second hidden YT player (ported) ----
+function mountBg(bg){
+  destroyBg();
+  if(!bg||!bg.youtube_video_id||!/^[a-zA-Z0-9_-]{11}$/.test(bg.youtube_video_id)) return;
+  if(!window.YT||!window.YT.Player) return;
+  bgCfg=bg;
+  let host=$('bg-audio-host');
+  if(!host){ host=document.createElement('div'); host.id='bg-audio-host';
+    host.style.cssText='position:fixed;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;'; document.body.appendChild(host); }
+  host.innerHTML='<div id="bg-audio"></div>';
+  try{
+    bgPlayer=new YT.Player('bg-audio',{ host:YT_HOST(), videoId:bg.youtube_video_id,
+      playerVars:{ autoplay:1, controls:0, modestbranding:1, rel:0, playsinline:1, start:bg.start_sec||0 },
+      events:{ onReady:e=>{ try{ e.target.setVolume(Math.round(Math.max(0,Math.min(1,typeof bg.volume==='number'?bg.volume:0.3))*100));
+        if(bg.start_sec) e.target.seekTo(bg.start_sec,true); if(playing) e.target.playVideo(); }catch(_){ } },
+        onStateChange:e=>{ if(e.data===0&&bgCfg&&bgCfg.end_sec){ try{ e.target.seekTo(bgCfg.start_sec||0,true); e.target.playVideo(); }catch(_){ } } } } });
+  }catch(_){}
+}
+function syncBg(state){ if(!bgPlayer) return; try{ if(state===1) bgPlayer.playVideo(); else if(state===2||state===0) bgPlayer.pauseVideo(); }catch(_){ } }
+
+// ---- cover (video_visible:false) + overlay layer (ported) ----
+function renderOverlay(it){
+  const p=it.performance||{}; const wrap=$('ytwrap'); if(!wrap) return;
+  if(p.video_visible===false){
+    const url=p.cover_image_url||it.thumbnail||('https://i.ytimg.com/vi/'+it.video_id+'/hqdefault.jpg');
+    const cover=document.createElement('div'); cover.className='cover'; cover.id='perf-cover';
+    cover.innerHTML='<img src="'+esc(url)+'" alt="">'; wrap.appendChild(cover);
+  }
+  if(p.overlays&&p.overlays.length){
+    const layer=document.createElement('div'); layer.className='ov-layer'; layer.id='ov-layer'; wrap.appendChild(layer);
+  }
+}
+
+function startPoll(it){
+  const p=it.performance||{};
+  if(poll) clearInterval(poll);
+  poll=setInterval(()=>{
+    if(!player||!player.getCurrentTime) return;
+    let t=0; try{ t=player.getCurrentTime()||0; }catch(_){ return; }
+    // crop end → advance
+    if(typeof p.end_sec==='number'&&t>=p.end_sec){
+      if(idx<items.length-1) goNext(); else { try{player.pauseVideo();}catch(_){ } showEndOverlay(it); }
+      return;
+    }
+    // overlays
+    const layer=$('ov-layer');
+    if(layer&&p.overlays){
+      const vis=p.overlays.filter(o=>t>=o.start_sec&&t<o.end_sec);
+      const sig=vis.map(o=>o.start_sec+'-'+o.end_sec+'-'+o.content).join('|');
+      if(layer.dataset.sig!==sig){
+        layer.dataset.sig=sig;
+        layer.innerHTML=vis.map(o=>{
+          const st='position:absolute;left:'+o.x_pct+'%;top:'+o.y_pct+'%;width:'+o.width_pct+'%;';
+          if(o.kind==='image') return '<img src="'+esc(o.content)+'" alt="" style="'+st+'height:auto;">';
+          return '<div style="'+st+'color:#fff;font-size:clamp(14px,2vw,28px);font-weight:600;text-shadow:0 2px 4px rgba(0,0,0,.9);white-space:pre-wrap;line-height:1.3;">'+esc(o.content)+'</div>';
+        }).join('');
+      }
+    }
+    // bound bg audio within its window
+    if(bgPlayer&&bgCfg&&typeof bgCfg.end_sec==='number'){
+      try{ const bgt=bgPlayer.getCurrentTime()||0; if(bgt>=bgCfg.end_sec){ bgPlayer.seekTo(bgCfg.start_sec||0,true); bgPlayer.playVideo(); } }catch(_){ }
+    }
+  },250);
+}
+
+// ---- video progress bar ----
+function startProgress(){
+  if(progTimer) clearInterval(progTimer);
+  progTimer=setInterval(()=>{
+    if(!player||!player.getCurrentTime||!player.getDuration) return;
+    let t=0,d=0; try{ t=player.getCurrentTime()||0; d=player.getDuration()||0; }catch(_){ return; }
+    const p=items[idx].performance||{};
+    const lo=(typeof p.start_sec==='number')?p.start_sec:0;
+    const hi=(typeof p.end_sec==='number'&&p.end_sec>lo)?p.end_sec:d;
+    const span=Math.max(1,hi-lo);
+    $('trackFill').style.width=Math.min(100,Math.max(0,(t-lo)/span*100))+'%';
+    $('curTime').textContent=fmt(Math.max(0,t-lo)); $('durTime').textContent=fmt(span);
+  },250);
+}
+
+function showEndOverlay(it){ $('endovTitle').textContent=(it.title||'Clip')+' · complete'; $('endov').style.display='flex'; }
+
+function goNext(){ if(audioMode) return audioSeekScene(1); if(idx<items.length-1){ show(idx+1, autoplay||playing); } else { pause(); } }
+function goPrev(){ if(audioMode) return audioSeekScene(-1); if(idx>0) show(idx-1, playing); }
+function seekRel(d){ if(audioMode){ if(audioEl){ audioEl.currentTime=Math.max(0,(audioEl.currentTime||0)+d); audioTick(); } return; }
+  if(player&&player.getCurrentTime){ try{ const t=player.getCurrentTime()||0; player.seekTo(Math.max(0,t+d),true);}catch(_){ } } }
+
+function play(){
+  if(audioMode) return audioPlay();
+  playing=true; setPlayBtn(); $('endov').style.display='none';
+  const it=items[idx];
+  if(it.type==='card'||it.type==='image'){ clearTimers(); startCardHold(it); }
+  else if(player&&player.playVideo){ try{player.playVideo();}catch(_){ } }
+  else { show(idx, true); }
+}
+function pause(){
+  if(audioMode) return audioPause();
+  playing=false; setPlayBtn(); clearTimers();
+  if(player&&player.pauseVideo){ try{player.pauseVideo();}catch(_){ } }
+}
+function setPlayBtn(){ $('play').textContent=playing?'⏸ Pause':'▶ Play'; }
+
+function bind(){
+  $('play').onclick=()=>playing?pause():play();
+  $('prev').onclick=goPrev;
+  $('next').onclick=goNext;
+  $('back10').onclick=()=>seekRel(-10);
+  $('fwd10').onclick=()=>seekRel(10);
+  $('auto').onclick=()=>{ autoplay=!autoplay; $('auto').setAttribute('aria-pressed',String(autoplay)); };
+  $('caps').onclick=toggleCaps;
+  $('full').onclick=()=>{ const el=$('stage'); if(!document.fullscreenElement){ (el.requestFullscreen||el.webkitRequestFullscreen||function(){}).call(el); } else { document.exitFullscreen(); } };
+  $('endReplay').onclick=()=>{ if(player){ try{ const p=items[idx].performance||{}; player.seekTo(p.start_sec||0,true); player.playVideo(); }catch(_){ } $('endov').style.display='none'; } };
+  $('endNext').onclick=()=>{ $('endov').style.display='none'; goNext(); };
+  $('track').onclick=ev=>{ if(!player||!player.getDuration) return; const r=$('track').getBoundingClientRect();
+    const frac=Math.min(1,Math.max(0,(ev.clientX-r.left)/r.width)); const p=items[idx].performance||{};
+    const lo=(typeof p.start_sec==='number')?p.start_sec:0; const d=player.getDuration()||0;
+    const hi=(typeof p.end_sec==='number'&&p.end_sec>lo)?p.end_sec:d; try{ player.seekTo(lo+frac*(hi-lo),true);}catch(_){ } };
+  document.addEventListener('keydown',e=>{
+    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+    if(e.key===' '){ e.preventDefault(); playing?pause():play(); }
+    else if(e.key==='ArrowRight'){ e.preventDefault(); goNext(); }
+    else if(e.key==='ArrowLeft'){ e.preventDefault(); goPrev(); }
+    else if(e.key==='Home'){ e.preventDefault(); show(0, playing); }
+    else if(e.key==='j'||e.key==='J'){ seekRel(-10); }
+    else if(e.key==='l'||e.key==='L'){ seekRel(10); }
+    else if(e.key==='f'||e.key==='F'){ $('full').click(); }
+    else if(e.key==='c'||e.key==='C'){ toggleCaps(); }
+  });
+  // touch swipe on the stage
+  let sx=null; $('stage').addEventListener('touchstart',e=>{ sx=e.changedTouches[0].screenX; },{passive:true});
+  $('stage').addEventListener('touchend',e=>{ if(sx==null) return; const dx=e.changedTouches[0].screenX-sx;
+    if(Math.abs(dx)>50){ dx<0?goNext():goPrev(); } sx=null; },{passive:true});
+}
+
+// ════════ grafted: single-MP3 clock + per-word KARAOKE (the new feature view.html lacks) ════════
+function toggleCaps(){ caps=!caps; $('kband').classList.toggle('caps',caps); $('caps').setAttribute('aria-pressed',String(caps)); }
+function initAudio(){
+  const md=G.metadata||{};
+  audioEl=$('audio'); audioEl.preload='auto'; audioEl.src=md.audio;
+  crops=(md.crop_ranges||[]).slice().sort((a,b)=>a[0]-b[0]);
+  scenes=items.map((it,i)=>({i,start:(it.performance||{}).start_sec,end:(it.performance||{}).end_sec,words:(it.performance||{}).words}))
+    .filter(s=>typeof s.start==='number').sort((a,b)=>a.start-b.start);
+  audioEl.addEventListener('timeupdate',audioTick);
+  audioEl.addEventListener('play',setPlayBtn2); audioEl.addEventListener('pause',setPlayBtn2); audioEl.addEventListener('ended',setPlayBtn2);
+  $('kband').classList.add('on'); $('scrub').classList.remove('on');
+  $('note').innerHTML='Narrated full-prose karaoke · '+esc(md.audio_source||'LibriVox (public domain)')
+    +' · chapter-title reading skipped · fullscreen ⛶ · AA = ALL-CAPS.';
+  showAudio(scenes.length?scenes[0].i:0);
+}
+function sceneByItem(i){ for(const s of scenes) if(s.i===i) return s; return null; }
+function sIdx(t){ let lo=0,hi=scenes.length-1,a=-1; while(lo<=hi){const m=(lo+hi)>>1; if(scenes[m].start<=t){a=m;lo=m+1;}else hi=m-1;} return a; }
+function setPlayBtn2(){ $('play').textContent=(audioEl&&!audioEl.paused)?'⏸ Pause':'▶ Play'; }
+function audioPlay(){ if(!audioEl)return; const s=sceneByItem(curIdx); if(s&&(audioEl.currentTime<s.start||audioEl.currentTime>=s.end)) audioEl.currentTime=s.start; audioEl.play().catch(()=>{}); playing=true; setPlayBtn2(); }
+function audioPause(){ if(audioEl)audioEl.pause(); playing=false; setPlayBtn2(); }
+function audioSeekScene(dir){ if(!audioEl)return; const cur=sIdx(audioEl.currentTime||0); const ni=Math.max(0,Math.min(scenes.length-1,(cur<0?0:cur)+dir)); if(scenes[ni]){ audioEl.currentTime=scenes[ni].start; audioTick(); } }
+function showAudio(i){
+  if(i<0||i>=items.length) return;
+  curIdx=i; const it=items[i];
+  $('pos').textContent=(i+1)+' / '+items.length;
+  $('now').innerHTML='<b>'+esc(it.title||'')+'</b>';
+  const cr=(it.metadata&&it.metadata.credit)||''; $('credit').textContent=cr; $('credit').style.display=cr?'block':'none';
+  const img=it.image_url||(it.metadata&&it.metadata.image_url)||'';
+  $('surface').innerHTML='<div class="img-face">'+(img?'<img src="'+esc(img)+'" alt="'+esc(it.title||'')+'">':'')+'</div>';
+  [...$('strip').children].forEach((b,k)=>b.classList.toggle('on',k===i));
+  if($('strip').children[i]) $('strip').children[i].scrollIntoView({block:'nearest',inline:'center'});
+  lastKey='';
+}
+function sentencesOf(s){
+  if(s._sents) return s._sents;
+  const ws=s.words,out=[]; let cur=[];
+  for(let i=0;i<ws.length;i++){ const w=ws[i]; cur.push({w:w.w,start:w.start,end:w.end,gi:i});
+    const nx=ws[i+1]; if(!nx||(nx.start-w.end)>GAP||cur.length>=MAXW){ out.push(cur); cur=[]; } }
+  if(cur.length) out.push(cur);
+  const map=new Array(ws.length); out.forEach((x,si)=>x.forEach(y=>map[y.gi]=si));
+  s._sents=out; s._sentOf=map; return out;
+}
+function audioTick(){
+  if(!audioEl) return;
+  const t=audioEl.currentTime||0;
+  for(const c of crops){ if(t>=c[0]-0.02&&t<c[1]-0.12){ audioEl.currentTime=c[1]; return; } }
+  const si=sIdx(t); if(si<0) return;
+  const s=scenes[si];
+  if(s.i!==curIdx) showAudio(s.i);
+  if(!s.words||!s.words.length){ return; }
+  const line=$('kline'); if(!line) return;
+  let wi=0,lo=0,hi=s.words.length-1; while(lo<=hi){const m=(lo+hi)>>1; if(s.words[m].start<=t){wi=m;lo=m+1;}else hi=m-1;}
+  const sents=sentencesOf(s), sNo=s._sentOf?s._sentOf[wi]:0, key=s.i+':'+sNo;
+  if(key!==lastKey){ const sent=sents[sNo]||[]; line.innerHTML=sent.map(w=>'<span class="w" data-gi="'+w.gi+'">'+esc(w.w)+'</span>').join(' '); lastKey=key; }
+  const sp=line.children; for(let j=0;j<sp.length;j++){ const gi=+sp[j].getAttribute('data-gi'); sp[j].className=gi<wi?'w spoken':(gi===wi?'w active':'w'); }
+}
+</script>
+
+<!--
+  ───────────────────────── REMOVED ECO DEPENDENCIES (view.html → sequence-v2.html) ─────────────────────────
+  1. Supabase content load (loadContent() + GrammarLoader)  → replaced with fetch(?src=<static JSON>)
+  2. window.ENV / config.js (Supabase URL + anon key)        → removed; no backend, nothing to configure
+  3. window.RecursiveAuth / auth-init                        → removed; viewer is fully anonymous, no auth
+  4. <site-header> / <site-footer> web components            → removed; standalone page chrome only
+  5. flow.recursive.eco/api/proxy-image (Drive image proxy)  → removed; image URLs used as-is (our images
+                                                               live on R2 / tarot.recursive.eco / i.ytimg.com,
+                                                               none need the Drive CORS proxy)
+  6. performanceMode toggle + "YouTube mode" toggle          → removed; this IS a performance viewer, so the
+                                                               crop/overlay/bg-audio engine is ALWAYS ON
+  7. Supabase deep-link plumbing (/view/<id>?item=<id>)      → removed; navigation is purely in-page (?src=)
+  Kept: the entire playback engine (convertUnifiedToLegacy, card dwell, segment crop, ENDED/auto-advance,
+  video_visible cover, overlays, background_audio, J/L seek, keyboard/touch nav). Only external script = YT IFrame API.
+-->
+</body>
+</html>
