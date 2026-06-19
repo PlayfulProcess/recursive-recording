@@ -508,7 +508,9 @@ function mdToHtml(s){
   // NOTE: esc() has already turned '>' into '&gt;' — match the escaped form for blockquotes
   return s.split(/\n{2,}/).map(b=>{ b=b.trim(); if(!b) return '';
     if(b==='---'||b==='***') return '<hr>';
-    if(b[0]==='#'){ const m=b.match(/^#+/)[0].length; return '<h'+(m>=3?3:2)+'>'+b.replace(/^#+\s*/,'')+'</h'+(m>=3?3:2)+'>'; }
+    if(b[0]==='#'){ const L=b.split('\n'); let out='',j=0;
+      while(j<L.length && L[j][0]==='#'){ const m=L[j].match(/^#+/)[0].length; out+='<h'+(m>=3?3:2)+'>'+L[j].replace(/^#+\s*/,'')+'</h'+(m>=3?3:2)+'>'; j++; }
+      const rest=L.slice(j).join('\n').trim(); if(rest) out+='<p>'+rest.replace(/\n/g,'<br>')+'</p>'; return out; }
     if(b.startsWith('&gt;')) return '<blockquote>'+b.replace(/^&gt;\s?/gm,'').replace(/\n/g,'<br>')+'</blockquote>';
     if(b.startsWith('[[placeholder]]')) return '<div class="placeholder">'+b.replace('[[placeholder]]','').trim()+'</div>';
     return '<p>'+b.replace(/\n/g,'<br>')+'</p>'; }).join('');
