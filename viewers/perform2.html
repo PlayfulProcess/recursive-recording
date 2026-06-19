@@ -97,6 +97,10 @@
   .kband.caps .kline{font-style:normal;font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(18px,3vw,34px)}
   .kline .w{transition:color .12s} .kline .w.spoken{color:rgba(255,255,255,.85)}
   .kline .w.active{color:var(--accent);font-style:normal;text-shadow:0 0 16px rgba(212,175,55,.7)}
+  /* Plain subtitle (no yellow word highlight — a normal "legenda") */
+  .kband.plain .kline .w{color:rgba(255,255,255,.92)!important;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+  /* Subtitles off entirely */
+  .kband.noband{display:none!important}
   .credit{position:absolute;top:10px;left:10px;z-index:12;background:rgba(0,0,0,.55);color:#fff;font-size:11px;
     letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;backdrop-filter:blur(4px);display:none}
 </style>
@@ -138,6 +142,8 @@
     <button class="ghost" id="next" aria-label="Next item">⏭</button>
     <button class="ghost" id="auto" aria-pressed="true" aria-label="Toggle continuous play" title="Continuous play">↻ Auto</button>
     <button class="ghost" id="caps" aria-pressed="false" aria-label="ALL-CAPS karaoke" title="ALL-CAPS (c)">AA</button>
+    <button class="ghost" id="plain" aria-pressed="false" aria-label="Plain subtitle (no word highlight)" title="Plain subtitle — no yellow highlight (p)">Plain</button>
+    <button class="ghost" id="hide" aria-pressed="false" aria-label="Hide subtitles" title="Subtitles on/off (b)">CC</button>
     <button class="ghost" id="full" aria-label="Fullscreen" title="Fullscreen (F)">⛶</button>
     <span class="pos" id="pos">1 / 1</span>
     <span class="now" id="now"></span>
@@ -412,6 +418,8 @@ function bind(){
   $('fwd10').onclick=()=>seekRel(10);
   $('auto').onclick=()=>{ autoplay=!autoplay; $('auto').setAttribute('aria-pressed',String(autoplay)); };
   $('caps').onclick=toggleCaps;
+  $('plain').onclick=togglePlain;
+  $('hide').onclick=toggleBand;
   $('full').onclick=()=>{ const el=$('stage'); if(!document.fullscreenElement){ (el.requestFullscreen||el.webkitRequestFullscreen||function(){}).call(el); } else { document.exitFullscreen(); } };
   $('endReplay').onclick=()=>{ if(player){ try{ const p=items[idx].performance||{}; player.seekTo(p.start_sec||0,true); player.playVideo(); }catch(_){ } $('endov').style.display='none'; } };
   $('endNext').onclick=()=>{ $('endov').style.display='none'; goNext(); };
@@ -429,6 +437,8 @@ function bind(){
     else if(e.key==='l'||e.key==='L'){ seekRel(10); }
     else if(e.key==='f'||e.key==='F'){ $('full').click(); }
     else if(e.key==='c'||e.key==='C'){ toggleCaps(); }
+    else if(e.key==='p'||e.key==='P'){ togglePlain(); }
+    else if(e.key==='b'||e.key==='B'){ toggleBand(); }
   });
   // touch swipe on the stage
   let sx=null; $('stage').addEventListener('touchstart',e=>{ sx=e.changedTouches[0].screenX; },{passive:true});
@@ -438,6 +448,8 @@ function bind(){
 
 // ════════ grafted: single-MP3 clock + per-word KARAOKE (the new feature view.html lacks) ════════
 function toggleCaps(){ caps=!caps; $('kband').classList.toggle('caps',caps); $('caps').setAttribute('aria-pressed',String(caps)); }
+function togglePlain(){ const on=$('kband').classList.toggle('plain'); $('plain').setAttribute('aria-pressed',String(on)); }   // no yellow highlight
+function toggleBand(){ const off=$('kband').classList.toggle('noband'); $('hide').setAttribute('aria-pressed',String(off)); } // subtitles on/off
 function initAudio(){
   const md=G.metadata||{};
   audioEl=$('audio'); audioEl.preload='auto'; audioEl.src=md.audio;
