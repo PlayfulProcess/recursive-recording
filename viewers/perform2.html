@@ -103,6 +103,13 @@
   .kband.noband{display:none!important}
   .credit{position:absolute;top:10px;left:10px;z-index:12;background:rgba(0,0,0,.55);color:#fff;font-size:11px;
     letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;backdrop-filter:blur(4px);display:none}
+  /* credit FLASH — a brief prominent attribution each time a new edition/plate is featured */
+  .credit-flash{position:absolute;top:14px;left:50%;transform:translateX(-50%) translateY(-8px);z-index:14;
+    background:rgba(0,0,0,.72);color:#fff;font-size:clamp(12px,1.7vw,17px);letter-spacing:.05em;padding:8px 16px;
+    border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 4px 18px rgba(0,0,0,.4);opacity:0;pointer-events:none;
+    transition:opacity .45s ease, transform .45s ease;max-width:86%;text-align:center}
+  .credit-flash.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  @media (prefers-reduced-motion: reduce){ .credit-flash{transition:opacity .2s} }
 </style>
 </head>
 <body>
@@ -115,6 +122,7 @@
   <div class="stage" id="stage" aria-live="off">
     <div id="surface" style="position:absolute;inset:0"></div>
     <div class="credit" id="credit"></div>
+    <div class="credit-flash" id="creditFlash"></div>
     <div class="kband" id="kband"><div class="kline" id="kline"></div></div>
     <div class="card-prog" id="cardProg"></div>
     <div class="endov" id="endov">
@@ -197,7 +205,7 @@ let G=null, items=[], idx=0, player=null, playing=false, autoplay=true;
 let cardTimer=null, cardProgTimer=null, poll=null, progTimer=null;
 let bgPlayer=null, bgCfg=null;            // background_audio
 // ── grafted audio-karaoke mode state ──
-let audioMode=false, audioEl=null, scenes=[], crops=[], caps=false, lastKey='', curIdx=-1;
+let audioMode=false, audioEl=null, scenes=[], crops=[], caps=false, lastKey='', curIdx=-1, lastFlashed='';
 const GAP=0.45, MAXW=14;
 
 (async function(){
@@ -448,6 +456,8 @@ function bind(){
 
 // ════════ grafted: single-MP3 clock + per-word KARAOKE (the new feature view.html lacks) ════════
 function toggleCaps(){ caps=!caps; $('kband').classList.toggle('caps',caps); $('caps').setAttribute('aria-pressed',String(caps)); }
+function flashCredit(text){ const f=$('creditFlash'); if(!f||!text) return; f.textContent='✦  '+text; f.classList.add('show');
+  clearTimeout(f._t); f._t=setTimeout(()=>f.classList.remove('show'), 2900); }
 function togglePlain(){ const on=$('kband').classList.toggle('plain'); $('plain').setAttribute('aria-pressed',String(on)); }   // no yellow highlight
 function toggleBand(){ const off=$('kband').classList.toggle('noband'); $('hide').setAttribute('aria-pressed',String(off)); } // subtitles on/off
 function initAudio(){
@@ -475,6 +485,7 @@ function showAudio(i){
   $('pos').textContent=(i+1)+' / '+items.length;
   $('now').innerHTML='<b>'+esc(it.title||'')+'</b>';
   const cr=(it.metadata&&it.metadata.credit)||''; $('credit').textContent=cr; $('credit').style.display=cr?'block':'none';
+  if(cr && cr!==lastFlashed){ flashCredit(cr); lastFlashed=cr; }   // flash on each newly-featured edition/plate
   const img=it.image_url||(it.metadata&&it.metadata.image_url)||'';
   $('surface').innerHTML='<div class="img-face">'+(img?'<img src="'+esc(img)+'" alt="'+esc(it.title||'')+'">':'')+'</div>';
   [...$('strip').children].forEach((b,k)=>b.classList.toggle('on',k===i));
