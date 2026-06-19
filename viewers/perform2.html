@@ -110,6 +110,20 @@
     transition:opacity .45s ease, transform .45s ease;max-width:86%;text-align:center}
   .credit-flash.show{opacity:1;transform:translateX(-50%) translateY(0)}
   @media (prefers-reduced-motion: reduce){ .credit-flash{transition:opacity .2s} }
+  /* "about this translation" modal (the compost / know-more page) */
+  .about-modal{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);
+    display:none;align-items:center;justify-content:center;padding:18px}
+  .about-modal.show{display:flex}
+  .about-card{position:relative;background:var(--panel);color:var(--ink);border:1px solid var(--line);
+    border-radius:14px;max-width:640px;width:100%;max-height:84vh;overflow:auto;padding:28px 30px 30px;
+    box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  .about-x{position:absolute;top:10px;right:12px;background:transparent;border:0;color:var(--muted);
+    font-size:26px;line-height:1;cursor:pointer}
+  .about-body{font-size:15px;line-height:1.62}
+  .about-body h2{font-size:20px;margin:.1em 0 .5em} .about-body h3{font-size:15px;margin:1.2em 0 .3em;color:var(--accent)}
+  .about-body p{margin:.7em 0} .about-body a{color:var(--accent)} .about-body strong{color:var(--ink)}
+  .about-body blockquote{margin:.8em 0;padding-left:.9em;border-left:3px solid var(--accent);color:var(--muted);font-style:italic}
+  .about-body .placeholder{margin-top:1em;padding:10px 14px;border:1px dashed var(--line);border-radius:8px;color:var(--muted);font-size:13px}
 </style>
 </head>
 <body>
@@ -152,12 +166,18 @@
     <button class="ghost" id="caps" aria-pressed="false" aria-label="ALL-CAPS karaoke" title="ALL-CAPS (c)">AA</button>
     <button class="ghost" id="plain" aria-pressed="false" aria-label="Plain subtitle (no word highlight)" title="Plain subtitle — no yellow highlight (p)">Plain</button>
     <button class="ghost" id="hide" aria-pressed="false" aria-label="Hide subtitles" title="Subtitles on/off (b)">CC</button>
+    <button class="ghost" id="about" aria-label="About this translation" title="Sobre a tradução / About this translation" style="display:none">ⓘ Tradução</button>
     <button class="ghost" id="full" aria-label="Fullscreen" title="Fullscreen (F)">⛶</button>
     <span class="pos" id="pos">1 / 1</span>
     <span class="now" id="now"></span>
   </div>
   <div class="strip" id="strip" role="tablist" aria-label="Program items"></div>
 </div>
+
+<div class="about-modal" id="aboutModal"><div class="about-card">
+  <button class="about-x" id="aboutX" aria-label="Close">×</button>
+  <div class="about-body" id="aboutBody"></div>
+</div></div>
 
 <script>
 const $=id=>document.getElementById(id);
@@ -428,6 +448,8 @@ function bind(){
   $('caps').onclick=toggleCaps;
   $('plain').onclick=togglePlain;
   $('hide').onclick=toggleBand;
+  $('about').onclick=openAbout; $('aboutX').onclick=closeAbout;
+  $('aboutModal').onclick=e=>{ if(e.target===$('aboutModal')) closeAbout(); };
   $('full').onclick=()=>{ const el=$('stage'); if(!document.fullscreenElement){ (el.requestFullscreen||el.webkitRequestFullscreen||function(){}).call(el); } else { document.exitFullscreen(); } };
   $('endReplay').onclick=()=>{ if(player){ try{ const p=items[idx].performance||{}; player.seekTo(p.start_sec||0,true); player.playVideo(); }catch(_){ } $('endov').style.display='none'; } };
   $('endNext').onclick=()=>{ $('endov').style.display='none'; goNext(); };
@@ -447,6 +469,7 @@ function bind(){
     else if(e.key==='c'||e.key==='C'){ toggleCaps(); }
     else if(e.key==='p'||e.key==='P'){ togglePlain(); }
     else if(e.key==='b'||e.key==='B'){ toggleBand(); }
+    else if(e.key==='Escape'){ closeAbout(); }
   });
   // touch swipe on the stage
   let sx=null; $('stage').addEventListener('touchstart',e=>{ sx=e.changedTouches[0].screenX; },{passive:true});
@@ -471,8 +494,23 @@ function initAudio(){
   $('kband').classList.add('on'); $('scrub').classList.remove('on');
   $('note').innerHTML='Narrated full-prose karaoke · '+esc(md.audio_source||'LibriVox (public domain)')
     +' · chapter-title reading skipped · fullscreen ⛶ · AA = ALL-CAPS.';
+  if(md.translation_note) $('about').style.display='';   // the "ⓘ about this translation" / compost page
   showAudio(scenes.length?scenes[0].i:0);
 }
+// minimal markdown -> html for the about/compost page (escaped first; our own trusted data)
+function mdToHtml(s){
+  s=esc(String(s||''));
+  s=s.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+  s=s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  return s.split(/\n{2,}/).map(b=>{ b=b.trim(); if(!b) return '';
+    if(b[0]==='#'){ const m=b.match(/^#+/)[0].length; return '<h'+(m>=3?3:2)+'>'+b.replace(/^#+\s*/,'')+'</h'+(m>=3?3:2)+'>'; }
+    if(b[0]==='>') return '<blockquote>'+b.replace(/^>\s?/gm,'')+'</blockquote>';
+    if(b.startsWith('[[placeholder]]')) return '<div class="placeholder">'+b.replace('[[placeholder]]','').trim()+'</div>';
+    return '<p>'+b.replace(/\n/g,'<br>')+'</p>'; }).join('');
+}
+function openAbout(){ const md=(G&&G.metadata)||{}; if(!md.translation_note) return;
+  $('aboutBody').innerHTML=mdToHtml(md.translation_note); $('aboutModal').classList.add('show'); }
+function closeAbout(){ $('aboutModal').classList.remove('show'); }
 function sceneByItem(i){ for(const s of scenes) if(s.i===i) return s; return null; }
 function sIdx(t){ let lo=0,hi=scenes.length-1,a=-1; while(lo<=hi){const m=(lo+hi)>>1; if(scenes[m].start<=t){a=m;lo=m+1;}else hi=m-1;} return a; }
 function setPlayBtn2(){ $('play').textContent=(audioEl&&!audioEl.paused)?'⏸ Pause':'▶ Play'; }
