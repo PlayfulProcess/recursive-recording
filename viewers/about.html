@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sobre esta tradução · recursive-recording</title>
+<style>
+  :root{ --bg:#0f0d17; --panel:#1a1726; --ink:#ece8f5; --muted:#9b94b3; --accent:#d4af37; --line:#2a2440; }
+  *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+  .page{max-width:680px;margin:0 auto;padding:28px 18px 70px}
+  .back{display:inline-block;color:var(--muted);text-decoration:none;font-size:13px;margin-bottom:16px}
+  .back:hover{color:var(--accent)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:30px 32px 34px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4)}
+  .body{font-size:15.5px;line-height:1.64}
+  .body h2{font-size:22px;margin:.1em 0 .3em} .body h3{font-size:15px;margin:1.3em 0 .3em;color:var(--accent)}
+  .body p{margin:.75em 0} .body a{color:var(--accent)} .body strong{color:var(--ink)} .body em{font-style:italic;color:var(--muted)}
+  .body blockquote{margin:.9em 0;padding:.1em 0 .1em .95em;border-left:3px solid var(--accent);color:var(--muted);font-style:italic}
+  .body hr{border:0;border-top:1px solid var(--line);margin:1.2em 0}
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="../index.html">← recursive-recording</a>
+  <div class="card"><div class="body" id="body">Loading…</div></div>
+</div>
+<script>
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+// same minimal markdown -> html as perform2's about modal (kept in sync intentionally)
+function mdToHtml(s){
+  s=esc(String(s||''));
+  s=s.replace(/\[([^\]]+)\]\(((?:https?:|\.\.?\/)[^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+  s=s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  s=s.replace(/\*([^*]+)\*/g,'<em>$1</em>');
+  return s.split(/\n{2,}/).map(b=>{ b=b.trim(); if(!b) return '';
+    if(b==='---'||b==='***') return '<hr>';
+    if(b[0]==='#'){ const L=b.split('\n'); let out='',j=0;
+      while(j<L.length && L[j][0]==='#'){ const m=L[j].match(/^#+/)[0].length; out+='<h'+(m>=3?3:2)+'>'+L[j].replace(/^#+\s*/,'')+'</h'+(m>=3?3:2)+'>'; j++; }
+      const rest=L.slice(j).join('\n').trim(); if(rest) out+='<p>'+rest.replace(/\n/g,'<br>')+'</p>'; return out; }
+    if(b.startsWith('&gt;')) return '<blockquote>'+b.replace(/^&gt;\s?/gm,'').replace(/\n/g,'<br>')+'</blockquote>';
+    return '<p>'+b.replace(/\n/g,'<br>')+'</p>'; }).join('');
+}
+const src=new URLSearchParams(location.search).get('src')||'';
+fetch(src).then(r=>{ if(!r.ok) throw 0; return r.text(); })
+  .then(t=>{ const md=t.replace(/<!--[\s\S]*?-->/g,'').trim();
+    document.getElementById('body').innerHTML=mdToHtml(md);
+    const h=document.querySelector('.body h2'); if(h) document.title=h.textContent+' · recursive-recording'; })
+  .catch(()=>{ document.getElementById('body').textContent='Could not load: '+src; });
+</script>
+</body>
+</html>
