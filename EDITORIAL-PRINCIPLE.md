@@ -1,63 +1,56 @@
-# Editorial principle — the historical, reparative stance
+# Editorial principle — composting
 
-*Working name (rename it — you name things well). This is the standing editorial stance for every
-work in this ecosystem: the genealogies, the performances, the translations, the maps. It's the
-spine that the editions-history, the tarot genealogy, the Lobato→Nastácia repair page, the Popenoe
-note, and the Ovid tone-flags are all expressions of. If a future build is unsure how to handle a
-source, it resolves the question here.*
+*This is the standing editorial stance for everything in this repo: the genealogies, the
+performances, the translations, the maps. It is not a new idea — it is **composting**, the framework
+PlayfulProcess already named and developed. The canonical statement lives in the schemas repo at
+`recursive.eco-schemas/compost/WHAT_IS_COMPOST.md`; the book-length articulation is
+`book-repo/src/axiom-v5/ch12-composting.md`. This file is just the application of composting to
+recursive-recording. When a build is unsure how to handle a source, it resolves the question here.*
 
-## The statement
-> **Carry the history. Hold the dialectic. Name harm without erasing it — and without propagating it.**
+## The principle (PlayfulProcess's words)
+> "Compost is not cancellation. Cancellation pretends the thing never existed. Compost acknowledges
+> that it existed, that it shaped the soil we're standing on, and that it needs to be broken down
+> before it can nourish anything new."
 
-Three moves, and they're really one:
+Three moves, from `WHAT_IS_COMPOST.md`:
+1. **The raw material goes in** — the original, assumptions intact. *"You can't compost what you refuse
+   to touch."* We don't sanitize the source.
+2. **The decomposers do their work** — the voices the original marginalized speak back. *"Du Bois
+   decomposes Gobineau. Achebe decomposes Conrad. **Nastácia decomposes Lobato.**"*
+3. **New growth emerges** — grammars/performances that retell, reframe, recenter. Not the original
+   cleaned up — something new, grown from what was broken down.
 
-### 1. A historical approach to everything we start
-Every work carries its **lineage** — who made it, when, what it answers to, how it descends. We don't
-present a thing free-floating; we map its genealogy (editions, translators, illustrators, teachers,
-schools) with honest edges (`trained_under` vs `influenced_by` vs `reacted_against`), sourced claims,
-and visible **confidence tags**. The door stays open: *"if you know better, correct us."* The work is
-built to **grow itself through the people it gathers** — that's what *recursive* means.
+And what compost is **not**: not a ban list (everything can be read — the question is *how*), not a
+judgment of readers (if you loved these as a child, that's part of the story), and not a claim the
+authors had no genius (*"Lobato was a genius… genius and colonialism are not mutually exclusive — that's
+precisely what makes colonial texts so effective"*).
 
-### 2. Hold the dialectic (Linehan)
-A source can be **both** worth transmitting **and** carry harm. We refuse to collapse that tension:
-- collapse toward **erase / cancel** and the harm goes *unexamined* (and quietly recurs);
-- collapse toward **celebrate / propagate** and the harm *rides along* uncritiqued.
-We hold both and move toward **repair / change** — acceptance *and* change, both/and, wise mind.
-The three filters still gate the work: **useful · compassionate · fits-the-data** (fits-the-data
-weighted heaviest).
+## The lineage (carry the history)
+Composting names a confluence PlayfulProcess has sat inside: **Audre Lorde** (the master's tools — but
+they can be composted), **Bayo Akomolafe** (the cracks are not to be repaired but sat in; *post-activism*),
+**Vanessa Andreotti** (*hospicing modernity* — stay with the dying without saving or abandoning it), and
+the Yoruba gesture of *bate a cabeça* — keeping faith with the buried ancestors inside the master's house.
+The form survives because it learned to live inside what tried to kill it.
 
-### 3. Name harm — don't erase it, don't propagate it
-The clinical key (DBT): **you cannot change a behavior you will not name.** Observe and describe it,
-clearly and without judgment-as-erasure. Applied to cultural inheritance:
-- **Erasing is not safety.** The unnamed harm is exactly the one that keeps repeating — quietly drop a
-  racist translator and the stereotype passes on *unexamined*. Naming interrupts that.
-- **Naming is not propagating.** We *describe and attribute* the harm; we do **not reproduce or
-  amplify** it (no racist text, no gratuitous depiction of violence, no reverent uncritical platform).
-- **Orient to repair.** Where there's harm, the context note doesn't end at the wound — it turns toward
-  reckoning (the **Nastácia** telling, given her own voice; not erasure, not apology-as-closure).
+## How it applies in recursive-recording
+- **The genealogies are the compost pile made legible** — editions / translators / illustrators / teachers
+  with honest edges, sources, and `confidence` tags, and an open door ("if you know better, correct us").
+  The history is the vehicle: you can only compost a thing if you kept the context.
+- **Performances keep the source verbatim and don't sanitize** (e.g. Ovid's text stays Ovid's), while the
+  framing, the plate choices, the pacing, and the content notes do the decomposing — naming harm without
+  reproducing it. (Arachne's self-harm: verbatim text, transformation-not-suicide plate, `content_note`.)
+- **The "about this translation" / context pages are compost pages** — they name what needs composting and
+  point at the decomposer. The flagship is **Lobato → Nastácia**.
 
-**Why history is the vehicle:** you can only hold a harm *in context* if you kept the context. Flatten
-the genealogy and you lose the very ability to name-and-repair. So move 1 and move 3 are the same
-instinct — the history is what makes the naming possible.
+## The live compost (this repo's responsibility)
+| Source | What needs composting | The decomposer (new growth) |
+|--------|----------------------|------------------------------|
+| **Monteiro Lobato** (the beloved PD Brazilian *Alice* + the Sítio books) | anti-Black language, the servile Tia Nastácia, eugenics | **Nastácia herself, telling her own stories** — sources already gathered in `schemas/compost/lobato-…/` (*Histórias de Tia Nastácia*, *Negrinha*). The repair story is PlayfulProcess's to write; the build only holds the slot. |
+| Popenoe (couples-communication history) | the eugenics origins of marriage counseling | name it, contextualize, don't celebrate |
+| Ovid (Metamorphoses performances) | sexual-violence / self-harm narratives | keep PD text, flag the content, choose plates/pacing that don't dwell on or depict the harm |
 
-## How it shows up in the work (the conventions)
-Every genealogy and production should carry, as data + prose:
-1. **Lineage** — the genealogy scaffold (`people.json` / `editions.json` + dossiers + honest edges).
-2. **Provenance & confidence** — sources, PD/licensing status, `confidence: high|med|low`, "corrections welcome."
-3. **A context / repair note where there is harm** — name it; do not reproduce it; orient to repair.
-   This is a first-class field, not an afterthought.
-
-### Live exemplars
-- **Lobato → Nastácia** (Alice PT subtitles) — the canonical case. Use the beloved, public-domain
-  Brazilian translation *and* name Lobato's racism *and* give Tia Nastácia her own telling. Reckoning,
-  not erasure; context, not a clean laurel.
-- **Popenoe** (couples-communication history) — name the eugenics origins of marriage counseling
-  honestly; contextualize; do not celebrate.
-- **Ovid** (Metamorphoses performances) — several myths are sexual-violence or self-harm narratives.
-  Keep the public-domain text (don't erase Ovid's words), flag the content, choose plates and pacing
-  that **don't dwell on or gratuitously depict** the harm, and curate which myths lead.
-
-## Provenance of this principle
-Named by the author (PlayfulProcess), noticing she was already doing it — the same way *līlā* and
-*PlayfulProcess* were named after the fact. Clinically it's DBT (observe/describe, dialectics, wise
-mind) turned on cultural heritage. It is dual-licensed with the rest of the repo: this text **CC-BY-SA-4.0**.
+## Naming
+Named by PlayfulProcess, who noticed she was already doing it (like *līlā* and *PlayfulProcess* were named
+after the fact). Clinically it rhymes with DBT (you cannot change what you will not name — observe and
+describe before you decompose). This text is **CC-BY-SA-4.0**; the canonical framework is the schemas
+`compost/` folder.
