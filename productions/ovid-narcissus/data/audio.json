@@ -1,0 +1,28 @@
+{
+  "librivox_catalog_url": "https://librivox.org/metamorphoses-by-publius-ovidius-naso-ovid/",
+  "archive_details_url": "https://archive.org/details/metamorphoses_1006_librivox",
+  "archive_download_base": "https://archive.org/download/metamorphoses_1006_librivox/",
+  "translation": "Brookes More (1922)",
+  "translation_match": "confirmed",
+  "translation_match_note": "LibriVox catalog page states 'Translated by Brookes More (1859-1942)' and cites theoi.com as the source text — same edition as data/text.json. High confidence.",
+  "pd": "LibriVox recordings are public domain (CC0 / public domain dedication).",
+  "myth_book": 3,
+  "book_files": [
+    { "file": "metamorphoses_07_ovid.mp3", "part": "Book 3, Part 1", "duration": "17:10" },
+    { "file": "metamorphoses_08_ovid.mp3", "part": "Book 3, Part 2", "duration": "20:52" },
+    { "file": "metamorphoses_09_ovid.mp3", "part": "Book 3, Part 3", "duration": "17:39" }
+  ],
+  "myth_locator": "Echo & Narcissus is the SECOND HALF of Book 3 (lines 3.339-510). Most likely spans metamorphoses_08_ovid.mp3 (into) metamorphoses_09_ovid.mp3. Builder: confirm the exact sub-span by matching the opening line 'Tiresias' fame of prophecy was spread...' against the audio; clip from there to '...the white around the gold.'",
+  "builder_steps": [
+    "Download the Book 3 mp3 part(s) above.",
+    "Locate the Narcissus span (starts 'Tiresias' fame of prophecy...').",
+    "Clip just that span; run Whisper forced-alignment against data/text.json passage text to get word timings.",
+    "Feed word timings into pipeline/assemble_performance.py to build the per-word karaoke overlays."
+  ],
+  "multi_reader_caveat": "metamorphoses_1006_librivox is a multi-reader LibriVox project; voice may change at book boundaries. Verify the reader is continuous across the Narcissus span before alignment.",
+  "alternate_recording_do_not_use": {
+    "identifier": "metamorphoses_2504_librivox",
+    "translation": "Frank Justus Miller (prose, Loeb)",
+    "reason": "Different translation — will NOT word-align to the Brookes More text."
+  }
+}
