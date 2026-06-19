@@ -1,0 +1,28 @@
+{
+  "librivox_catalog_url": "https://librivox.org/metamorphoses-by-publius-ovidius-naso-ovid/",
+  "archive_details_url": "https://archive.org/details/metamorphoses_1006_librivox",
+  "archive_download_base": "https://archive.org/download/metamorphoses_1006_librivox/",
+  "translation": "Brookes More (1922)",
+  "translation_match": "confirmed",
+  "translation_match_note": "Same recording as Narcissus; catalog states Brookes More, source theoi.com. High confidence.",
+  "pd": "LibriVox recordings are public domain.",
+  "myth_book": 6,
+  "book_files": [
+    { "file": "metamorphoses_15_ovid.mp3", "part": "Book 6, Part 1", "duration": "22:06" },
+    { "file": "metamorphoses_16_ovid.mp3", "part": "Book 6, Part 2", "duration": "07:28" },
+    { "file": "metamorphoses_17_ovid.mp3", "part": "Book 6, Part 3", "duration": "22:49" }
+  ],
+  "myth_locator": "Arachne OPENS Book 6 (lines 6.1-145), so it is at the start of metamorphoses_15_ovid.mp3 (possibly running a little into _16_). Builder: clip from the opening 'All this Minerva heard...' to '...Arachne, as a spider, weaves her web.'",
+  "builder_steps": [
+    "Download metamorphoses_15_ovid.mp3 (and _16_ if the span overruns).",
+    "Clip the Arachne span (starts 'All this Minerva heard...').",
+    "Whisper forced-align against data/text.json; produce word timings.",
+    "assemble_performance.py -> per-word karaoke overlays."
+  ],
+  "multi_reader_caveat": "Multi-reader project; confirm reader continuity across the Arachne span.",
+  "alternate_recording_do_not_use": {
+    "identifier": "metamorphoses_2504_librivox",
+    "translation": "Frank Justus Miller (prose)",
+    "reason": "Different translation — will not align to Brookes More text."
+  }
+}

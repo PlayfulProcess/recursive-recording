@@ -1,0 +1,38 @@
+[
+  {
+    "artist": "Johann Wilhelm Baur",
+    "year": 1703,
+    "edition": "Baur (designs 1641; Nuremberg 1703) — UVM 'Ovid Project' scan",
+    "plate": "55 — 'Pallas Arachnen in Araneam Transmutat'",
+    "image_url": "https://www.uvm.edu/~hag/ovid/baur1703/baur1703b6p55.jpeg",
+    "image_page": "https://www.uvm.edu/~hag/ovid/baur1703/baur1703b6.html",
+    "source": "The Ovid Project, University of Vermont (Hope Greenberg)",
+    "license": "PD",
+    "license_confidence": "high",
+    "license_note": "Baur d.1642; 1703 print PD by age. One of the few UVM plates with a confirmed Latin label; UVa concordance matches it to Tempesta 54.",
+    "depicts": "Pallas/Minerva transforms Arachne into a spider (the moment of metamorphosis).",
+    "book_line": "6.139-145",
+    "anchor_passage_idx": 14,
+    "resolution": "high"
+  },
+  {
+    "artist": "Antonio Tempesta",
+    "year": 1606,
+    "edition": "Tempesta, Metamorphoseon (150 etchings)",
+    "plate": "54 — 'Athena Changing Arachne into a Spider' (Arachne in araneam a Pallade convertitur)",
+    "image_url": null,
+    "image_page": "https://commons.wikimedia.org/wiki/File:Athena_Changing_Arachne_into_a_Spider_LACMA_65.37.138.jpg",
+    "source": "LACMA 65.37.138 via Wikimedia Commons (direct upload URL unverified — Commons API unreachable during research)",
+    "license": "PD",
+    "license_confidence": "high",
+    "license_note": "Tempesta d.1630 — PD by age; LACMA copy is PD. The Met's own Tempesta Arachne objects (401101/402120) are flagged no-image, so source the LACMA copy on Commons. FOLLOW-UP: confirm the direct file URL via a browser.",
+    "depicts": "Minerva (armored) turning Arachne into a spider — same moment as the Baur plate.",
+    "book_line": "6.139-145",
+    "anchor_passage_idx": 14,
+    "resolution": "unknown",
+    "status": "needs-url"
+  },
+  {
+    "_coverage_note": "Solis (1581) and Salomon (1557) both SKIP Arachne entirely (their Book 6 runs Pierides -> Niobe -> Lycian rustics -> Marsyas -> Tereus). So for Arachne only TWO PD engraving plates exist (Baur 55, Tempesta 54), and both depict the same moment: the spider transformation. There is NO 'Arachne and Minerva at the looms' plate in any of these sets — a gap a modern CC-illustrator could fill (collaborator hook)."
+  }
+]
