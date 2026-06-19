@@ -123,6 +123,8 @@
   .about-body h2{font-size:20px;margin:.1em 0 .5em} .about-body h3{font-size:15px;margin:1.2em 0 .3em;color:var(--accent)}
   .about-body p{margin:.7em 0} .about-body a{color:var(--accent)} .about-body strong{color:var(--ink)}
   .about-body blockquote{margin:.8em 0;padding-left:.9em;border-left:3px solid var(--accent);color:var(--muted);font-style:italic}
+  .about-body hr{border:0;border-top:1px solid var(--line);margin:1.1em 0}
+  .about-body em{font-style:italic;color:var(--muted)}
   .about-body .placeholder{margin-top:1em;padding:10px 14px;border:1px dashed var(--line);border-radius:8px;color:var(--muted);font-size:13px}
 </style>
 </head>
@@ -500,11 +502,14 @@ function initAudio(){
 // minimal markdown -> html for the about/compost page (escaped first; our own trusted data)
 function mdToHtml(s){
   s=esc(String(s||''));
-  s=s.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+  s=s.replace(/\[([^\]]+)\]\(((?:https?:|\.\.?\/)[^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
   s=s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  s=s.replace(/\*([^*]+)\*/g,'<em>$1</em>');   // may span line-wraps inside a blockquote
+  // NOTE: esc() has already turned '>' into '&gt;' — match the escaped form for blockquotes
   return s.split(/\n{2,}/).map(b=>{ b=b.trim(); if(!b) return '';
+    if(b==='---'||b==='***') return '<hr>';
     if(b[0]==='#'){ const m=b.match(/^#+/)[0].length; return '<h'+(m>=3?3:2)+'>'+b.replace(/^#+\s*/,'')+'</h'+(m>=3?3:2)+'>'; }
-    if(b[0]==='>') return '<blockquote>'+b.replace(/^>\s?/gm,'')+'</blockquote>';
+    if(b.startsWith('&gt;')) return '<blockquote>'+b.replace(/^&gt;\s?/gm,'').replace(/\n/g,'<br>')+'</blockquote>';
     if(b.startsWith('[[placeholder]]')) return '<div class="placeholder">'+b.replace('[[placeholder]]','').trim()+'</div>';
     return '<p>'+b.replace(/\n/g,'<br>')+'</p>'; }).join('');
 }
