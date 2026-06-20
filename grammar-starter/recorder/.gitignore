@@ -1,0 +1,4 @@
+# Never commit these — saved login session + generated screenshots + deps
+auth.json
+out/
+node_modules/
