@@ -1,0 +1,22 @@
+{
+  "name": "build-a-grammar",
+  "base_url": "https://dev.flow.recursive.eco",
+  "viewport": { "width": 1440, "height": 900 },
+  "_comment": "Steps are screenshotted in order. `goto` is a path (or full URL). `highlight` outlines a data-tour element. `authed:true` needs auth.json (run login.mjs once). `wait_for` waits for a selector; `click`/`fill` interact. Customize the URLs/selectors for your flow.",
+  "steps": [
+    { "name": "library", "goto": "/library", "wait_ms": 1500, "authed": false,
+      "caption": "Browse the Library — every public grammar across channels." },
+    { "name": "open-deck", "goto": "/g/REPLACE_WITH_A_PUBLIC_GRAMMAR_ID", "wait_ms": 1800, "authed": false,
+      "caption": "Open a published deck to see the cards rendered." },
+    { "name": "create-name", "goto": "/create", "highlight": "[data-tour=\"create-name\"]", "authed": true,
+      "caption": "In Create, give your new grammar a name." },
+    { "name": "add-items", "highlight": "[data-tour=\"create-add-item\"]", "authed": true,
+      "caption": "Add cards by hand — or let the Grammar Assistant draft them all." },
+    { "name": "assistant", "highlight": "[data-tour=\"create-assistant\"]", "authed": true,
+      "caption": "The Grammar Assistant authors + illustrates items for you." },
+    { "name": "view-modes", "highlight": "[data-tour=\"create-view-modes\"]", "authed": true,
+      "caption": "Preview the deck in any viewer via the Eye menu." },
+    { "name": "publish", "highlight": "[data-tour=\"create-publish\"]", "authed": true,
+      "caption": "Publish to share it — you get a link anyone can open." }
+  ]
+}

@@ -6,3 +6,11 @@ node_modules/
 .env
 .env.*
 config.js
+
+# Secrets / never commit — saved browser sessions + MCP tokens + recorder output
+auth.json
+**/auth.json
+*.token
+mcp-token.txt
+grammar-starter/recorder/out/
+**/recorder/out/

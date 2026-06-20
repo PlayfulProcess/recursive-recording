@@ -1,0 +1,14 @@
+{
+  "name": "grammar-course-recorder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local Playwright recorder: drive a real recursive.eco flow and screenshot each step into a course.",
+  "scripts": {
+    "login": "node login.mjs",
+    "record": "node recorder.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}
