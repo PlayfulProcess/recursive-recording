@@ -1,0 +1,158 @@
+{
+  "_note": "Public-domain artwork stream for the Ovid 'Arachne & Minerva' karaoke performance (recursive-recording). 13 verified PD artworks ordered to roughly follow the 15 narrative beats in text.json (anchor_beat_idx 0-14). Intended to rotate ~every 3s across narration. Curated by PlayfulProcess. Each image_url uses Wikimedia Commons Special:FilePath (resolves to the current full-resolution original); source_page links the Commons File: page where the license was verified. license_confidence reflects how unambiguous the PD status on the file page is. Every file's license was checked on its individual Commons File page (category membership alone was NOT trusted). The self-harm beat (idx 12) is intentionally NOT illustrated with any hanging imagery; it is covered by non-graphic period art (transformation / wrath) per the tone_note in text.json.",
+  "images": [
+    {
+      "title": "Pallas and Arachne (Athena and Arachne)",
+      "artist": "Jacopo Tintoretto",
+      "year": "c. 1543-1590",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20Aracne%20sfida%20Minerva%20in%20una%20gara%20di%20tessitura%2C%201503783.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Tintoretto_-_Aracne_sfida_Minerva_in_una_gara_di_tessitura,_1503783.jpg",
+      "license": "PD-Art (PD-old, faithful reproduction of 2D PD work; Tintoretto d. 1594)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 0,
+      "note": "Minerva watches Arachne at the loom from below. Tintoretto canvas (Uffizi). Strong opener for Minerva's brooding pride. NOTE: the alternate Commons file 'Tintoretto - Minerva e Aracne, 1575-85 (1579).jpg' was REJECTED (photographer CC-BY-SA claim); this PD-Art file is used instead."
+    },
+    {
+      "title": "Arachne (weaver at the spinning wheel, surrounded by textile tools)",
+      "artist": "Philip Galle, after Marten van Cleve & Frans Floris",
+      "year": "1574",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Philip%20Galle%2C%20Marten%20van%20Cleve%20(After)%2C%20Frans%20Floris%20(after)%20-%20Arachne.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Philip_Galle,_Marten_van_Cleve_(After),_Frans_Floris_(after)_-_Arachne.jpg",
+      "license": "PD (faithful reproduction of 2D PD work; engravers 16th c.)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 1,
+      "note": "Arachne at the spinning wheel amid the tools of the textile trade, weaver and loom behind. Fits the humble-origin / craft-fame beat."
+    },
+    {
+      "title": "Las Hilanderas (The Fable of Arachne / The Spinners)",
+      "artist": "Diego Velazquez",
+      "year": "c. 1657",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vel%C3%A1zquez%2C%20Diego%20-%20The%20Fable%20of%20Arachne%20(Las%20Hilanderas)%20-%20c.%201657.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Vel%C3%A1zquez,_Diego_-_The_Fable_of_Arachne_(Las_Hilanderas)_-_c._1657.jpg",
+      "license": "PD-Art (PD-old-auto-expired; Velazquez d. 1660)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 2,
+      "note": "The famous Prado tapestry-workshop scene; spinners in the foreground, the contest tableau (with the tapestry of Europa) behind. Anchors Arachne's skill and her boast."
+    },
+    {
+      "title": "Minerva and Arachne (Minerve et Arachne)",
+      "artist": "Rene-Antoine Houasse",
+      "year": "1706",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ren%C3%A9-Antoine%20Houasse%20-%20Minerve%20et%20Arachne%20(Versailles).jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ren%C3%A9-Antoine_Houasse_-_Minerve_et_Arachne_(Versailles).jpg",
+      "license": "PD (CC-PD-Mark; published pre-1931; Houasse d. 1710)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 3,
+      "note": "Versailles canvas of Minerva confronting/instructing Arachne. Good for the disguised-goddess and warning beat."
+    },
+    {
+      "title": "Minerve et Arachne",
+      "artist": "Claude Vignon",
+      "year": "c. 1630",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Minerve%20et%20Arachn%C3%A9%20-%20Claude%20VIGNON.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Minerve_et_Arachn%C3%A9_-_Claude_VIGNON.jpg",
+      "license": "PD (PD-1923 / CC-PD-Mark; Vignon d. 1670)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 4,
+      "note": "Tense confrontation between Minerva and the defiant Arachne. Anchors Arachne's defiant reply / Minerva revealing herself."
+    },
+    {
+      "title": "Athena and Arachne (Metamorphoses plate)",
+      "artist": "Antonio Tempesta",
+      "year": "c. 1600",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Antonio%20Tempesta%20Arachne.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Antonio_Tempesta_Arachne.jpg",
+      "license": "PD (CC-PD-Mark; published pre-1931; Tempesta d. 1630)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 5,
+      "note": "Engraving from Tempesta's Metamorphoses series showing Athena and Arachne. Period-print register for the moment the goddess reveals herself and the contest is joined."
+    },
+    {
+      "title": "Athena Changing Arachne into a Spider (Metamorphoses plate)",
+      "artist": "Antonio Tempesta (with Wilhelm Janson)",
+      "year": "1606",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Athena%20Changing%20Arachne%20into%20a%20Spider%20LACMA%2065.37.138.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Athena_Changing_Arachne_into_a_Spider_LACMA_65.37.138.jpg",
+      "license": "PD (LACMA public-domain high-res release; Tempesta d. 1630)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 6,
+      "note": "Engraving showing both weavers at their looms; provides a contest tableau. (Despite the catalog title, the plate frames the weaving competition.) Anchors the contest beginning."
+    },
+    {
+      "title": "The Rape of Europa",
+      "artist": "Titian (Tiziano Vecellio)",
+      "year": "c. 1560-1562",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tizian%20085.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Tizian_085.jpg",
+      "license": "PD (CC-PD-Mark; published pre-1931; Titian d. 1576)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 9,
+      "note": "Europa carried off on the bull's back across the waves - the exact first scene Arachne weaves (idx 9). Titian (Gardner Museum, Boston)."
+    },
+    {
+      "title": "Leda and the Swan",
+      "artist": "Antonio da Correggio",
+      "year": "c. 1532",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Correggio%20-%20Leda%20and%20the%20Swan%20-%20Google%20Art%20Project.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Correggio_-_Leda_and_the_Swan_-_Google_Art_Project.jpg",
+      "license": "PD (CC-PD-Mark; published pre-1931; Correggio d. 1534)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 9,
+      "note": "Leda by the stream beneath the swan's wings - one of Jove's deceptions Arachne depicts in idx 9. Correggio (Gemaldegalerie, Berlin)."
+    },
+    {
+      "title": "Danae",
+      "artist": "Antonio da Correggio",
+      "year": "c. 1530",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Correggio%20-%20Dana%C3%AB%20-%20WGA05341.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Correggio_-_Dana%C3%AB_-_WGA05341.jpg",
+      "license": "PD (CC-PD-Mark; published pre-1931; Correggio d. 1534)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 10,
+      "note": "Jove luring Danae as a shower of gold - among the divine deceptions in Arachne's web. Bridges idx 9-10 (the catalogue of Jove/Neptune/Apollo seductions). Correggio (Galleria Borghese)."
+    },
+    {
+      "title": "Las Hilanderas - detail (the contest tapestry)",
+      "artist": "Diego Velazquez",
+      "year": "c. 1657",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Las%20hilanderas%20Vel%C3%A1zquez%20detail.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Las_hilanderas_Vel%C3%A1zquez_detail.jpg",
+      "license": "PD-Art (PD-old; Velazquez d. 1660)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 11,
+      "note": "Detail of the rear chamber where Minerva (helmeted) confronts Arachne before the woven tapestry - reads as the moment of judgment / Minerva's wrath at the finished web."
+    },
+    {
+      "title": "The Spider (Arachne transformed)",
+      "artist": "Nikolaos Gyzis",
+      "year": "1884",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nikolas%20Gysis%20The%20Spider.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Nikolas_Gysis_The_Spider.jpg",
+      "license": "PD (CC-PD-Mark; published pre-1931; Gyzis d. 1901)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 13,
+      "note": "Allegorical figure of Arachne at the threshold of transformation - non-graphic. Used to cover the curse beat and (gently) bridge the merged wrath/transformation arc without depicting the hanging (idx 12)."
+    },
+    {
+      "title": "Arachne (etching, the spider-woman)",
+      "artist": "Otto Henry Bacher",
+      "year": "1884",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Arachne%20MET%20DP872951.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Arachne_MET_DP872951.jpg",
+      "license": "CC0 1.0 Public Domain Dedication (The Met)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 14,
+      "note": "Etching evoking Arachne with her spider/web nature - closes the stream on the transformation into the spider who weaves forever."
+    }
+  ],
+  "rejected": [
+    {
+      "title": "Tintoretto - Minerva e Aracne, 1575-85 (1579).jpg",
+      "reason": "Commons file page carries a modern photographer's Creative Commons Attribution-ShareAlike 4.0 license claim (CC-BY-SA-4.0), NOT a clean PD-Art tag. Although the underlying 16th-c. painting is PD, the file as licensed is not unambiguously public domain. Replaced with the PD-Art Commons file of the same Tintoretto painting (Tintoretto - Aracne sfida Minerva in una gara di tessitura, 1503783.jpg)."
+    },
+    {
+      "title": "Gustave Dore - Arachne (Dante, Purgatorio Canto XII)",
+      "reason": "Could not verify a specific Commons File page for a Dore Arachne plate during this pass (search surfaced only Inferno plates, not the Purgatorio Arachne). Dore (d. 1883) is PD, but without confirming the exact file page and license tag it was left out rather than assumed. Candidate to add later once the precise File: name is verified."
+    }
+  ]
+}
