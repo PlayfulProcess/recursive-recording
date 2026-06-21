@@ -1,0 +1,245 @@
+{
+  "id": "lewis-carroll",
+  "name": "Lewis Carroll — A Genealogy of Wonderland",
+  "description": "A context map of the world around the Alice books: the author Charles Dodgson / Lewis Carroll, the real Alice Liddell, the illustrators who answered Tenniel, and the companion works (Looking-Glass, Jabberwocky, the Snark). Built from free public-domain sources — bios via Wikipedia, portraits and plates via Wikimedia Commons (license + artist baked into every credit). A recursive-recording context grammar. Curation: PlayfulProcess; text AI-assisted and historically verified; all imagery public domain.",
+  "grammar_type": "custom",
+  "default_preview": "grid",
+  "is_published": false,
+  "tags": ["lewis-carroll", "alice", "carroll", "tenniel", "genealogy", "context", "public-domain"],
+  "metadata": {
+    "kind": "genealogy",
+    "author": "PlayfulProcess",
+    "source_note": "Bios condensed from English Wikipedia (CC BY-SA text, paraphrased); every image is public domain, sourced from Wikimedia Commons or the British Library with artist + license recorded in each item's metadata.credit. No AI image generation was used. Cross-links point at ../alice-in-wonderland (editions + people) — reference only, not overwritten.",
+    "cross_refs": {
+      "alice_people": "../alice-in-wonderland/data/people.json",
+      "alice_editions": "../alice-in-wonderland/data/editions.json",
+      "alice_performance": "../alice-in-wonderland/alice-illustration-stream.json"
+    }
+  },
+  "item_count": 10,
+  "items": [
+    {
+      "id": "carroll", "name": "Lewis Carroll (Charles Lutwidge Dodgson)", "number": 1,
+      "symbol": "1832–1898", "category": "person", "role_group": "author",
+      "keywords": ["author", "mathematician", "photographer", "Christ Church Oxford"],
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/LewisCarrollSelfPhoto.jpg",
+      "sections": {
+        "Who": "Charles Lutwidge Dodgson — pen name Lewis Carroll — was an English author, mathematician, photographer and reluctant Anglican deacon, lecturing in mathematics at Christ Church, Oxford. He was noted for his facility with word-play, logic and fantasy; his nonsense reflects his published work on mathematical logic.",
+        "In this map": "The origin point. He told the tale to the Liddell sisters on a river outing (1862), hand-wrote and illustrated it as *Alice's Adventures Under Ground* (1864), then expanded it into *Wonderland* (1865) and its sequel *Through the Looking-Glass* (1871), and wrote the nonsense poems *Jabberwocky* and *The Hunting of the Snark*.",
+        "Connections": "→ told the story to **Alice Liddell** (muse) · → commissioned & closely directed **John Tenniel** · → wrote **Under Ground**, **Wonderland**, **Looking-Glass**, **Jabberwocky**, **The Hunting of the Snark**."
+      },
+      "metadata": {
+        "credit": "Lewis Carroll (Charles L. Dodgson), self-portrait photograph, c. 1857. Public domain (PD-old, author d. 1898). Source: Wikimedia Commons, File:LewisCarrollSelfPhoto.jpg.",
+        "license": "Public domain (PD-old)", "source_page": "https://commons.wikimedia.org/wiki/File:LewisCarrollSelfPhoto.jpg",
+        "wikipedia": "https://en.wikipedia.org/wiki/Lewis_Carroll"
+      },
+      "relations": [
+        {"to": "alice-liddell", "label": "told the story to"},
+        {"to": "john-tenniel", "label": "commissioned / directed"},
+        {"to": "under-ground", "label": "wrote & illustrated"},
+        {"to": "wonderland", "label": "wrote"},
+        {"to": "looking-glass", "label": "wrote"},
+        {"to": "jabberwocky", "label": "wrote"},
+        {"to": "snark", "label": "wrote"}
+      ],
+      "sort_order": 0
+    },
+    {
+      "id": "alice-liddell", "name": "Alice Liddell (later Hargreaves)", "number": 2,
+      "symbol": "1852–1934", "category": "person", "role_group": "muse",
+      "keywords": ["muse", "dedicatee", "the real Alice"],
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Alice_Liddell.jpg",
+      "sections": {
+        "Who": "Alice Pleasance Liddell, daughter of the Dean of Christ Church, was the child to whom Lewis Carroll first told the Wonderland story during a boating trip, and the dedicatee of the book. She shared her name with the heroine, though scholars disagree on how far the character was 'based on' her.",
+        "In this map": "The muse and first audience. The 1864 manuscript *Alice's Adventures Under Ground* was a handwritten gift to her.",
+        "Connections": "→ the story was told to her by **Lewis Carroll** · → received the **Under Ground** manuscript as a gift."
+      },
+      "metadata": {
+        "credit": "Photograph of Alice Liddell by Lewis Carroll, c. 1858–1860. Public domain (PD-old, photographer d. 1898). Source: Wikimedia Commons, File:Alice_Liddell.jpg.",
+        "license": "Public domain (PD-old)", "source_page": "https://commons.wikimedia.org/wiki/File:Alice_Liddell.jpg",
+        "wikipedia": "https://en.wikipedia.org/wiki/Alice_Liddell"
+      },
+      "relations": [
+        {"to": "carroll", "label": "muse of"},
+        {"to": "under-ground", "label": "dedicatee of"}
+      ],
+      "sort_order": 1
+    },
+    {
+      "id": "john-tenniel", "name": "Sir John Tenniel", "number": 3,
+      "symbol": "1820–1914", "category": "person", "role_group": "illustrator",
+      "keywords": ["illustrator", "Punch cartoonist", "canonical Alice"],
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/John_Tenniel.png",
+      "sections": {
+        "Who": "Sir John Tenniel was a leading English illustrator and political cartoonist (chief cartoonist of *Punch*). Knighted in 1893 — the first such honour for an illustrator — he defined the canonical look of Alice in 42 wood-engravings for *Wonderland* (1865) and again for *Looking-Glass* (1871).",
+        "In this map": "The image-maker every later illustrator answers to. A reluctant collaborator whom Carroll micromanaged. His Jabberwock and Humpty Dumpty are the definitive images of the sequel.",
+        "Connections": "→ commissioned & directed by **Lewis Carroll** · → illustrated **Wonderland**, **Looking-Glass**, **Jabberwocky** · → the reference point for **Arthur Rackham** and the whole later illustrator lineage in the Alice performance."
+      },
+      "metadata": {
+        "credit": "Portrait of Sir John Tenniel. Public domain (PD-old, sitter/illustrator d. 1914). Source: Wikimedia Commons, File:John_Tenniel.png.",
+        "license": "Public domain (PD-old)", "source_page": "https://commons.wikimedia.org/wiki/File:John_Tenniel.png",
+        "wikipedia": "https://en.wikipedia.org/wiki/John_Tenniel"
+      },
+      "relations": [
+        {"to": "carroll", "label": "directed by"},
+        {"to": "wonderland", "label": "illustrated"},
+        {"to": "looking-glass", "label": "illustrated"},
+        {"to": "jabberwocky", "label": "illustrated"},
+        {"to": "arthur-rackham", "label": "precedes / reference for"}
+      ],
+      "sort_order": 2
+    },
+    {
+      "id": "arthur-rackham", "name": "Arthur Rackham", "number": 4,
+      "symbol": "1867–1939", "category": "person", "role_group": "illustrator",
+      "keywords": ["illustrator", "golden age", "1907 Alice"],
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Arthur_rackham_selfportrait.jpg",
+      "sections": {
+        "Who": "Arthur Rackham was a leading figure of the Golden Age of British book illustration, known for robust pen-and-ink line combined with delicate watercolour. His 1907 *Alice* (Heinemann) was the first major illustrated edition after the British copyright lapsed.",
+        "In this map": "The most famous of the 'second wave' illustrators who reinterpreted Alice once the book entered the public domain — represented in the Alice performance alongside Walker, Le Fanu, Hudson, Woodward, Rountree and others.",
+        "Connections": "→ works in the shadow of **John Tenniel** · → reinterprets **Wonderland** (1907) · → one node of the illustrator lineage in the **Alice performance**."
+      },
+      "metadata": {
+        "credit": "Arthur Rackham, self-portrait. Public domain (PD-old, artist d. 1939; work pre-1929). Source: Wikimedia Commons, File:Arthur_rackham_selfportrait.jpg.",
+        "license": "Public domain (PD-old)", "source_page": "https://commons.wikimedia.org/wiki/File:Arthur_rackham_selfportrait.jpg",
+        "wikipedia": "https://en.wikipedia.org/wiki/Arthur_Rackham"
+      },
+      "relations": [
+        {"to": "john-tenniel", "label": "answers to"},
+        {"to": "wonderland", "label": "reinterpreted (1907)"}
+      ],
+      "sort_order": 3
+    },
+    {
+      "id": "under-ground", "name": "Alice's Adventures Under Ground", "number": 5,
+      "symbol": "1864 (manuscript)", "category": "work", "role_group": "work",
+      "keywords": ["manuscript", "origin", "self-illustrated"],
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Alice%27s_Adventures_Under_Ground_-_Lewis_Carroll_-_British_Library_Add_MS_46700_f18r.jpg",
+      "sections": {
+        "What": "The original handwritten, self-illustrated manuscript Carroll made as a gift for Alice Liddell in 1864 — the seed of the published book. Now British Library Add MS 46700.",
+        "In this map": "The root text: Carroll as his own first illustrator, before Tenniel. The recursive-recording Alice performance already uses pages from this manuscript as its oldest 'edition'.",
+        "Connections": "→ written & drawn by **Lewis Carroll** · → gift to **Alice Liddell** · → expanded into **Wonderland**."
+      },
+      "metadata": {
+        "credit": "Lewis Carroll, autograph manuscript of ‘Alice's Adventures Under Ground’ (1864), British Library Add MS 46700, f.18r. Public domain (PD-old, author d. 1898). Digitised by the British Library; via Wikimedia Commons.",
+        "license": "Public domain (PD-old)", "source_page": "https://commons.wikimedia.org/wiki/File:Alice%27s_Adventures_Under_Ground_-_Lewis_Carroll_-_British_Library_Add_MS_46700_f18r.jpg"
+      },
+      "relations": [
+        {"to": "carroll", "label": "by"},
+        {"to": "alice-liddell", "label": "gift to"},
+        {"to": "wonderland", "label": "expanded into"}
+      ],
+      "sort_order": 4
+    },
+    {
+      "id": "wonderland", "name": "Alice's Adventures in Wonderland", "number": 6,
+      "symbol": "1865", "category": "work", "role_group": "work",
+      "keywords": ["novel", "Tenniel", "White Rabbit"],
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Alice-white-rabbit.jpg",
+      "sections": {
+        "What": "The published novel (Macmillan, 1865), expanded from *Under Ground* and illustrated by John Tenniel. Among the most important works of Victorian literature; a touchstone of literary nonsense.",
+        "In this map": "The book at the centre of the recursive-recording Alice performance — every illustrated edition from 1865 to 1933 is stamped onto a single LibriVox karaoke reading there.",
+        "Connections": "→ written by **Lewis Carroll** · → illustrated by **John Tenniel** · → reinterpreted by **Arthur Rackham** & later illustrators · → sequel: **Through the Looking-Glass**."
+      },
+      "metadata": {
+        "credit": "Sir John Tenniel, ‘The White Rabbit’, wood-engraving for *Alice's Adventures in Wonderland* (Macmillan, 1865). Public domain (PD-old, illustrator d. 1914). Source: Wikimedia Commons, File:Alice-white-rabbit.jpg.",
+        "license": "Public domain (PD-old)", "source_page": "https://commons.wikimedia.org/wiki/File:Alice-white-rabbit.jpg",
+        "wikipedia": "https://en.wikipedia.org/wiki/Alice%27s_Adventures_in_Wonderland"
+      },
+      "relations": [
+        {"to": "carroll", "label": "by"},
+        {"to": "john-tenniel", "label": "illustrated by"},
+        {"to": "looking-glass", "label": "sequel"}
+      ],
+      "sort_order": 5
+    },
+    {
+      "id": "looking-glass", "name": "Through the Looking-Glass, and What Alice Found There", "number": 7,
+      "symbol": "1871", "category": "work", "role_group": "work",
+      "keywords": ["sequel", "mirror", "chess", "Humpty Dumpty"],
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Alice_with_Humpty_Dumpty_%28Illustration_by_John_Tenniel%29.png",
+      "sections": {
+        "What": "The 1871 sequel: Alice climbs through a mirror into a reversed world structured like a chess game, where logic runs backwards. It contains *Jabberwocky* and the Humpty Dumpty 'a word means what I choose it to mean' dialogue.",
+        "In this map": "The mirror book — its reversal theme rhymes with recursive.eco's own concerns. Tenniel illustrated it too.",
+        "Connections": "→ written by **Lewis Carroll** · → illustrated by **John Tenniel** · → contains **Jabberwocky** · → sequel to **Wonderland**."
+      },
+      "metadata": {
+        "credit": "Sir John Tenniel, ‘Alice and Humpty Dumpty’, from *Through the Looking-Glass* (Macmillan, 1871). Public domain (PD-old, illustrator d. 1914). Source: Wikimedia Commons, File:Alice_with_Humpty_Dumpty_(Illustration_by_John_Tenniel).png.",
+        "license": "Public domain (PD-old)", "source_page": "https://commons.wikimedia.org/wiki/File:Alice_with_Humpty_Dumpty_(Illustration_by_John_Tenniel).png",
+        "wikipedia": "https://en.wikipedia.org/wiki/Through_the_Looking-Glass"
+      },
+      "relations": [
+        {"to": "carroll", "label": "by"},
+        {"to": "john-tenniel", "label": "illustrated by"},
+        {"to": "jabberwocky", "label": "contains"},
+        {"to": "wonderland", "label": "sequel to"}
+      ],
+      "sort_order": 6
+    },
+    {
+      "id": "jabberwocky", "name": "Jabberwocky", "number": 8,
+      "symbol": "1871", "category": "work", "role_group": "work",
+      "keywords": ["nonsense poem", "portmanteau", "the Jabberwock"],
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Jabberwocky.jpg/1280px-Jabberwocky.jpg",
+      "sections": {
+        "What": "A nonsense poem within *Through the Looking-Glass*, recounting the slaying of the Jabberwock. Famous for its coined portmanteau words ('slithy', 'brillig', 'mimsy') — invented language that nonetheless reads as grammatical.",
+        "In this map": "Carroll's clearest demonstration that *grammar* can carry meaning even when vocabulary is invented — a natural anchor for a 'grammar' platform. Tenniel's frontispiece Jabberwock is its defining image.",
+        "Connections": "→ written by **Lewis Carroll** · → appears in **Through the Looking-Glass** · → illustrated by **John Tenniel** · → lends words & setting to **The Hunting of the Snark**."
+      },
+      "metadata": {
+        "credit": "Sir John Tenniel, ‘The Jabberwock’, frontispiece to *Through the Looking-Glass* (1871). Public domain (PD-old, illustrator d. 1914). Source: Wikimedia Commons, File:Jabberwocky.jpg.",
+        "license": "Public domain (PD-old)", "source_page": "https://commons.wikimedia.org/wiki/File:Jabberwocky.jpg",
+        "wikipedia": "https://en.wikipedia.org/wiki/Jabberwocky"
+      },
+      "relations": [
+        {"to": "carroll", "label": "by"},
+        {"to": "looking-glass", "label": "appears in"},
+        {"to": "john-tenniel", "label": "illustrated by"},
+        {"to": "snark", "label": "lends words to"}
+      ],
+      "sort_order": 7
+    },
+    {
+      "id": "snark", "name": "The Hunting of the Snark", "number": 9,
+      "symbol": "1876", "category": "work", "role_group": "work",
+      "keywords": ["nonsense poem", "An Agony in Eight Fits", "Boojum"],
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Lewis_Carroll_-_Henry_Holiday_-_Hunting_of_the_Snark_-_Plate_1.jpg/1280px-Lewis_Carroll_-_Henry_Holiday_-_Hunting_of_the_Snark_-_Plate_1.jpg",
+      "sections": {
+        "What": "A nonsense poem (1876), subtitled 'An Agony, in Eight Fits', telling of an absurd crew hunting an undefined creature, the Snark — which may turn out to be a Boojum. It borrows setting, creatures and portmanteau words from *Jabberwocky*. Illustrated by Henry Holiday.",
+        "In this map": "The far node of Carroll's nonsense — a whole voyage built from invented terms. Illustrated not by Tenniel but by Henry Holiday (1839–1927).",
+        "Connections": "→ written by **Lewis Carroll** · → borrows from **Jabberwocky** · → illustrated by **Henry Holiday**."
+      },
+      "metadata": {
+        "credit": "Henry Holiday, Plate 1 (‘The Landing’) for *The Hunting of the Snark* by Lewis Carroll (Macmillan, 1876). Public domain (PD-old; Holiday d. 1927, Carroll d. 1898). Source: Wikimedia Commons.",
+        "license": "Public domain (PD-old)", "source_page": "https://commons.wikimedia.org/wiki/File:Lewis_Carroll_-_Henry_Holiday_-_Hunting_of_the_Snark_-_Plate_1.jpg",
+        "wikipedia": "https://en.wikipedia.org/wiki/The_Hunting_of_the_Snark"
+      },
+      "relations": [
+        {"to": "carroll", "label": "by"},
+        {"to": "jabberwocky", "label": "borrows from"}
+      ],
+      "sort_order": 8
+    },
+    {
+      "id": "golden-afternoon", "name": "The Golden Afternoon (the 1862 boat trip)", "number": 10,
+      "symbol": "4 July 1862", "category": "context", "role_group": "origin",
+      "keywords": ["origin", "Isis", "Godstow", "Liddell sisters"],
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Alice%27s_Adventures_Under_Ground_-_Lewis_Carroll_-_British_Library_Add_MS_46700_f18r.jpg",
+      "sections": {
+        "What": "The river outing on the Isis (Thames at Oxford) toward Godstow, 4 July 1862, when Carroll first improvised the Wonderland story for the three Liddell sisters — Alice begging him afterwards to 'write it out'. The 'golden afternoon' of the prefatory poem.",
+        "In this map": "The event the whole genealogy hangs from: an oral story, told once, that Alice asked to have written down — which became the manuscript, the books, the illustrations, and (a century and a half on) this performance.",
+        "Connections": "→ **Lewis Carroll** improvised the tale · → for **Alice Liddell** & her sisters · → became **Alice's Adventures Under Ground**."
+      },
+      "metadata": {
+        "credit": "Illustrated with a page of Carroll's own 1864 manuscript (British Library Add MS 46700, f.18r). Public domain (PD-old). Source: Wikimedia Commons / British Library. (No contemporary image of the boat trip itself is public domain; the manuscript stands in for the origin.)",
+        "license": "Public domain (PD-old)", "source_page": "https://commons.wikimedia.org/wiki/File:Alice%27s_Adventures_Under_Ground_-_Lewis_Carroll_-_British_Library_Add_MS_46700_f18r.jpg"
+      },
+      "relations": [
+        {"to": "carroll", "label": "storyteller"},
+        {"to": "alice-liddell", "label": "audience"},
+        {"to": "under-ground", "label": "became"}
+      ],
+      "sort_order": 9
+    }
+  ]
+}
