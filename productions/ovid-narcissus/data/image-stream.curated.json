@@ -1,0 +1,125 @@
+{
+  "_note": "Public-domain / CC0 artwork stream for the Ovid 'Echo & Narcissus' karaoke performance (recursive-recording). 10 verified works, each anchored to a narrative beat in text.json (anchor_beat_idx 0-22). Gathered via the recursive.eco MCP commons_image_search (free); each license + artist taken from the Commons/Met file record and baked into 'credit' with EXCESSIVE attribution. Met images are Open Access (isPublicDomain); UVM Baur scan is PD by age (Baur d.1642). image_url uses Wikimedia upload thumbs (~1024-1280px, mirror-safe) or the source museum's direct file. Author of this curation: PlayfulProcess. AI disclosed: artwork is human-made historical PD; only the narration audio is AI TTS (declared in the grammar).",
+  "images": [
+    {
+      "title": "Echo and Narcissus",
+      "artist": "John William Waterhouse",
+      "year": 1903,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/John_William_Waterhouse_-_Echo_and_Narcissus_-_Google_Art_Project.jpg/1280px-John_William_Waterhouse_-_Echo_and_Narcissus_-_Google_Art_Project.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_Echo_and_Narcissus_-_Google_Art_Project.jpg",
+      "credit": "John William Waterhouse, “Echo and Narcissus” (1903), Walker Art Gallery, Liverpool — via Google Art Project / Wikimedia Commons",
+      "license": "Public domain (PD-old-auto; Waterhouse d. 1917)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 0,
+      "note": "The canonical image of the whole myth — Echo watching the boy at the pool; used as the establishing wide shot over the opening (Liriope/Tiresias)."
+    },
+    {
+      "title": "The Nymph Echo (Die Nymphe Echo / La Nymphe Écho)",
+      "artist": "Eugène Carrière",
+      "year": "c. 1900",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Eug%C3%A8ne_Carri%C3%A8re_-_Die_Nymphe_Echo_-_14683_-_Bavarian_State_Painting_Collections.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Carri%C3%A8re_-_Die_Nymphe_Echo_-_14683_-_Bavarian_State_Painting_Collections.jpg",
+      "credit": "Eugène Carrière, “La Nymphe Écho” (c. 1900), Bavarian State Painting Collections — Wikimedia Commons",
+      "license": "Public domain (PD-old-auto; Carrière d. 1906)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 2,
+      "note": "Echo as a lone, vapour-soft figure — anchors 'Echo introduced'."
+    },
+    {
+      "title": "A Bather (Echo)",
+      "artist": "Jean-Jacques Henner",
+      "year": "c. 1880",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/A_Bather_%28Echo%29_MET_EP966.jpg/1280px-A_Bather_%28Echo%29_MET_EP966.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:A_Bather_(Echo)_MET_EP966.jpg",
+      "credit": "Jean-Jacques Henner, “A Bather (Echo)”, The Metropolitan Museum of Art (Open Access, CC0) — Wikimedia Commons",
+      "license": "CC0 1.0 Public Domain Dedication (The Met Open Access; Henner d. 1905)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 7,
+      "note": "A solitary fading figure for 'Echo wastes to a voice'."
+    },
+    {
+      "title": "Narcissus at the Well (Metamorphoseon ... Ovidianarum, pl. 28)",
+      "artist": "Antonio Tempesta",
+      "year": 1606,
+      "image_url": "https://images.metmuseum.org/CRDImages/dp/original/DP864257.jpg",
+      "source_page": "https://www.metmuseum.org/art/collection/search/401131",
+      "credit": "Antonio Tempesta, “Narcissus at the Well”, from the Ovid Metamorphoses etchings (1606), The Metropolitan Museum of Art (Open Access, obj. 401131)",
+      "license": "Public domain (Met flags isPublicDomain:true; Tempesta d. 1630)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 9,
+      "note": "Period Ovid-edition engraving of the boy at the unsullied fountain."
+    },
+    {
+      "title": "Narcissus",
+      "artist": "Caravaggio (Michelangelo Merisi da Caravaggio)",
+      "year": "c. 1594-1596",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Narcissus-Caravaggio_%281594-96%29_edited.jpg/1280px-Narcissus-Caravaggio_%281594-96%29_edited.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Narcissus-Caravaggio_(1594-96)_edited.jpg",
+      "credit": "Caravaggio, “Narcissus” (c. 1594-1596), Galleria Nazionale d'Arte Antica, Rome — Wikimedia Commons",
+      "license": "Public domain (PD-old-auto; Caravaggio d. 1610)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 10,
+      "note": "The definitive reflection image — anchors 'He falls in love with his reflection'."
+    },
+    {
+      "title": "Narcissus (Narciso)",
+      "artist": "Jan Cossiers",
+      "year": "c. 1650",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Jan_Cossiers_-_Narciso.jpg/1280px-Jan_Cossiers_-_Narciso.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Jan_Cossiers_-_Narciso.jpg",
+      "credit": "Jan Cossiers, “Narciso” (c. 1650), Museo Nacional del Prado, Madrid — Wikimedia Commons",
+      "license": "Public domain (PD-old-auto; Cossiers d. 1671)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 10,
+      "note": "A second take on the reflection, to rotate against the Caravaggio across the long pool scene."
+    },
+    {
+      "title": "Narcissus",
+      "artist": "Gyula Benczúr",
+      "year": 1881,
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Benczur-narcissus.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Benczur-narcissus.jpg",
+      "credit": "Gyula Benczúr, “Narcissus” (1881) — Wikimedia Commons (Fine Arts in Hungary)",
+      "license": "Public domain (PD-old-auto; Benczúr d. 1920)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 11,
+      "note": "The youth absorbed in himself — anchors 'Loving himself, sought and seeking'."
+    },
+    {
+      "title": "Narcisse",
+      "artist": "Nicolas-Bernard Lépicié",
+      "year": "c. 1771",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/L%C3%A9pici%C3%A9%2C_Nicolas-Bernardt_-_Narcisse_-_ca._1771.png/1280px-L%C3%A9pici%C3%A9%2C_Nicolas-Bernardt_-_Narcisse_-_ca._1771.png",
+      "source_page": "https://commons.wikimedia.org/wiki/File:L%C3%A9pici%C3%A9,_Nicolas-Bernardt_-_Narcisse_-_ca._1771.png",
+      "credit": "Nicolas-Bernard Lépicié, “Narcisse” (c. 1771) — Wikimedia Commons",
+      "license": "Public domain (PD-old-auto; Lépicié d. 1784)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 12,
+      "note": "Anchors 'The narrator's warning' / the boy fixed at the water."
+    },
+    {
+      "title": "Echo and Narcissus",
+      "artist": "Nicolas Poussin",
+      "year": "c. 1630",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Nicolas_Poussin_-_Echo_and_Narcissus_-_WGA18271.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Nicolas_Poussin_-_Echo_and_Narcissus_-_WGA18271.jpg",
+      "credit": "Nicolas Poussin, “Echo and Narcissus” (c. 1630), Musée du Louvre, Paris — via Web Gallery of Art / Wikimedia Commons",
+      "license": "Public domain (PD-old-auto; Poussin d. 1665)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 21,
+      "note": "Narcissus dead/dying with grieving Echo and the first flower — anchors the death."
+    },
+    {
+      "title": "Narcissus in Florem (Ovid Metamorphoses, Book 3, pl. 33)",
+      "artist": "Johann Wilhelm Baur",
+      "year": 1703,
+      "image_url": "https://www.uvm.edu/~hag/ovid/baur1703/baur1703b3p33.jpeg",
+      "source_page": "https://www.uvm.edu/~hag/ovid/baur1703/baur1703b3.html",
+      "credit": "Johann Wilhelm Baur, “Narcissus in Florem”, pl. 33 of the 1703 Nuremberg Ovid (designs c. 1641), The Ovid Project, University of Vermont (Hope Greenberg)",
+      "license": "Public domain (Baur d. 1642; 1703 print PD by age)",
+      "license_confidence": "high",
+      "anchor_beat_idx": 22,
+      "note": "The transformation into the flower — closes the stream."
+    }
+  ]
+}

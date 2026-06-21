@@ -73,8 +73,7 @@ def credit_of(im):
         base_c = "%s — %s" % (base_c, lic)
     return base_c
 
-# group artworks by the beat they're anchored to (order preserved)
-RECENT = 3  # how many recent prior-beat artworks stay in the rotation for variety
+# group artworks by the beat they depict (order preserved)
 by_beat = {}
 for k, im in enumerate(images):
     im["_idx"] = im.get("anchor_beat_idx", 0)
@@ -90,28 +89,32 @@ def emit(im, a, b, stamps):
         "display_start": round(a, 2), "display_end": round(b, 2),
     })
 
-# Walk beats in order. Each beat LEADS with its own (newly-anchored) artwork, then rotates
-# through a small pool of recent past artworks — never a future one (no spoiler). Single-image
-# beats still rotate (against the recent carry) so a fresh picture appears ~every WIN seconds.
-stamps, carry = [], []
+# Walk beats in order. Each beat plays through ITS OWN images in sequence, one per ~WIN-second
+# window — so with enough images per beat every window is a fresh, on-scene picture (no A-B-A-B
+# looping). A beat with more images than windows shows only as many as fit; a beat with fewer
+# cycles its own set. A beat with NO images of its own borrows from the most recently shown ones
+# (fallback only). No future-beat image is ever shown early (no spoiler).
+stamps, last_url, recent = [], None, []
 for bi in sorted(beat_start.keys()):
     start = beat_start[bi]
     end = beat_end.get(bi) or (start + WIN)
     if bi == max(beat_start):  # last beat holds to the very end of the audio
         end = max(end, total)
-    own = by_beat.get(bi, [])
-    local = own + [c for c in carry if c["image_url"] not in {o["image_url"] for o in own}]
-    if not local:  # nothing unlocked yet (before the first anchored artwork) -> leave a gap
+    pool = list(by_beat.get(bi, [])) or list(recent)   # own images, else recent fallback
+    if not pool:  # nothing available yet (before the first beat with art) -> leave a gap
         continue
+    if len(pool) > 1 and pool[0]["image_url"] == last_url:   # don't repeat across the seam
+        pool = pool[1:] + pool[:1]
     t, k = start, 0
     while t < end - 0.2:
         e = min(t + WIN, end)
-        emit(local[k % len(local)], t, e, stamps)
+        im = pool[k % len(pool)]
+        if im["image_url"] == last_url and len(pool) > 1:     # never back-to-back duplicate
+            k += 1; im = pool[k % len(pool)]
+        emit(im, t, e, stamps); last_url = im["image_url"]
+        recent = [r for r in recent if r["image_url"] != im["image_url"]]
+        recent.append(im); recent = recent[-8:]
         k += 1; t = e
-    for im in own:  # refresh carry (most-recent last, distinct by url, capped)
-        carry = [c for c in carry if c["image_url"] != im["image_url"]]
-        carry.append(im)
-    carry = carry[-RECENT:]
 
 # stamp table (human-readable; the "illustration-stamps track" like Alice's)
 json.dump({"min_hold_sec": WIN, "win_sec": WIN, "rotation": "round-robin over unlocked pool",
