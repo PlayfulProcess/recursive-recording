@@ -168,6 +168,7 @@
     <button class="ghost" id="caps" aria-pressed="false" aria-label="ALL-CAPS karaoke" title="ALL-CAPS (c)">AA</button>
     <button class="ghost" id="plain" aria-pressed="false" aria-label="Plain subtitle (no word highlight)" title="Plain subtitle — no yellow highlight (p)">Plain</button>
     <button class="ghost" id="hide" aria-pressed="false" aria-label="Hide subtitles" title="Subtitles on/off (b)">CC</button>
+    <button class="ghost" id="srcbtn" aria-pressed="false" aria-label="Show or hide source credit" title="Source credit on/off (s)">© Credit</button>
     <button class="ghost" id="about" aria-label="About this translation" title="Sobre a tradução / About this translation" style="display:none">ⓘ Tradução</button>
     <button class="ghost" id="full" aria-label="Fullscreen" title="Fullscreen (F)">⛶</button>
     <span class="pos" id="pos">1 / 1</span>
@@ -227,7 +228,7 @@ let G=null, items=[], idx=0, player=null, playing=false, autoplay=true;
 let cardTimer=null, cardProgTimer=null, poll=null, progTimer=null;
 let bgPlayer=null, bgCfg=null;            // background_audio
 // ── grafted audio-karaoke mode state ──
-let audioMode=false, audioEl=null, scenes=[], crops=[], caps=false, lastKey='', curIdx=-1, lastFlashed='';
+let audioMode=false, audioEl=null, scenes=[], crops=[], caps=false, lastKey='', curIdx=-1, lastFlashed='', creditHidden=false;
 const GAP=0.45, MAXW=14;
 
 (async function(){
@@ -450,6 +451,7 @@ function bind(){
   $('caps').onclick=toggleCaps;
   $('plain').onclick=togglePlain;
   $('hide').onclick=toggleBand;
+  $('srcbtn').onclick=toggleCredit;
   $('about').onclick=openAbout; $('aboutX').onclick=closeAbout;
   $('aboutModal').onclick=e=>{ if(e.target===$('aboutModal')) closeAbout(); };
   $('full').onclick=()=>{ const el=$('stage'); if(!document.fullscreenElement){ (el.requestFullscreen||el.webkitRequestFullscreen||function(){}).call(el); } else { document.exitFullscreen(); } };
@@ -471,6 +473,7 @@ function bind(){
     else if(e.key==='c'||e.key==='C'){ toggleCaps(); }
     else if(e.key==='p'||e.key==='P'){ togglePlain(); }
     else if(e.key==='b'||e.key==='B'){ toggleBand(); }
+    else if(e.key==='s'||e.key==='S'){ toggleCredit(); }
     else if(e.key==='Escape'){ closeAbout(); }
   });
   // touch swipe on the stage
@@ -481,9 +484,13 @@ function bind(){
 
 // ════════ grafted: single-MP3 clock + per-word KARAOKE (the new feature view.html lacks) ════════
 function toggleCaps(){ caps=!caps; $('kband').classList.toggle('caps',caps); $('caps').setAttribute('aria-pressed',String(caps)); }
-function flashCredit(text){ const f=$('creditFlash'); if(!f||!text) return; f.textContent='✦  '+text; f.classList.add('show');
+function flashCredit(text){ const f=$('creditFlash'); if(!f||!text||creditHidden) return; f.textContent='✦  '+text; f.classList.add('show');
   clearTimeout(f._t); f._t=setTimeout(()=>f.classList.remove('show'), 2900); }
 function togglePlain(){ const on=$('kband').classList.toggle('plain'); $('plain').setAttribute('aria-pressed',String(on)); }   // no yellow highlight
+function toggleCredit(){ creditHidden=!creditHidden; $('srcbtn').setAttribute('aria-pressed',String(creditHidden));   // source-credit pill + flash on/off
+  const cr=(curIdx>=0&&items[curIdx]&&items[curIdx].metadata&&items[curIdx].metadata.credit)||'';
+  $('credit').style.display=(cr&&!creditHidden)?'block':'none';
+  if(creditHidden) $('creditFlash').classList.remove('show'); }
 function toggleBand(){ const off=$('kband').classList.toggle('noband'); $('hide').setAttribute('aria-pressed',String(off)); } // subtitles on/off
 function initAudio(){
   const md=G.metadata||{};
@@ -529,7 +536,7 @@ function showAudio(i){
   curIdx=i; const it=items[i];
   $('pos').textContent=(i+1)+' / '+items.length;
   $('now').innerHTML='<b>'+esc(it.title||'')+'</b>';
-  const cr=(it.metadata&&it.metadata.credit)||''; $('credit').textContent=cr; $('credit').style.display=cr?'block':'none';
+  const cr=(it.metadata&&it.metadata.credit)||''; $('credit').textContent=cr; $('credit').style.display=(cr&&!creditHidden)?'block':'none';
   if(cr && cr!==lastFlashed){ flashCredit(cr); lastFlashed=cr; }   // flash on each newly-featured edition/plate
   const img=it.image_url||(it.metadata&&it.metadata.image_url)||'';
   $('surface').innerHTML='<div class="img-face">'+(img?'<img src="'+esc(img)+'" alt="'+esc(it.title||'')+'">':'')+'</div>';
