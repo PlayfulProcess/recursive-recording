@@ -74,10 +74,13 @@ This repo is dual-licensed, deliberately:
 
 | What | License |
 |------|---------|
-| **Code** — `viewers/`, `pipeline/`, any HTML/JS/Python | **AGPL-3.0** — see [`LICENSE`](LICENSE) |
+| **Code** — `viewers/`, `pipeline/`, `karaoke/*.html`, `grammar-starter/recorder/`, the `scripts/` inside `productions/`, any HTML/JS/Python, and the format spec `GRAMMAR_FORMAT.md` | **Apache-2.0** — see [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE) |
 | **Content** — grammars, `docs/`, passages, data, illustrations *authored here* | **CC-BY-SA-4.0** — see [`LICENSE-CONTENT.txt`](LICENSE-CONTENT.txt) |
+| **The names** "recursive.eco" and "Recursive", and the spiral logo | Not licensed — see [`TRADEMARKS.md`](TRADEMARKS.md) |
 
-AGPL keeps improvements to the *players and pipeline* open even when run as a network service.
+Apache-2.0 lets anyone reuse the *players and pipeline*, including in closed products, as long as
+the notices travel with them. (The code was AGPL-3.0 until September 2026; copies taken before
+then keep that licence.)
 CC-BY-SA keeps the *performances* shareable and remixable, attribution preserved. Third-party
 public-domain assets referenced by the grammars (e.g. LibriVox recordings, scanned editions)
 carry their own public-domain status — see each production's README for provenance.
