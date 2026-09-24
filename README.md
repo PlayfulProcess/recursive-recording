@@ -10,6 +10,18 @@ track). **The viewer is the player.** No build step, no backend, no account.
 > — the same way a lab can open its *software* without opening its *models*. Everything here is
 > meant to be forked, hosted on GitHub Pages, and contributed to.
 
+## Work in progress
+
+This is a work in progress. I published it mainly so the pages could be served, and it isn't
+finished. Contributors are welcome: open an issue or send a pull request, however small.
+
+The idea behind [recursive.eco](https://recursive.eco) is a hypothesis, not a claim: that we may
+need to learn together how to create the conditions for recursive eco-improvement, rather than
+race toward recursive self-improvement.
+
+If your work appears here and you'd like it featured differently, removed, or given a shelf of
+your own, please write to pp@playfulprocess.com.
+
 ## Try it now (no install)
 Serve the folder and open a viewer:
 ```bash
