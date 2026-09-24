@@ -5,7 +5,8 @@
 set -e
 IN="${1:-/tmp/ovid/whisper.mp3}"
 OUT="${2:-/tmp/ovid/whisper.json}"
-ENVF="C:/Users/USER/OneDrive/Documentos/GitHub/recursive-eco/apps/flow/.env.local"
+# recursive-eco is expected next to this repo; ENVF overrides.
+ENVF="${ENVF:-$(cd "$(dirname "$0")/../../../.." && pwd)/recursive-eco/apps/flow/.env.local}"
 KEY=$(grep -E '^OPENAI_API_KEY=' "$ENVF" | head -1 | cut -d= -f2- | tr -d '"' | tr -d "'" | tr -d '\r' | xargs)
 [ -z "$KEY" ] && { echo "no OPENAI_API_KEY"; exit 1; }
 echo "transcribing $IN (Whisper word timestamps)..."

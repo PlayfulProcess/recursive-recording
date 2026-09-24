@@ -13,7 +13,10 @@ from collections import defaultdict
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GRAMMAR = os.path.join(HERE, "data", "base-grammar.json")
-MANIFEST = r"C:\Users\USER\OneDrive\Documentos\GitHub\recursive-kids-stories-club\books\alice-in-wonderland\audio\karaoke-manifest.json"
+# recursive-kids-stories-club is expected next to this repo; KARAOKE_MANIFEST overrides.
+MANIFEST = os.environ.get("KARAOKE_MANIFEST") or os.path.normpath(os.path.join(
+    HERE, "..", "..", "..", "recursive-kids-stories-club", "books", "alice-in-wonderland",
+    "audio", "karaoke-manifest.json"))
 OUT = os.path.join(HERE, "data", "align-pagewords.json")
 
 CURLY = {"‘":"'","’":"'","“":'"',"”":'"',"—":" ","–":" ","…":" "}

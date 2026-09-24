@@ -27,10 +27,13 @@ import os, re, sys, json, glob, base64, subprocess, tempfile, urllib.request, ur
 
 VOICE = sys.argv[2] if len(sys.argv) > 2 else "en-US-Neural2-D"
 PROD = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else ".")
-ENV_CANDIDATES = [
-    r"C:\Users\USER\OneDrive\Documentos\GitHub\recursive-eco\apps\flow\.env.local",
-    r"C:\Users\USER\OneDrive\Documentos\GitHub\recursive-eco\.env.local",
-]
+# recursive-eco is expected next to this repo; RECURSIVE_ECO_ENV overrides.
+_GITHUB = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", ".."))
+ENV_CANDIDATES = [p for p in [
+    os.environ.get("RECURSIVE_ECO_ENV"),
+    os.path.join(_GITHUB, "recursive-eco", "apps", "flow", ".env.local"),
+    os.path.join(_GITHUB, "recursive-eco", ".env.local"),
+] if p]
 
 def read_key():
     for p in ENV_CANDIDATES:

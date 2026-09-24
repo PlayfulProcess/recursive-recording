@@ -10,12 +10,12 @@ In:  /tmp/ovid/whisper.json (Whisper verbose_json, words[] with abs times in big
 Out: /tmp/ovid/alignment.json (S, E, total, per-passage {start_sec,end_sec,words[]} clip-relative)
      /tmp/ovid/narration.mp3 (the clipped Narcissus narration)
 """
-import json, re, os, subprocess
+import json, re, os, subprocess, tempfile
 from difflib import SequenceMatcher
 from collections import defaultdict
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TMP = "C:/Users/USER/AppData/Local/Temp/ovid"   # Git Bash /tmp/ovid in native-Windows form
+TMP = os.environ.get("OVID_TMP") or os.path.join(tempfile.gettempdir(), "ovid")   # Git Bash /tmp/ovid in native-Windows form
 W = json.load(open(TMP + "/whisper.json", encoding="utf-8"))
 T = json.load(open(os.path.join(HERE, "data", "text.json"), encoding="utf-8"))
 words = W["words"]

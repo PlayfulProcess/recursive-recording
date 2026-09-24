@@ -3,10 +3,10 @@
 (Baur 1703, the transformation) → through-image. Editorial principle: the text is
 kept verbatim (don't erase Ovid), the plate shows the metamorphosis NOT the suicide
 (don't depict/propagate), and a grammar-level content_note names it (don't erase)."""
-import json, os
+import json, os, tempfile
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TMP  = "C:/Users/USER/AppData/Local/Temp/ovid"
+TMP  = os.environ.get("OVID_TMP") or os.path.join(tempfile.gettempdir(), "ovid")
 PAD  = 0.25
 T = json.load(open(os.path.join(HERE, "data", "text.json"), encoding="utf-8"))
 A = json.load(open(os.path.join(TMP, "alignment.json"), encoding="utf-8"))

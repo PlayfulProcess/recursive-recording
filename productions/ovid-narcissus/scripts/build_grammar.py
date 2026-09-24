@@ -7,10 +7,10 @@ Plates: only two are URL-confirmed for v1 (Tempesta 1606 + Baur 1703), so Tempes
 is the through-image (carried forward) and Baur takes the closing transformation —
 scene-precise timing comes when the Solis/Salomon plates are sourced.
 """
-import json, os
+import json, os, tempfile
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TMP  = "C:/Users/USER/AppData/Local/Temp/ovid"
+TMP  = os.environ.get("OVID_TMP") or os.path.join(tempfile.gettempdir(), "ovid")
 PAD  = 0.25   # align_clip padded the clip by 0.25s at the head; shift word times to match
 
 T = json.load(open(os.path.join(HERE, "data", "text.json"), encoding="utf-8"))
